@@ -2,7 +2,7 @@
 
 Ayudas públicas en España, con fuentes oficiales y un plan que gestionas tú.
 
-Proyecto nacido del [brief España ayudas](https://app.notion.com/p/40da1ee8bd0680638e87f69899520d19): una experiencia de descubrimiento y preparación inspirada en Wizbii Money, autogestionable. [Abrir Ayudario](https://ayudario-xi.vercel.app). La aplicación y su primera actualización real están publicadas; queda pendiente la comprobación final del catálogo real en la interfaz alojada.
+Proyecto nacido del [brief España ayudas](https://app.notion.com/p/40da1ee8bd0680638e87f69899520d19): una experiencia de descubrimiento y preparación inspirada en Wizbii Money, autogestionable. [Abrir Ayudario](https://ayudario-xi.vercel.app). Primera versión publicada, con actualización oficial real y comprobación del catálogo en la interfaz alojada.
 
 ## Qué hace
 
@@ -30,6 +30,8 @@ La aplicación estática vive en `public/`; los módulos de perfil y plan son re
 ## Comprobaciones
 
 Los [cuatro flujos de Chromium y 29 casos iniciales](docs/results/2026/11-07/application-checks.md) tienen su fuente y resultados conservados. La corrección posterior del importador pasó [18 casos y una actualización oficial real](docs/results/2026/11-07/catalogue-refresh.md); las comprobaciones anteriores del perfil y la interfaz mantienen su fuente original. No se presenta como una única ejecución nueva de 31 casos. El historial conserva ambos fallos iniciales y el diagnóstico.
+
+La [comprobación alojada B05](docs/results/2026/11-07/hosted-catalogue.md) verificó una sesión anónima real: los 20.888 bytes publicados, 50 títulos y enlaces oficiales, ocho guías, fecha de actualización y cierre normal del navegador. No sustituye una decisión de elegibilidad ni acredita calendarios externos, dispositivos físicos o ejecuciones futuras del horario diario.
 
 ## Datos y licencia
 

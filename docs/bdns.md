@@ -66,3 +66,9 @@ government endorsement. Public source metadata does not establish entitlement.
 and disposable filesystem output. It does not establish live API availability,
 Vercel connectivity or scheduled refresh execution. The earlier bounded live
 probe on this Mac received no HTTP status; no live retry is part of these tests.
+
+The separate [7 November live release](results/2026/11-07/catalogue-refresh.md)
+passed the 18-case importer gate, fetched and published 50 actual public records.
+The [hosted observation](results/2026/11-07/hosted-catalogue.md) verifies their
+decoded response bytes and visible text/links. Those results preserve the failed
+first refresh and diagnostic; they are not claims made by the fixture suite.

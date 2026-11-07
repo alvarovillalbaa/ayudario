@@ -23,6 +23,6 @@ The corrected parser permits bounded public title whitespace while continuing to
 
 ## What this result does not replace
 
-The 13 profile/plan cases and four browser journeys from [source `5da5391`](application-checks.md) are unchanged prior evidence. They were not re-executed as part of a new 31-case invocation. The 18 integration cases and live refresh establish the producer boundary; **B05 rendering of this actual 50-record dataset remains pending** at this checkpoint.
+The 13 profile/plan cases and four browser journeys from [source `5da5391`](application-checks.md) are unchanged prior evidence. They were not re-executed as part of a new 31-case invocation. The 18 integration cases and live refresh establish the producer boundary. A later, separate [actual hosted B05 acceptance](hosted-catalogue.md) binds this 50-record dataset to the rendered alias without re-running B01–B04.
 
 Vercel reported generated-data commit `da4ab00` READY as deployment `dpl_DsAEnzTWcUZdjSUoQ9wLgdDcdYi8` for `ayudario-xi.vercel.app`; this is deployment metadata, not an actual browser observation. The [earlier hosted HTTP observation](hosted-attempt-1.observation.json) served the empty catalogue and cannot establish delivery of these new bytes. Future scheduled refreshes, source availability and changing programme conditions remain outside this single successful observation.
