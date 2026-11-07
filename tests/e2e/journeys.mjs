@@ -89,7 +89,7 @@ try {
     assert.equal(await page.locator("#profile-dialog").evaluate((element) => element.open), false);
     assert.match(await page.locator('#guide-grid [data-guide-id="imv"]').innerText(), /Puede interesarte/);
     await page.getByRole("searchbox", { name: "Buscar en las guías" }).fill("ingreso mínimo");
-    assert.equal(await page.locator("#guide-grid article").count(), 1);
+    assert.deepEqual((await page.locator("#guide-grid article").evaluateAll((cards) => cards.map((card) => card.dataset.guideId))).sort(), ["complemento-infancia", "imv"]);
     await page.locator('#guide-grid [data-guide-id="imv"]').getByRole("button", { name: "Conocer la ayuda" }).click();
     const source = page.getByRole("link", { name: "Consultar la fuente oficial" });
     assert.equal(await source.getAttribute("href"), GUIDES.find((guide) => guide.id === "imv").sourceUrl);
