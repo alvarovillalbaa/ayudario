@@ -1,0 +1,45 @@
+name: Refresh official public catalogue
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '40 6 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: official-public-catalogue
+  cancel-in-progress: false
+jobs:
+  refresh:
+    if: github.repository == 'alvarovillalbaa/ayudario' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.22.2'
+      - name: One bounded official request, then publish only the validated public file
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          export AYUDARIO_CATALOGUE_EXPECTED_SHA="$(git rev-parse HEAD:public/data/calls.json)"
+          node scripts/refresh-calls.mjs
+          node --input-type=module <<'JS'
+          import { execFileSync } from 'node:child_process';
+          import { readFile, writeFile } from 'node:fs/promises';
+          const repository = process.env.GITHUB_REPOSITORY;
+          const owned = 'public/data/calls.json';
+          const expected = process.env.AYUDARIO_CATALOGUE_EXPECTED_SHA;
+          if (!/^[a-f0-9]{40}$/.test(expected)) throw new Error('Missing checked-out catalogue identity');
+          const content = await readFile(owned);
+          if (content.length > 1024 * 1024) throw new Error('Public catalogue exceeds its bound');
+          const input = `${process.env.RUNNER_TEMP}/ayudario-catalogue-put.json`;
+          await writeFile(input, JSON.stringify({ message: 'Refresh official public BDNS catalogue [skip ci]', branch: 'main', sha: expected, content: content.toString('base64') }), { flag: 'wx', mode: 0o600 });
+          const result = JSON.parse(execFileSync('gh', ['api', '--method', 'PUT', `repos/${repository}/contents/${owned}`, '--input', input], { encoding: 'utf8' }));
+          console.log(JSON.stringify({ path: owned, commit: result.commit.sha, blob: result.content.sha, items: JSON.parse(content).items.length }));
+          JS

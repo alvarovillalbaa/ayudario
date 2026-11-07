@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "source": {
+    "name": "Sistema Nacional de Publicidad de Subvenciones y Ayudas Públicas (BDNS)",
+    "url": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias"
+  },
+  "fetchedAt": null,
+  "window": { "from": "", "to": "" },
+  "items": [],
+  "warning": "Aún no hay una descarga verificada del catálogo oficial. Puedes consultar las guías y el buscador BDNS."
+}

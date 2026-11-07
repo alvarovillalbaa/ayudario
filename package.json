@@ -1,0 +1,14 @@
+{
+  "name": "ayudario",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Ayudas públicas en España, con fuentes oficiales y un plan personal autogestionado.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/unit/*.test.mjs tests/integration/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "refresh": "node scripts/refresh-calls.mjs"
+  }
+}
