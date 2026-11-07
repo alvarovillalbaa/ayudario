@@ -1,0 +1,17 @@
+{
+  "checkedSource": "ba05a0d2ab0b80d721f5ff82e9563e950675f837",
+  "run": 42399760244,
+  "job": 128484791018,
+  "node": "v24.22.2",
+  "integrationPassed": 18,
+  "publicCommit": "da4ab00b46c77e4f2e149e83cd56172427e87414",
+  "blob": "b696ee76eda749049291c7db2c703bb7ddbbc9ea",
+  "bytes": 20888,
+  "sha256": "66b4d8eb4335077b9c13c67b76001a97c894fbe59d2200990d5876ea8878b5f8",
+  "items": 50,
+  "fetchedAt": "2026-11-07T18:08:32.697Z",
+  "window": {
+    "from": "2026-10-09",
+    "to": "2026-11-07"
+  }
+}

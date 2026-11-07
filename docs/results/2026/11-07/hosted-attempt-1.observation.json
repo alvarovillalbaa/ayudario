@@ -1,0 +1,58 @@
+{
+  "origin": "https://ayudario-xi.vercel.app",
+  "observedAt": "2026-11-07T18:03:41.841065+00:00",
+  "anonymous": true,
+  "redirectsFollowed": 0,
+  "allBodyBytesEqual": true,
+  "assets": [
+    {
+      "path": "public/index.html",
+      "bytes": 12341,
+      "sha256": "1f86d19b26068d4e125a6b2dc9027c128c3f72e09c4cbd642e614b8e5510a083",
+      "status": 200
+    },
+    {
+      "path": "public/app.js",
+      "bytes": 28603,
+      "sha256": "70285052a4ca02f1085a661030bd8aa256b0bd281fd951d1265e843a4ef3c626",
+      "status": 200
+    },
+    {
+      "path": "public/styles.css",
+      "bytes": 23904,
+      "sha256": "e106a1c1389f09156e1f616361530c9412800e3a60324098967817dfc0a6fe0e",
+      "status": 200
+    },
+    {
+      "path": "public/favicon.svg",
+      "bytes": 298,
+      "sha256": "1e2919dc454b4d9e198e0bfc574d4e5d797ebc87223a448a32683ce00b201428",
+      "status": 200
+    },
+    {
+      "path": "public/lib/catalog.js",
+      "bytes": 16617,
+      "sha256": "f5a68110cde22a609249aa0fffb688227cea9285c563cfa1d77996881a826ca5",
+      "status": 200
+    },
+    {
+      "path": "public/lib/matcher.js",
+      "bytes": 2772,
+      "sha256": "aebdafea1d9c31db2b98b715669f2dd23b18c5d8de1015625c1df627bba40d9c",
+      "status": 200
+    },
+    {
+      "path": "public/lib/plan.js",
+      "bytes": 4079,
+      "sha256": "57cc21f20ea704b2420fc51cab2344f956d4aa2fe6404c2fe386a5b6f78b681a",
+      "status": 200
+    },
+    {
+      "path": "public/data/calls.json",
+      "bytes": 398,
+      "sha256": "cf38abf2de54a262f8532a475b2df4f908312423a9cec1c37c1869902e999ff3",
+      "status": 200
+    }
+  ],
+  "limits": "Static delivery observation; browser cases were on loopback. Live BDNS catalogue remains unaccepted."
+}

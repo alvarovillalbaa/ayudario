@@ -5,7 +5,7 @@ import path from "node:path";
 
 const root = process.env.AYUDARIO_PROOF_DIR;
 if (!root) throw new Error("Owned proof directory is required");
-const allowed = new Set(["source-before.json", "source-after.json", "domain.tap", "browser.json", "server-cleanup.json", "server.log", "desktop.png", "narrow.png", "b01-reminder.ics", "b03-backup.json", "b04-backup.json", "attempt-1-original.zip"]);
+const allowed = new Set(["source-before.json", "source-after.json", "domain.tap", "browser.json", "server-cleanup.json", "server.log", "desktop.png", "narrow.png", "b01-reminder.ics", "b03-backup.json", "b04-backup.json", "attempt-1-original.zip", "hosted.json", "hosted.png"]);
 let total = 0;
 for (const name of (await readdir(root)).sort()) {
   if (!allowed.has(name)) throw new Error("Unexpected proof output");
