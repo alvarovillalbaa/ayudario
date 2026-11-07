@@ -1,11 +1,365 @@
 {
   "version": 1,
   "source": {
-    "name": "Sistema Nacional de Publicidad de Subvenciones y Ayudas Públicas (BDNS)",
+    "name": "SNPSAP / BDNS — Intervención General de la Administración del Estado",
     "url": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias"
   },
-  "fetchedAt": null,
-  "window": { "from": "", "to": "" },
-  "items": [],
-  "warning": "Aún no hay una descarga verificada del catálogo oficial. Puedes consultar las guías y el buscador BDNS."
+  "fetchedAt": "2026-11-07T18:08:32.697Z",
+  "window": {
+    "from": "2026-10-09",
+    "to": "2026-11-07"
+  },
+  "items": [
+    {
+      "id": "940585",
+      "title": "BASES REGULADORAS PARA LA CONCESIÓN DE SUBVENCIONES COMO PREMIOS EN EL CONCURSO DE CARROZAS Y PASACALLES DE LAS FIESTAS NAVIDEÑAS. CABALGATA DE REYES ENERO 2027",
+      "agency": "LOCAL · CIEMPOZUELOS · AYUNTAMIENTO DE CIEMPOZUELOS",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940585"
+    },
+    {
+      "id": "940583",
+      "title": "Convenio 2026 Aimar Salvà Mulet",
+      "agency": "LOCAL · GATA DE GORGOS · AYUNTAMIENTO DE GATA DE GORGOS",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940583"
+    },
+    {
+      "id": "940582",
+      "title": "Convenio 2026 Unai Salvà Mulet",
+      "agency": "LOCAL · GATA DE GORGOS · AYUNTAMIENTO DE GATA DE GORGOS",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940582"
+    },
+    {
+      "id": "940580",
+      "title": "CONCESIÓN DIRECTA ALUMNOS ESCUELAS TALLER",
+      "agency": "AUTONOMICA · PRINCIPADO DE ASTURIAS · SERVICIO PÚBLICO DE EMPLEO DEL PRINCIPADO DE ASTURIAS",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940580"
+    },
+    {
+      "id": "940555",
+      "title": "Ajut activitats protecció i conservació del patrimoni immoble tradicional - Associació Greta",
+      "agency": "LOCAL · DIPUTACIÓN PROV. DE GIRONA · DIPUTACIÓN PROVINCIAL DE GIRONA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940555"
+    },
+    {
+      "id": "940540",
+      "title": "CONVOCATORIA DEL CONCURSO DE ARTES PLÁSTICAS DE LA UNIVERSIDAD REY JUAN CARLOS 2026-27, VII EDICIÓN, “FORMAS DE UN RELATO”.",
+      "agency": "OTROS · UNIVERSIDAD REY JUAN CARLOS",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940540"
+    },
+    {
+      "id": "940520",
+      "title": "SUBVENCIONS TRANSPORT ESTUDIANTS QUE CURSEN ESTUDIS POST-OBLIGATORIS FORA DEL MUNICIPI",
+      "agency": "LOCAL · SANT PERE DE RIUDEBITLLES · AYUNTAMIENTO DE SANT PERE DE RIUDEBITLLES",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940520"
+    },
+    {
+      "id": "940510",
+      "title": "Fomento natalidad 2026",
+      "agency": "LOCAL · GRISEL · AYUNTAMIENTO DE GRISEL",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940510"
+    },
+    {
+      "id": "940507",
+      "title": "BASES REGULADORAS PARA LA CONCESIÓN DE AYUDAS A PROPIETARIOS DE INMUEBLES DECLARADOS EN RUINA U ORDEN DE DESALOJO DERIVADOS DE LA PROBLEMÁTICA DE LA LÍNEA 7- B DE METRO",
+      "agency": "LOCAL · SAN FERNANDO DE HENARES · AYUNTAMIENTO DE SAN FERNANDO DE HENARES",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940507"
+    },
+    {
+      "id": "940502",
+      "title": "Exp 3192/2025: Conveni col·laboració entre l`Associació Coral Ginesta del Vallès i l`Ajuntament - Activitats 2025",
+      "agency": "LOCAL · BADIA DEL VALLÈS · AYUNTAMIENTO DE BADIA DEL VALLÈS",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940502"
+    },
+    {
+      "id": "940497",
+      "title": "Resolución de 3 de noviembre de 2026 de la Vicerrectora de Internacionalización por la que se publican las bases reguladoras y se convocan ayudas de movilidad internacional de estancia formativa durante el curso académico 2026/2027.",
+      "agency": "OTROS · UNIVERSIDAD DE GRANADA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940497"
+    },
+    {
+      "id": "940482",
+      "title": "VIVIENDA COMUNITARIA PERSONAL ADULTAS CON DISCAP INTELECTUAL",
+      "agency": "LOCAL · COSLADA · AYUNTAMIENTO DE COSLADA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940482"
+    },
+    {
+      "id": "940478",
+      "title": "AYUDA ART 27 L.O.1/2004 IAM_2026_AYU27ZA16",
+      "agency": "AUTONOMICA · ARAGÓN · INSTITUTO ARAGONÉS DE LA MUJER (IAM)",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940478"
+    },
+    {
+      "id": "940474",
+      "title": "AYUDA ART 27 LEY 1/2004 IAM_2026_AYU27ZA19",
+      "agency": "AUTONOMICA · ARAGÓN · INSTITUTO ARAGONÉS DE LA MUJER (IAM)",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940474"
+    },
+    {
+      "id": "940469",
+      "title": "Extracto de la Resolución de Alcaldía n.º 498, de fecha 29 de octubre de 2026, por la que se aprueban las bases reguladoras y convocatoria de ayudas para la adquisición de material escolar del alumnado del segundo ciclo de Educación Infantil y primaria",
+      "agency": "LOCAL · RUEDA · AYUNTAMIENTO DE RUEDA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940469"
+    },
+    {
+      "id": "940465",
+      "title": "CONVOCATORIA CAMPAÑA BONOS CONSUMO 2026.",
+      "agency": "LOCAL · ELCHE/ELX · AYUNTAMIENTO DE ELCHE/ELX",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940465"
+    },
+    {
+      "id": "940458",
+      "title": "Convocatoria Ayuda al Alquiler 2026",
+      "agency": "LOCAL · PELIGROS · AYUNTAMIENTO DE PELIGROS",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940458"
+    },
+    {
+      "id": "940453",
+      "title": "Convenio 2026 Unai Salvà Mulet",
+      "agency": "LOCAL · GATA DE GORGOS · AYUNTAMIENTO DE GATA DE GORGOS",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940453"
+    },
+    {
+      "id": "940448",
+      "title": "Convocatoria de becas para la realización de estudios de grado en ingeniería minera y energética en la Escuela de Ingeniería Minera e Industrial de Almadén durante el curso 2026-27",
+      "agency": "OTROS · UNIVERSIDAD DE CASTILLA-LA MANCHA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940448"
+    },
+    {
+      "id": "940445",
+      "title": "Acuerdo de la JGLde 26 de octubre por el que se aprueban las bases de la convocatoria de la Campaña Bono Consumo 2026",
+      "agency": "LOCAL · ELDA · AYUNTAMIENTO DE ELDA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940445"
+    },
+    {
+      "id": "940442",
+      "title": "Convocatoria de subvenciones destinadas al apoyo a las personas deportistas de Las Franquesas y/o que pertenecen a Clubes del municipio de Las Franquesas que participan en competiciones deportivas internacionales, temporada 2025-2026",
+      "agency": "LOCAL · FRANQUESES DEL VALLÈS, LES · AYUNTAMIENTO DE FRANQUESES DEL VALLÈS, LES",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940442"
+    },
+    {
+      "id": "940434",
+      "title": "Decreto de alcaldía 1693/2026, de 25 de septiembre de 2026, por el que se convocan subvenciones municipales para gastos de transporte escolar para el año 2026",
+      "agency": "LOCAL · SADA · AYUNTAMIENTO DE SADA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940434"
+    },
+    {
+      "id": "940431",
+      "title": "Convocatoria extraordinaria de Ayudas Individuales de comedor (AIM), curso 2026/27",
+      "agency": "LOCAL · CONSELL COMARCAL DE TARRAGONÈS",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940431"
+    },
+    {
+      "id": "940427",
+      "title": "CONVOCATORIA DE SUBVENCIONES DEL PROGRAMA “BONO CONSUMO MONFORTE DEL CID”. ANUALIDAD 2026.",
+      "agency": "LOCAL · MONFORTE DEL CID · AYUNTAMIENTO DE MONFORTE DEL CID",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940427"
+    },
+    {
+      "id": "940418",
+      "title": "Subvención nominativa a Colegio de la Abogacía de Cuenca 2026.",
+      "agency": "LOCAL · DIPUTACIÓN PROV. DE CUENCA · DIPUTACIÓN PROVINCIAL DE CUENCA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940418"
+    },
+    {
+      "id": "940411",
+      "title": "Bases reguladoras que regirán la concesión de ayudas para adquisición de libros y material escolar para el curso 2026-2027",
+      "agency": "LOCAL · RAMIRÁS · AYUNTAMIENTO DE RAMIRÁS",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940411"
+    },
+    {
+      "id": "940399",
+      "title": "Becas excelencia académica \"Bonet\" 2025-26",
+      "agency": "LOCAL · TORRES DE BERRELLÉN · AYUNTAMIENTO DE TORRES DE BERRELLÉN",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940399"
+    },
+    {
+      "id": "940389",
+      "title": "CONVOCATORIA DEL XXXI CONCURSO LOCAL DE BELENES \"CIUDAD DE SEGORBE\"",
+      "agency": "LOCAL · SEGORBE · AYUNTAMIENTO DE SEGORBE",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940389"
+    },
+    {
+      "id": "940388",
+      "title": "SUBVENCIONES DIRECTAS PARA LA CONCESIÓN DE AYUDAS ECONÓMICAS SOCIALES - OCTUBRE 2026 -",
+      "agency": "LOCAL · ARUCAS · AYUNTAMIENTO DE ARUCAS",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940388"
+    },
+    {
+      "id": "940380",
+      "title": "RESOLUCIÓN de 22 de octubre de 2026, de la Presidencia del IVACE, por la que se convocan ayudas para actuaciones de eficiencia energética en edificios existentes del sector terciario (PREE Terciario)",
+      "agency": "AUTONOMICA · COMUNITAT VALENCIANA · INSTITUTO VALENCIANO DE COMPETITIVIDAD EMPRESARIAL (IVACE)",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940380"
+    },
+    {
+      "id": "940376",
+      "title": "Decreto de alcaldía por el que se aprueba la convocatoria para la concesión de ayudas para primer ciclo de educación infantil en centros educativos de titularidad privada",
+      "agency": "LOCAL · CABANILLAS DEL CAMPO · AYUNTAMIENTO DE CABANILLAS DEL CAMPO",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940376"
+    },
+    {
+      "id": "940375",
+      "title": "Acuerdo de la Junta de Gobierno Local 30-10-2026, por el que se aprueban las Bases de la Convocatoria del II Certamen de Poesía contra la violencia hacia las mujeres \"Francisca de Pedraza\". Edición 2026.",
+      "agency": "LOCAL · ALCALÁ DE HENARES · AYUNTAMIENTO DE ALCALÁ DE HENARES",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940375"
+    },
+    {
+      "id": "940373",
+      "title": "BASES REGULADORAS DE SUBVENCIONES: VENTA DE BONOS Y AYUDAS A PRODUCTORES/AS PARA CAPTAR CLIENTES Y PROMOCIONAR EL CONSUMO DIRECTO EN EL MERCADO MUNICIPAL.",
+      "agency": "LOCAL · BEASAIN · AYUNTAMIENTO DE BEASAIN",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940373"
+    },
+    {
+      "id": "940371",
+      "title": "Becas para sufragar los gastos de matrícula de las microcredenciales universitarias \"Santander microcredenciales 2026-2ª edición\" organizadas por la Universidad de Alicante",
+      "agency": "OTROS · UNIVERSIDAD DE ALICANTE",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940371"
+    },
+    {
+      "id": "940361",
+      "title": "Procedimiento de concesión de Subvenciones económicas por concurrencia competitiva destinadas a la promoción, conservación y fomento de la tradición belenista en el municipio de Santa Úrsula, mediante la convocatoria del Concurso de Belenes 2026",
+      "agency": "LOCAL · SANTA ÚRSULA · AYUNTAMIENTO DE SANTA ÚRSULA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940361"
+    },
+    {
+      "id": "940354",
+      "title": "Convocatoria de los premios de la actividad “Digital Builders” año 2026 organizada por el Aula NTT DATA-UCLM y la Escuela Superior de Informática Universidad de Castilla-La Mancha",
+      "agency": "OTROS · UNIVERSIDAD DE CASTILLA-LA MANCHA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940354"
+    },
+    {
+      "id": "940352",
+      "title": "PROGRAMA DE MOVILIDAD ERASMUS + ACCIÓN KA131 DIMENSIÓN INTERNACIONAL PARA PERSONAL DOCENTE E INVESTIGADOR Y PERSONAL TÉCNICO, DE GESTIÓN Y DE ADMINISTRACIÓN Y SERVICIOS DURANTE EL CURSO ACADÉMICO 2026/2027 (código de subvención 11-131-4-2026-0100-S)",
+      "agency": "OTROS · UNIVERSIDAD MIGUEL HERNÁNDEZ DE ELCHE",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940352"
+    },
+    {
+      "id": "940350",
+      "title": "Ayudas para participar en clases de refuerzo para alumnado de 2º y 3r ciclo de Educación Primaria y Educación Secundaria Obligatoria de centros benidormenses,1r semestre 2027",
+      "agency": "LOCAL · BENIDORM · AYUNTAMIENTO DE BENIDORM",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940350"
+    },
+    {
+      "id": "940347",
+      "title": "BASES REGULADORAS PARA LA CONCESIÓN DE SUBVENCIONES DIRIGIDAS A FAMILIAS EN SITUACIÓN DE VULNERABILIDAD ECONÓMICA PARA FOMENTAR LA PARTICIPACIÓN DE NIÑOS, NIÑAS Y ADOLESCENTES EN ACTIVIDADES CULTURALES, DEPORTIVAS Y DE OCIO.",
+      "agency": "LOCAL · BEASAIN · AYUNTAMIENTO DE BEASAIN",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940347"
+    },
+    {
+      "id": "940343",
+      "title": "Convocatoria de una beca de colaboración para estudiantes de Doctorado en Criminología. Centro de Investigación en Criminología de la Universidad de Castilla-La Mancha. Curso académico 2026/2027",
+      "agency": "OTROS · UNIVERSIDAD DE CASTILLA-LA MANCHA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940343"
+    },
+    {
+      "id": "940330",
+      "title": "BASES PARA LA CONCESIÓN DE AYUDAS A LAS PERSONAS QUE ESTUDIAN EUSKARA EN LOS EUSKALTEGIS PARA EL CURSO 2026-2027",
+      "agency": "LOCAL · BEASAIN · AYUNTAMIENTO DE BEASAIN",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940330"
+    },
+    {
+      "id": "940328",
+      "title": "VII CONCURSO DE DECORACIÓN DE FACHADAS NAVIDEÑAS",
+      "agency": "LOCAL · SEGORBE · AYUNTAMIENTO DE SEGORBE",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940328"
+    },
+    {
+      "id": "940325",
+      "title": "BASES PARA LA CONCESIÓN DE AYUDAS A LOS ESTUDIANTES UNIVERSITARIOS CURSO 2026-2027",
+      "agency": "LOCAL · ALGAIDA · AYUNTAMIENTO DE ALGAIDA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940325"
+    },
+    {
+      "id": "940323",
+      "title": "Convocatoria de premios a Trabajos Fin de Grado del Grado en Ingeniería Química de la Facultad de Ciencias y Tecnologías Químicas de la Universidad de Castilla-La Mancha en colaboración con REPSOL. Curso Académico 2025-26.",
+      "agency": "OTROS · UNIVERSIDAD DE CASTILLA-LA MANCHA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940323"
+    },
+    {
+      "id": "940319",
+      "title": "Convocatoria del premio a Trabajos Fin de Grado del Grado en Ingeniería Química de la Facultad de Ciencias y Tecnologías Químicas de la Universidad de Castilla-La Mancha patrocinados por VEOLIA. Curso Académico 2025/2026",
+      "agency": "OTROS · UNIVERSIDAD DE CASTILLA-LA MANCHA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940319"
+    },
+    {
+      "id": "940313",
+      "title": "Desenvolupament d`accions i programes per garantir l`equitat en el lleure educatiu i l`educació a temps complet - Els Omellons",
+      "agency": "LOCAL · DIPUTACIÓN PROV. DE LLEIDA · DIPUTACIÓN PROVINCIAL DE LLEIDA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940313"
+    },
+    {
+      "id": "940312",
+      "title": "Resolución de Alcaldía nº 2026/00005564 de fecha 05/11/2026 por la que se aprueba la convocatoria de concesión de subvenciones en concurrencia\ncompetitiva para el IV Concurso de Postales Navideñas.",
+      "agency": "LOCAL · POZOBLANCO · AYUNTAMIENTO DE POZOBLANCO",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940312"
+    },
+    {
+      "id": "940308",
+      "title": "SUBVENCIONES PARA PROYECTOS DE ASOCIACIONES DE MUJERES, MAYORES E INTEGRACION SOCIAL  EN PARACUELLOS DE JARAMA",
+      "agency": "LOCAL · PARACUELLOS DE JARAMA · AYUNTAMIENTO DE PARACUELLOS DE JARAMA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940308"
+    },
+    {
+      "id": "940297",
+      "title": "Concurso \"Plásticos con Propósito\" de la Cátedra UBE de Plásticos Sostenibles",
+      "agency": "OTROS · UNIVERSIDAD JAUME I DE CASTELLÓN",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940297"
+    },
+    {
+      "id": "940296",
+      "title": "Decreto de Presidencia de fecha 2102026 por el cual se aprueba la concesión de una subvención nominativa al Ayuntamiento de Tarragona por el Premio Tinet 28a edición",
+      "agency": "LOCAL · DIPUTACIÓN PROV. DE TARRAGONA · DIPUTACIÓN PROVINCIAL DE TARRAGONA",
+      "registeredAt": "2026-11-06",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940296"
+    }
+  ],
+  "warning": "Selección limitada a 50 convocatorias registradas en los últimos 30 días para personas físicas sin actividad económica. No es un catálogo completo: una convocatoria reciente no implica plazo abierto ni elegibilidad personal.\nLa reutilización de los datos del Sistema Nacional de Publicidad de Subvenciones y Ayudas Públicas está sujeta a una serie de restricciones y consideraciones legales. Consulte el aviso legal en https://www.infosubvenciones.es/bdnstrans/GE/es/avisolegal.Además, el usuario debe ser consciente que la información presentada es de naturaleza dinámica, y que los datos pueden ser sometidos a correcciones, inserciones, modificaciones y eliminaciones en momentos posteriores a su extracción. Accesos al API del sistema Nacional de Publicidad de Subvenciones y Ayudas Públicas. La Administración Presupuestaria, para salvaguardar la protección del acceso libre e irrestricto de los ciudadanos a este Portal y a su información podrá adoptar medidas restrictivas de acceso al API ante situaciones de manifiesto abuso del servicio, riesgos de seguridad, o uso fraudulento de la información descargada, de acuerdo con las buenas prácticas de gestión de datos abiertos (https://datos.gob.es/es/blog/limitaciones-la-consulta-de-una-api) establecidas por el Ministerio para la Transformación Digital y de la Función Pública."
 }
