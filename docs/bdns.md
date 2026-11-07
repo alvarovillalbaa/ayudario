@@ -25,6 +25,14 @@ links are ignored; source links are constructed from the stable BDNS code under
 the official HTTPS portal. The fetch helper accepts an injected fetch function
 and smaller limits for authored tests; the CLI uses the fixed production limits.
 
+Bounded `descripcion` titles preserve their original text, including legitimate
+TAB, LF and CR whitespace. NUL, DEL and all other ASCII controls remain refused.
+The structural diagnostic received HTTP 200 and a complete 21,329-byte response;
+one of its 50 titles had an ASCII control. Only field types and lengths were
+retained, so that diagnostic does not identify the exact character or establish
+that it was a newline. The changed boundary has authored whitespace/control
+fixtures; live refresh acceptance still requires a successful changed run.
+
 Only a fully fetched and validated response becomes a public snapshot. The CLI
 writes and fsyncs an exclusive sibling temporary file, then atomically renames it
 to `public/data/calls.json`. Failure before that commit point preserves existing

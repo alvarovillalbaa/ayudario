@@ -22,6 +22,19 @@ jobs:
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
         with:
           node-version: '24.22.2'
+      - name: Verify importer boundaries before publishing public data
+        shell: bash
+        run: |
+          node --input-type=module <<'JS'
+          import { readFile } from 'node:fs/promises';
+          import { createHash } from 'node:crypto';
+          const files = {};
+          for (const file of ['lib/bdns.mjs', 'scripts/refresh-calls.mjs', 'tests/integration/bdns.test.mjs']) files[file] = createHash('sha256').update(await readFile(file)).digest('hex');
+          console.log(JSON.stringify({ source: process.env.GITHUB_SHA, node: process.version, files }));
+          JS
+          node --test --test-reporter=tap tests/integration/bdns.test.mjs
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
       - name: One bounded official request, then publish only the validated public file
         env:
           GH_TOKEN: ${{ github.token }}

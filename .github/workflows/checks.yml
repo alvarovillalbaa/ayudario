@@ -24,7 +24,6 @@ on:
       - '.github/workflows/checks.yml'
 permissions:
   contents: read
-  actions: read
 concurrency:
   group: application-checks-${{ github.ref }}
   cancel-in-progress: false
@@ -115,14 +114,6 @@ jobs:
           cmp "$AYUDARIO_PROOF_DIR/source-before.json" "$AYUDARIO_PROOF_DIR/source-after.json"
           git diff --exit-code
           test -z "$(git status --porcelain)"
-      - name: Recover immutable first-attempt originals
-        if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          gh api repos/alvarovillalbaa/ayudario/actions/artifacts/13583728339/zip > "$AYUDARIO_PROOF_DIR/attempt-1-original.zip"
-          printf '%s  %s\n' 'b4197ef99dfd7fa8988eb8eb215966a1a03e6a7ee4205b0770899b830a808286' "$AYUDARIO_PROOF_DIR/attempt-1-original.zip" | sha256sum --check --status
       - name: Retain bounded original bytes in the readable job log
         if: always()
         shell: bash

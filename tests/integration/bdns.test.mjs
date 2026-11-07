@@ -48,6 +48,23 @@ test('T2 parser preserves bounded registration text without deadline coercion', 
   assert.equal(result.items[0].agency, 'ESTADO · Órgano de ejemplo');
 });
 
+test('T2 public titles round-trip TAB LF and CR without changing their text', () => {
+  const source = fixture();
+  const title = 'Ayuda\tcon separación\nsegunda línea\r\ntercera línea';
+  source.content[0].descripcion = title;
+  const result = parseBdnsResponse(source, meta);
+  assert.equal(result.items[0].title, title);
+  assert.deepEqual(Buffer.from(result.items[0].title), Buffer.from(title));
+});
+
+test('T2 public titles still refuse NUL DEL and other non-whitespace controls', () => {
+  for (const code of [0, 1, 11, 12, 31, 127]) {
+    const source = fixture();
+    source.content[0].descripcion = `Ayuda${String.fromCharCode(code)}pública`;
+    assert.throws(() => parseBdnsResponse(source, meta), refused('payload'));
+  }
+});
+
 test('T2 a genuinely empty validated response remains a dated bounded snapshot', () => {
   const source = fixture([]);
   delete source.advertencia;
