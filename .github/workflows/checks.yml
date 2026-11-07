@@ -31,11 +31,13 @@ jobs:
   focused:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
-    env:
-      AYUDARIO_PROOF_DIR: ${{ runner.temp }}/ayudario-proof
-      AYUDARIO_PLAYWRIGHT_DIR: ${{ runner.temp }}/ayudario-browser-tools
-      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/ayudario-browser-binaries
     steps:
+      - name: Define owned runner paths
+        shell: bash
+        run: |
+          printf 'AYUDARIO_PROOF_DIR=%s\n' "$RUNNER_TEMP/ayudario-proof" >> "$GITHUB_ENV"
+          printf 'AYUDARIO_PLAYWRIGHT_DIR=%s\n' "$RUNNER_TEMP/ayudario-browser-tools" >> "$GITHUB_ENV"
+          printf 'PLAYWRIGHT_BROWSERS_PATH=%s\n' "$RUNNER_TEMP/ayudario-browser-binaries" >> "$GITHUB_ENV"
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
           persist-credentials: false
