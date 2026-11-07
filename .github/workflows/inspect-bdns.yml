@@ -1,0 +1,54 @@
+# Temporary, pinned read-only diagnostic.
+name: Inspect one official BDNS response shape
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: official-public-catalogue
+  cancel-in-progress: false
+jobs:
+  inspect:
+    if: github.repository == 'alvarovillalbaa/ayudario' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      SOURCE_COMMIT: 636211c60c330652bae966c32c4ce9d1ce6c03f3
+    steps:
+      - name: Define owned diagnostic path
+        shell: bash
+        run: printf 'AYUDARIO_DIAGNOSTIC_DIR=%s\n' "$RUNNER_TEMP/ayudario-bdns-diagnostic" >> "$GITHUB_ENV"
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: ${{ env.SOURCE_COMMIT }}
+          persist-credentials: false
+          clean: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.22.2'
+      - name: Bind source before the single request
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+          test -z "$(git status --porcelain)"
+          mkdir -p "$AYUDARIO_DIAGNOSTIC_DIR"
+          node scripts/fingerprint.mjs "$AYUDARIO_DIAGNOSTIC_DIR/source-before.json"
+      - name: Observe structure without publishing catalogue data
+        shell: bash
+        run: node scripts/inspect-bdns.mjs | tee "$AYUDARIO_DIAGNOSTIC_DIR/diagnostic.jsonl"
+      - name: Always verify unchanged source
+        if: always()
+        shell: bash
+        run: |
+          test -f "$AYUDARIO_DIAGNOSTIC_DIR/source-before.json"
+          node scripts/fingerprint.mjs "$AYUDARIO_DIAGNOSTIC_DIR/source-after.json"
+          cmp "$AYUDARIO_DIAGNOSTIC_DIR/source-before.json" "$AYUDARIO_DIAGNOSTIC_DIR/source-after.json"
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
+      - name: Retain structural diagnostic only
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: bdns-response-diagnostic
+          path: ${{ runner.temp }}/ayudario-bdns-diagnostic
+          retention-days: 7
