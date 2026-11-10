@@ -4,18 +4,74 @@
     "name": "SNPSAP / BDNS — Intervención General de la Administración del Estado",
     "url": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias"
   },
-  "fetchedAt": "2026-11-09T16:50:34.957Z",
+  "fetchedAt": "2026-11-10T15:13:43.544Z",
   "window": {
-    "from": "2026-10-11",
-    "to": "2026-11-09"
+    "from": "2026-10-12",
+    "to": "2026-11-10"
   },
   "items": [
+    {
+      "id": "940988",
+      "title": "Bases reguladoras y convocatoria correspondiente a ayudas directas a estudiantado del Máster Erasmus Mundus en Estudios de las Mujeres y de Género (GEMMA) con destino en la Universidad de Oviedo en el curso 2026-2027",
+      "agency": "OTROS · UNIVERSIDAD DE OVIEDO",
+      "registeredAt": "2026-11-10",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940988"
+    },
+    {
+      "id": "940987",
+      "title": "Complemento autonòmico Bono Social Térmico 2024",
+      "agency": "AUTONOMICA · ILLES BALEARS · DIRECCIÓN GENERAL DE PLANIFICACIÓN Y SERVICIOS SOCIALES",
+      "registeredAt": "2026-11-10",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940987"
+    },
+    {
+      "id": "940983",
+      "title": "Convocatoria de 2026 de Subvenciones a la ciudadanía para hacer frente al gasto de agua, basura y saneamiento en el municipio de Irura.",
+      "agency": "LOCAL · IRURA · AYUNTAMIENTO DE IRURA",
+      "registeredAt": "2026-11-09",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940983"
+    },
+    {
+      "id": "940982",
+      "title": "EXP. 6394/2026.- CONVOCATORIA PARA LA CONCESIÓN, EN REGIMEN DE CONCURRENCIA COMPETITIVA, DE SUBVENCIONES PARA GASTOS EFECTUADOS EN EL AÑO 2026 DE ESCUELA INFANTIL Y/O GUARDERÍA PARA NIÑOS/AS DE 0 A 3 AÑOS.",
+      "agency": "LOCAL · ALMORADÍ · AYUNTAMIENTO DE ALMORADÍ",
+      "registeredAt": "2026-11-09",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940982"
+    },
+    {
+      "id": "940972",
+      "title": "Decreto de alcaldía de 9 de noviembre de 2026, por la que se convocan ayudas para gastos escolares del curso 2025/2026",
+      "agency": "LOCAL · PALOL DE REVARDIT · AYUNTAMIENTO DE PALOL DE REVARDIT",
+      "registeredAt": "2026-11-09",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940972"
+    },
+    {
+      "id": "940965",
+      "title": "CONVOCATORIA DE SUBVENCIONES DEPORTIVAS DE CONCURRENCIA COMPETITIVA PARA DEPORTISTAS DE ALTA COMPETICIÓN  DE LA ISLA LANZAROTE Y LA GRACIOSA  (TEMPORADA 2025/2026)",
+      "agency": "LOCAL · CABILDO INSULAR DE LANZAROTE",
+      "registeredAt": "2026-11-09",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940965"
+    },
+    {
+      "id": "940952",
+      "title": "Ayudas a profesionales para la estancia y asistencia actividades formativas de larga duración 2026",
+      "agency": "AUTONOMICA · PRINCIPADO DE ASTURIAS · CONSEJERÍA DE SALUD",
+      "registeredAt": "2026-11-09",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940952"
+    },
     {
       "id": "940947",
       "title": "EXP. 8632/2026.- CONVOCATORIA CONCESIÓN, EN RÉGIMEN DE CONCURRENCIA COMPETITIVA, AYUDAS TRANSPORTE PARA ESTUDIANTES UNIVERSITARIOS Y DE CICLOS FORMATIVOS GRADO MEDIO Y SUPERIOR (SIEMPRE Y CUANDO LA F.P. NO SE IMPARTA EN EL MUNICIPIO), CURSO 2026-2027.",
       "agency": "LOCAL · ALMORADÍ · AYUNTAMIENTO DE ALMORADÍ",
       "registeredAt": "2026-11-09",
       "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940947"
+    },
+    {
+      "id": "940943",
+      "title": "Resolución R-1458/2026, de 6 de noviembre, del Rector de la Universidad de Murcia, por la que se convoca la III edición de premios al mejor TFG y TFM de la Cátedra Primafrio",
+      "agency": "OTROS · UNIVERSIDAD DE MURCIA",
+      "registeredAt": "2026-11-09",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940943"
     },
     {
       "id": "940942",
@@ -303,62 +359,6 @@
       "agency": "LOCAL · MONISTROL DE MONTSERRAT · AYUNTAMIENTO DE MONISTROL DE MONTSERRAT",
       "registeredAt": "2026-11-09",
       "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940735"
-    },
-    {
-      "id": "940714",
-      "title": "APROBACIÓN  CONVOCATORIA Y BASES PARA LA CONCESIÓN DE SUBVENCIÓN CONCURSO CARTEL DE FIESTAS 2026",
-      "agency": "LOCAL · CASTELLÓ · AJUNTAMENT DE CASTELLÓ",
-      "registeredAt": "2026-11-09",
-      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940714"
-    },
-    {
-      "id": "940708",
-      "title": "Concessió d’ajudes per a facilitar solucions residencials a persones en situació d’especial vulnerabilitat a través de les entitats locals, corresponent al Pla\nestatal per a l’accés a la vivenda 2022-2025, i convocatòria 2025",
-      "agency": "LOCAL · CASTELLÓ · AJUNTAMENT DE CASTELLÓ",
-      "registeredAt": "2026-11-09",
-      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940708"
-    },
-    {
-      "id": "940705",
-      "title": "RESOLUCIÓN REY JUAN CARLOS CONVOCATORIA CONCURSO DE RELATO BREVE DE LA UNIVERSIDAD REY JUAN CARLOS 2026-27, XX EDICIÓN, “LA VERDAD Y LA MÁSCARA”.",
-      "agency": "OTROS · UNIVERSIDAD REY JUAN CARLOS",
-      "registeredAt": "2026-11-09",
-      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940705"
-    },
-    {
-      "id": "940700",
-      "title": "AYUDAS SOCIALES BGSS 12_2026",
-      "agency": "LOCAL · CANET DE MAR · AYUNTAMIENTO DE CANET DE MAR",
-      "registeredAt": "2026-11-09",
-      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940700"
-    },
-    {
-      "id": "940697",
-      "title": "Orden HAC/14/2026, de 6 de noviembre, por la que se convoca el XVIII Concurso Escolar de Trabajos Estadísticos",
-      "agency": "AUTONOMICA · CANTABRIA · INSTITUTO CÁNTABRO DE ESTADÍSTICA",
-      "registeredAt": "2026-11-09",
-      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940697"
-    },
-    {
-      "id": "940695",
-      "title": "AYUDAS SOCIALES BSGG 11/2026",
-      "agency": "LOCAL · CANET DE MAR · AYUNTAMIENTO DE CANET DE MAR",
-      "registeredAt": "2026-11-09",
-      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940695"
-    },
-    {
-      "id": "940694",
-      "title": "RESOLUCIÓN UNIVERSIDAD REY JUAN CARLOS CONVOCATORIA CONCURSO DE PIEZAS AUDIOVISUALES DE LA UNIVERSIDAD REY JUAN CARLOS 2026-27, III EDICIÓN, “DEL RELATO A LA PANTALLA”.",
-      "agency": "OTROS · UNIVERSIDAD REY JUAN CARLOS",
-      "registeredAt": "2026-11-09",
-      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940694"
-    },
-    {
-      "id": "940693",
-      "title": "CONVOCATORIA DEL III CONCURSO DE CANCIÓN ANDALUZA ORGANIZADO POR LA DELEGACIÓN DE CULTURA DEL AYUNTAMIENTO DE ALCALÁ DE GUADAÍRA",
-      "agency": "LOCAL · ALCALÁ DE GUADAÍRA · AYUNTAMIENTO DE ALCALÁ DE GUADAÍRA",
-      "registeredAt": "2026-11-09",
-      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/940693"
     }
   ],
   "warning": "Selección limitada a 50 convocatorias registradas en los últimos 30 días para personas físicas sin actividad económica. No es un catálogo completo: una convocatoria reciente no implica plazo abierto ni elegibilidad personal.\nLa reutilización de los datos del Sistema Nacional de Publicidad de Subvenciones y Ayudas Públicas está sujeta a una serie de restricciones y consideraciones legales. Consulte el aviso legal en https://www.infosubvenciones.es/bdnstrans/GE/es/avisolegal.Además, el usuario debe ser consciente que la información presentada es de naturaleza dinámica, y que los datos pueden ser sometidos a correcciones, inserciones, modificaciones y eliminaciones en momentos posteriores a su extracción. Accesos al API del sistema Nacional de Publicidad de Subvenciones y Ayudas Públicas. La Administración Presupuestaria, para salvaguardar la protección del acceso libre e irrestricto de los ciudadanos a este Portal y a su información podrá adoptar medidas restrictivas de acceso al API ante situaciones de manifiesto abuso del servicio, riesgos de seguridad, o uso fraudulento de la información descargada, de acuerdo con las buenas prácticas de gestión de datos abiertos (https://datos.gob.es/es/blog/limitaciones-la-consulta-de-una-api) establecidas por el Ministerio para la Transformación Digital y de la Función Pública."
