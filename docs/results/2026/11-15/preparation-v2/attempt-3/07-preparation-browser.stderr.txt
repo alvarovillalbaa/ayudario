@@ -1,0 +1,19 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator('#guide-grid [data-guide-id="imv"]').getByRole('button', { name: 'Conocer la ayuda', exact: true })
+
+    at openGuide (/home/runner/work/ayudario/ayudario/tests/e2e/preparation-v2.mjs:71:129)
+    at async file:///home/runner/work/ayudario/ayudario/tests/e2e/preparation-v2.mjs:106:7
+    at async run (/home/runner/work/ayudario/ayudario/tests/e2e/preparation-v2.mjs:96:9)
+    at async file:///home/runner/work/ayudario/ayudario/tests/e2e/preparation-v2.mjs:102:3 {
+  log: [
+    `  - waiting for locator('#guide-grid [data-guide-id="imv"]').getByRole('button', { name: 'Conocer la ayuda', exact: true })`
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2

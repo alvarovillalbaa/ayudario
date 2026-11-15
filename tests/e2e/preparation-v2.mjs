@@ -25,7 +25,7 @@ const server = await chromium.launchServer({ headless: true });
 const nativeProcess = server.process();
 const browser = await chromium.connect(server.wsEndpoint());
 report.browser = browser.version();
-const contexts = [];
+const contexts = [], states = [];
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
 async function until(check, message) {
   const deadline = Date.now() + 8000;
@@ -35,7 +35,7 @@ async function until(check, message) {
 async function makeContext(options = {}) {
   const state = { errors: [], unexpected: [], requests: [], legacy: false, expectedFailure: false };
   const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, acceptDownloads: true, ...options });
-  contexts.push(context); state.context = context;
+  contexts.push(context); states.push(state); state.context = context;
   context.on('page', page => {
     page.on('pageerror', error => state.errors.push(error.message));
     page.on('console', message => { if (message.type() === 'error') state.errors.push(message.text()); });
@@ -68,7 +68,7 @@ async function openGuide(page, id) {
   await page.locator('#browse-nav').click();
   await page.getByRole('searchbox', { name: 'Buscar en las guías' }).fill('');
   await page.locator('#categories').getByRole('button', { name: 'Todas', exact: true }).click();
-  await page.locator('#guide-grid [data-guide-id="' + id + '"]').getByRole('button', { name: 'Conocer la ayuda', exact: true }).click();
+  await page.locator('#guide-grid [data-guide-id="' + id + '"]').getByRole('button', { name: 'Conocer la ayuda ↗', exact: true }).click();
   await modal(page).waitFor({ state: 'visible' });
 }
 async function toolbar(page, label) {
@@ -94,7 +94,18 @@ function boundary(state) {
 async function run(id, description, action) {
   const item = { id, description, status: 'running' }; report.cases.push(item);
   try { await action(item); item.status = 'passed'; }
-  catch (error) { item.status = 'failed'; item.error = error.stack; throw error; }
+  catch (error) {
+    item.status = 'failed'; item.error = error.stack;
+    const state = states.at(-1), page = state?.context.pages().at(-1);
+    item.boundary = state && { requests: state.requests, errors: state.errors, unexpected: state.unexpected };
+    if (page && !page.isClosed()) {
+      try {
+        await page.screenshot({ path: path.join(output, 'failure-' + id + '.png') });
+        item.visibleState = await page.evaluate(() => ({ title: document.title, text: document.body.innerText.slice(0, 16000), dialog: (() => { const e = document.querySelector('#guide-dialog'); return e && { open: e.open, scrollTop: e.scrollTop, scrollHeight: e.scrollHeight, clientHeight: e.clientHeight }; })() }));
+      } catch (diagnosticError) { item.diagnosticError = String(diagnosticError); }
+    }
+    throw error;
+  }
   finally { await writeFile(path.join(output, 'preparation-browser.json'), JSON.stringify(report, null, 2) + '\n'); }
 }
 try {
@@ -146,7 +157,7 @@ try {
   });
   for (const width of [390, 320]) await run(width === 390 ? 'P03a' : 'P03b', 'Narrow ' + width + 'px real taps, native scrolling and accessible checklist', async item => {
     const state = await makeContext({ viewport: { width, height: 844 }, isMobile: true, hasTouch: true }), page = state.page; await open(state);
-    const guide = GUIDES[9]; await page.locator('#guide-grid [data-guide-id="' + guide.id + '"]').getByRole('button', { name: 'Conocer la ayuda', exact: true }).tap();
+    const guide = GUIDES[9]; await page.locator('#guide-grid [data-guide-id="' + guide.id + '"]').getByRole('button', { name: 'Conocer la ayuda ↗', exact: true }).tap();
     item.initial = await toolbar(page, width + ' initial');
     const box = await modal(page).boundingBox(); await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2); await page.mouse.wheel(0, 1800);
     await until(async () => await modal(page).evaluate(element => element.scrollTop) > 0, 'Narrow dialog did not scroll');

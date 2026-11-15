@@ -4,7 +4,6 @@ on:
     branches: [qa/ayudario-preparation-20261115]
 permissions:
   contents: read
-  actions: read
 concurrency:
   group: ayudario-preparation-v2-${{ github.ref }}
   cancel-in-progress: false
@@ -24,35 +23,6 @@ jobs:
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
         with:
           node-version: '24.22.2'
-      - name: Inspect and retain prior original proof
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          python3 - <<'PY'
-          import urllib.request,urllib.error,urllib.parse,hashlib,zipfile,io,json,base64,os
-          class NoRedirect(urllib.request.HTTPRedirectHandler):
-              def redirect_request(self,req,fp,code,msg,headers,newurl):
-                  return None
-          request=urllib.request.Request("https://api.github.com/repos/alvarovillalbaa/ayudario/actions/artifacts/14147917672/zip",headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json"})
-          try:
-              with urllib.request.build_opener(NoRedirect).open(request,timeout=30) as response:
-                  data=response.read(1024*1024)
-          except urllib.error.HTTPError as error:
-              assert error.code in (301,302,303,307,308)
-              location=error.headers["Location"]
-              parsed=urllib.parse.urlsplit(location)
-              assert parsed.scheme=="https" and not parsed.username and parsed.hostname and (parsed.hostname.endswith(".blob.core.windows.net") or parsed.hostname.endswith(".actions.githubusercontent.com") or parsed.hostname=="objects.githubusercontent.com")
-              with urllib.request.urlopen(location,timeout=30) as response:
-                  data=response.read(1024*1024)
-          expected="d7332f00a4f30a95547e19130cdf4e672771a917524ee2484314eea303704f5e"
-          assert hashlib.sha256(data).hexdigest()==expected
-          archive=zipfile.ZipFile(io.BytesIO(data))
-          assert len(archive.infolist())<100 and sum(item.file_size for item in archive.infolist())<8*1024*1024
-          print("AYUDARIO_PREVIOUS_ARCHIVE "+json.dumps({"sha256":expected,"base64":base64.b64encode(data).decode()}))
-          for item in archive.infolist():
-              if item.filename.endswith(".stderr.txt") or item.filename=="runner.json":
-                  print("AYUDARIO_PREVIOUS_TEXT "+json.dumps({"name":item.filename,"text":archive.read(item).decode("utf-8")}))
-          PY
       - name: Owned preparation qualification and teardown
         run: python3 tests/scripts/preparation-v2-qa.py
       - name: Retain original bytes in job log

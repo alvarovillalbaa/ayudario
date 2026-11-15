@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-15",
+  "runId": 43680579804,
+  "jobId": 132710101324,
+  "source": "375c53710f532ab4e4ae422ad2359de423ef157b",
+  "acceptedCases": [],
+  "failure": "P01 stopped at the first guide: exact accessible button name omitted the rendered arrow.",
+  "correction": "Use exact current accessible name in both guide-open controls; add failure-only screenshot/rendered state/network diagnostics. No product runtime or acceptance assertion changed.",
+  "originals": [
+    "job.log",
+    "preparation-browser.json",
+    "runner.json",
+    "07-preparation-browser.stderr.txt"
+  ],
+  "priorArtifact": {
+    "runId": 43679845140,
+    "id": 14147917672,
+    "bytes": 13002,
+    "sha256": "d7332f00a4f30a95547e19130cdf4e672771a917524ee2484314eea303704f5e",
+    "originalRetainedAs": "../attempt-2/original-artifact.zip.base64"
+  },
+  "cumulativeRunnerSecondsBeforeNextAttempt": 39,
+  "localPersistence": "Mac disk full; remote-owned QA ref only. Local checkout/source/index/refs unchanged."
+}

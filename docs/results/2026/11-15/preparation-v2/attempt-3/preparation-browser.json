@@ -1,0 +1,53 @@
+{
+  "tier": "T2",
+  "source": "375c53710f532ab4e4ae422ad2359de423ef157b",
+  "node": "v24.22.2",
+  "cases": [
+    {
+      "id": "P01",
+      "description": "All 16 guides, source/steps/documents, desktop sticky add and Escape close",
+      "status": "failed",
+      "guideIds": [],
+      "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('#guide-grid [data-guide-id=\"imv\"]').getByRole('button', { name: 'Conocer la ayuda', exact: true })\n\n    at openGuide (/home/runner/work/ayudario/ayudario/tests/e2e/preparation-v2.mjs:71:129)\n    at async file:///home/runner/work/ayudario/ayudario/tests/e2e/preparation-v2.mjs:106:7\n    at async run (/home/runner/work/ayudario/ayudario/tests/e2e/preparation-v2.mjs:96:9)\n    at async file:///home/runner/work/ayudario/ayudario/tests/e2e/preparation-v2.mjs:102:3"
+    }
+  ],
+  "boundaries": [],
+  "passed": false,
+  "legacyRef": "f60033c8d6b10ea8dc46c3931b820d41525c6a3e",
+  "legacyAssets": [
+    {
+      "path": "public/index.html",
+      "bytes": 12341,
+      "sha256": "1f86d19b26068d4e125a6b2dc9027c128c3f72e09c4cbd642e614b8e5510a083"
+    },
+    {
+      "path": "public/app.js",
+      "bytes": 28603,
+      "sha256": "70285052a4ca02f1085a661030bd8aa256b0bd281fd951d1265e843a4ef3c626"
+    },
+    {
+      "path": "public/styles.css",
+      "bytes": 23904,
+      "sha256": "e106a1c1389f09156e1f616361530c9412800e3a60324098967817dfc0a6fe0e"
+    },
+    {
+      "path": "public/lib/catalog.js",
+      "bytes": 16617,
+      "sha256": "f5a68110cde22a609249aa0fffb688227cea9285c563cfa1d77996881a826ca5"
+    },
+    {
+      "path": "public/lib/plan.js",
+      "bytes": 4079,
+      "sha256": "57cc21f20ea704b2420fc51cab2344f956d4aa2fe6404c2fe386a5b6f78b681a"
+    }
+  ],
+  "browser": "158.0.8127.18",
+  "cleanup": {
+    "contextsClosed": true,
+    "nativePid": 2504,
+    "nativeExitCode": 0,
+    "nativeSignal": null,
+    "failures": [],
+    "nativeAbsent": true
+  }
+}
