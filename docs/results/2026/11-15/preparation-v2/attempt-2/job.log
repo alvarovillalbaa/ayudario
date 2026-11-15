@@ -1,0 +1,218 @@
+﻿2026-11-15T05:09:29.6620659Z Current runner version: '2.338.2'
+2026-11-15T05:09:29.6640075Z ##[group]Runner Image Provisioner
+2026-11-15T05:09:29.6640633Z Hosted Compute Agent
+2026-11-15T05:09:29.6641051Z Version: 20261103.629
+2026-11-15T05:09:29.6641539Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+2026-11-15T05:09:29.6641979Z Build Date: 2026-11-03T17:26:59Z
+2026-11-15T05:09:29.6642462Z Worker ID: {9be885c3-b5f5-4f58-ac54-38744b927945}
+2026-11-15T05:09:29.6642905Z Region: northcentralus
+2026-11-15T05:09:29.6643324Z Cloud: Azure
+2026-11-15T05:09:29.6643686Z ##[endgroup]
+2026-11-15T05:09:29.6644685Z ##[group]Operating System
+2026-11-15T05:09:29.6645251Z Ubuntu
+2026-11-15T05:09:29.6645588Z 24.04.5
+2026-11-15T05:09:29.6646059Z LTS
+2026-11-15T05:09:29.6646476Z ##[endgroup]
+2026-11-15T05:09:29.6646828Z ##[group]Runner Image
+2026-11-15T05:09:29.6647234Z Image: ubuntu-24.04
+2026-11-15T05:09:29.6647603Z Version: 20261111.370.1
+2026-11-15T05:09:29.6648744Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261111.370/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-15T05:09:29.6649660Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261111.370
+2026-11-15T05:09:29.6650267Z ##[endgroup]
+2026-11-15T05:09:29.6650981Z ##[group]GITHUB_TOKEN Permissions
+2026-11-15T05:09:29.6652453Z Contents: read
+2026-11-15T05:09:29.6652821Z Metadata: read
+2026-11-15T05:09:29.6653169Z ##[endgroup]
+2026-11-15T05:09:29.6654626Z Secret source: Actions
+2026-11-15T05:09:29.6655491Z Cache mode: write
+2026-11-15T05:09:29.6656014Z Prepare workflow directory
+2026-11-15T05:09:29.6871620Z Prepare all required actions
+2026-11-15T05:09:29.6906982Z Getting action download info
+2026-11-15T05:09:29.9398897Z Download action repository 'actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803' (SHA:d23441a48e516b6c34aea4fa41551a30e30af803)
+2026-11-15T05:09:30.0646020Z Download action repository 'actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38' (SHA:249970729cb0ef3589644e2896645e5dc5ba9c38)
+2026-11-15T05:09:30.2300929Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-11-15T05:09:30.3982842Z Complete job name: preparation
+2026-11-15T05:09:30.4646238Z ##[group]Run echo "AYUDARIO_PROOF_DIR=$RUNNER_TEMP/ayudario-preparation-proof-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" >> "$GITHUB_ENV"
+2026-11-15T05:09:30.4647180Z [36;1mecho "AYUDARIO_PROOF_DIR=$RUNNER_TEMP/ayudario-preparation-proof-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" >> "$GITHUB_ENV"[0m
+2026-11-15T05:09:30.4666279Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-15T05:09:30.4666753Z ##[endgroup]
+2026-11-15T05:09:30.5048301Z ##[group]Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+2026-11-15T05:09:30.5048752Z with:
+2026-11-15T05:09:30.5049003Z   persist-credentials: false
+2026-11-15T05:09:30.5049285Z   fetch-depth: 3
+2026-11-15T05:09:30.5049551Z   repository: alvarovillalbaa/ayudario
+2026-11-15T05:09:30.5051749Z   token: ***
+2026-11-15T05:09:30.5051988Z   ssh-strict: true
+2026-11-15T05:09:30.5052259Z   ssh-user: git
+2026-11-15T05:09:30.5052495Z   clean: true
+2026-11-15T05:09:30.5052748Z   sparse-checkout-cone-mode: true
+2026-11-15T05:09:30.5053053Z   fetch-tags: false
+2026-11-15T05:09:30.5053304Z   show-progress: true
+2026-11-15T05:09:30.5053554Z   lfs: false
+2026-11-15T05:09:30.5053787Z   submodules: false
+2026-11-15T05:09:30.5054041Z   set-safe-directory: true
+2026-11-15T05:09:30.5054329Z   allow-unsafe-pr-checkout: false
+2026-11-15T05:09:30.5054612Z env:
+2026-11-15T05:09:30.5055199Z   AYUDARIO_PROOF_DIR: /home/runner/work/_temp/ayudario-preparation-proof-43679845140-1
+2026-11-15T05:09:30.5055680Z ##[endgroup]
+2026-11-15T05:09:30.6931391Z Syncing repository: alvarovillalbaa/ayudario
+2026-11-15T05:09:30.6933230Z ##[group]Getting Git version info
+2026-11-15T05:09:30.6933869Z Working directory is '/home/runner/work/ayudario/ayudario'
+2026-11-15T05:09:30.6934805Z [command]/usr/bin/git version
+2026-11-15T05:09:30.7006176Z git version 2.56.1
+2026-11-15T05:09:30.7024291Z ##[endgroup]
+2026-11-15T05:09:30.7042799Z Temporarily overriding HOME='/home/runner/work/_temp/ae305bf1-d4f8-4e2c-b81b-6dea213e7be8' before making global git config changes
+2026-11-15T05:09:30.7044248Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-15T05:09:30.7049070Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ayudario/ayudario
+2026-11-15T05:09:30.7108798Z Deleting the contents of '/home/runner/work/ayudario/ayudario'
+2026-11-15T05:09:30.7112058Z ##[group]Determining repository object format
+2026-11-15T05:09:30.7113572Z ##[endgroup]
+2026-11-15T05:09:30.7114431Z ##[group]Initializing the repository
+2026-11-15T05:09:30.7118317Z [command]/usr/bin/git init /home/runner/work/ayudario/ayudario
+2026-11-15T05:09:30.7218922Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-15T05:09:30.7219893Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-15T05:09:30.7220714Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-15T05:09:30.7221450Z hint: call:
+2026-11-15T05:09:30.7221867Z hint:
+2026-11-15T05:09:30.7222392Z hint: 	git config --global init.defaultBranch <name>
+2026-11-15T05:09:30.7222995Z hint:
+2026-11-15T05:09:30.7223565Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-15T05:09:30.7224417Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-15T05:09:30.7224889Z hint:
+2026-11-15T05:09:30.7225376Z hint: 	git branch -m <name>
+2026-11-15T05:09:30.7225740Z hint:
+2026-11-15T05:09:30.7226368Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-15T05:09:30.7227456Z Initialized empty Git repository in /home/runner/work/ayudario/ayudario/.git/
+2026-11-15T05:09:30.7233930Z [command]/usr/bin/git remote add origin https://github.com/alvarovillalbaa/ayudario
+2026-11-15T05:09:30.7287953Z ##[endgroup]
+2026-11-15T05:09:30.7288669Z ##[group]Disabling automatic garbage collection
+2026-11-15T05:09:30.7291763Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-15T05:09:30.7325886Z ##[endgroup]
+2026-11-15T05:09:30.7326744Z ##[group]Setting up auth
+2026-11-15T05:09:30.7327238Z Removing SSH command configuration
+2026-11-15T05:09:30.7333353Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-15T05:09:30.7372292Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-15T05:09:30.7690463Z Removing HTTP extra header
+2026-11-15T05:09:30.7695737Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-15T05:09:30.7734393Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-15T05:09:30.7932802Z Removing includeIf entries pointing to credentials config files
+2026-11-15T05:09:30.7938895Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-15T05:09:30.7977880Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-15T05:09:30.8173610Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-15T05:09:30.8218596Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/ayudario/ayudario/.git.path /home/runner/work/_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config
+2026-11-15T05:09:30.8259239Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/ayudario/ayudario/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config
+2026-11-15T05:09:30.8299610Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config
+2026-11-15T05:09:30.8341318Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config
+2026-11-15T05:09:30.8375476Z ##[endgroup]
+2026-11-15T05:09:30.8380810Z ##[group]Fetching the repository
+2026-11-15T05:09:30.8381678Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=3 origin +856285c8ca2f1c355b1a515910ed36d19a4cb3d0:refs/remotes/origin/qa/ayudario-preparation-20261115
+2026-11-15T05:09:31.2496739Z From https://github.com/alvarovillalbaa/ayudario
+2026-11-15T05:09:31.2505369Z  * [new ref]         856285c8ca2f1c355b1a515910ed36d19a4cb3d0 -> origin/qa/ayudario-preparation-20261115
+2026-11-15T05:09:31.2507421Z [command]/usr/bin/git branch --list --remote origin/qa/ayudario-preparation-20261115
+2026-11-15T05:09:31.2546380Z   origin/qa/ayudario-preparation-20261115
+2026-11-15T05:09:31.2554220Z [command]/usr/bin/git rev-parse refs/remotes/origin/qa/ayudario-preparation-20261115
+2026-11-15T05:09:31.2585536Z 856285c8ca2f1c355b1a515910ed36d19a4cb3d0
+2026-11-15T05:09:31.2590912Z ##[endgroup]
+2026-11-15T05:09:31.2591575Z ##[group]Determining the checkout info
+2026-11-15T05:09:31.2595280Z ##[endgroup]
+2026-11-15T05:09:31.2595976Z [command]/usr/bin/git sparse-checkout disable
+2026-11-15T05:09:31.2652314Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-15T05:09:31.2686188Z ##[group]Checking out the ref
+2026-11-15T05:09:31.2689615Z [command]/usr/bin/git checkout --progress --force -B qa/ayudario-preparation-20261115 refs/remotes/origin/qa/ayudario-preparation-20261115
+2026-11-15T05:09:31.2788317Z Switched to a new branch 'qa/ayudario-preparation-20261115'
+2026-11-15T05:09:31.2792768Z branch 'qa/ayudario-preparation-20261115' set up to track 'origin/qa/ayudario-preparation-20261115'.
+2026-11-15T05:09:31.2797214Z ##[endgroup]
+2026-11-15T05:09:31.2838221Z [command]/usr/bin/git log -1 --format=%H
+2026-11-15T05:09:31.2868446Z 856285c8ca2f1c355b1a515910ed36d19a4cb3d0
+2026-11-15T05:09:31.2876907Z ##[group]Removing auth
+2026-11-15T05:09:31.2877349Z Removing SSH command configuration
+2026-11-15T05:09:31.2879245Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-15T05:09:31.2916612Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-15T05:09:31.3110066Z Removing HTTP extra header
+2026-11-15T05:09:31.3113468Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-15T05:09:31.3149192Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-15T05:09:31.3336856Z Removing includeIf entries pointing to credentials config files
+2026-11-15T05:09:31.3339591Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-15T05:09:31.3374370Z includeif.gitdir:/home/runner/work/ayudario/ayudario/.git.path
+2026-11-15T05:09:31.3376272Z includeif.gitdir:/home/runner/work/ayudario/ayudario/.git/worktrees/*.path
+2026-11-15T05:09:31.3377759Z includeif.gitdir:/github/workspace/.git.path
+2026-11-15T05:09:31.3379006Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-15T05:09:31.3383707Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/ayudario/ayudario/.git.path
+2026-11-15T05:09:31.3412925Z /home/runner/work/_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config
+2026-11-15T05:09:31.3421531Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/ayudario/ayudario/.git.path /home/runner/work/_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config
+2026-11-15T05:09:31.3462591Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/ayudario/ayudario/.git/worktrees/*.path
+2026-11-15T05:09:31.3493258Z /home/runner/work/_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config
+2026-11-15T05:09:31.3501232Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/ayudario/ayudario/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config
+2026-11-15T05:09:31.3566945Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-15T05:09:31.3594006Z /github/runner_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config
+2026-11-15T05:09:31.3601658Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config
+2026-11-15T05:09:31.3638416Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-15T05:09:31.3666364Z /github/runner_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config
+2026-11-15T05:09:31.3673697Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config
+2026-11-15T05:09:31.3711810Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-15T05:09:31.3902945Z Removing credentials config '/home/runner/work/_temp/git-credentials-beed5999-bc65-4a20-9a3e-3ed160319b43.config'
+2026-11-15T05:09:31.3910219Z ##[endgroup]
+2026-11-15T05:09:31.4108696Z ##[group]Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+2026-11-15T05:09:31.4109408Z with:
+2026-11-15T05:09:31.4109726Z   node-version: 24.22.2
+2026-11-15T05:09:31.4110114Z   check-latest: false
+2026-11-15T05:09:31.4115115Z   token: ***
+2026-11-15T05:09:31.4115476Z   package-manager-cache: true
+2026-11-15T05:09:31.4115907Z env:
+2026-11-15T05:09:31.4116547Z   AYUDARIO_PROOF_DIR: /home/runner/work/_temp/ayudario-preparation-proof-43679845140-1
+2026-11-15T05:09:31.4117368Z ##[endgroup]
+2026-11-15T05:09:31.5077475Z Found in cache @ /opt/hostedtoolcache/node/24.22.2/x64
+2026-11-15T05:09:31.5079598Z ##[group]Environment details
+2026-11-15T05:09:31.7946814Z node: v24.22.2
+2026-11-15T05:09:31.7947561Z npm: 11.19.1
+2026-11-15T05:09:31.7948265Z yarn: 1.22.22
+2026-11-15T05:09:31.7949670Z ##[endgroup]
+2026-11-15T05:09:31.8086988Z ##[group]Run python3 tests/scripts/preparation-v2-qa.py
+2026-11-15T05:09:31.8087815Z [36;1mpython3 tests/scripts/preparation-v2-qa.py[0m
+2026-11-15T05:09:31.8112390Z shell: /usr/bin/bash -e {0}
+2026-11-15T05:09:31.8113029Z env:
+2026-11-15T05:09:31.8113768Z   AYUDARIO_PROOF_DIR: /home/runner/work/_temp/ayudario-preparation-proof-43679845140-1
+2026-11-15T05:09:31.8114548Z ##[endgroup]
+2026-11-15T05:09:42.4490822Z {"source": "856285c8ca2f1c355b1a515910ed36d19a4cb3d0", "passed": false, "node": "v24.22.2", "server_pid": 2474, "error": "RuntimeError: preparation-browser failed; preserve its original streams", "server_forced": false, "server_exit": 0, "server_group_absent": true, "source_stable": true, "git_clean": true, "lingering_owned_pids": [], "owned_processes_absent": true, "owned_tools_removed": true}
+2026-11-15T05:09:42.4578827Z ##[error]Process completed with exit code 1.
+2026-11-15T05:09:42.4647406Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-11-15T05:09:42.4647643Z with:
+2026-11-15T05:09:42.4647777Z   name: preparation-v2-proof
+2026-11-15T05:09:42.4647997Z   path: /home/runner/work/_temp/ayudario-preparation-proof-43679845140-1
+2026-11-15T05:09:42.4648207Z   retention-days: 7
+2026-11-15T05:09:42.4648331Z   if-no-files-found: warn
+2026-11-15T05:09:42.4648461Z   compression-level: 6
+2026-11-15T05:09:42.4648583Z   overwrite: false
+2026-11-15T05:09:42.4648882Z   include-hidden-files: false
+2026-11-15T05:09:42.4649016Z   archive: true
+2026-11-15T05:09:42.4649129Z env:
+2026-11-15T05:09:42.4649320Z   AYUDARIO_PROOF_DIR: /home/runner/work/_temp/ayudario-preparation-proof-43679845140-1
+2026-11-15T05:09:42.4649551Z ##[endgroup]
+2026-11-15T05:09:42.5647293Z With the provided path, there will be 25 files uploaded
+2026-11-15T05:09:42.5651337Z Artifact name is valid!
+2026-11-15T05:09:42.5651642Z Root directory input is valid!
+2026-11-15T05:09:42.8060682Z Uploading artifact: preparation-v2-proof.zip
+2026-11-15T05:09:42.8086881Z Beginning upload of artifact content to blob storage
+2026-11-15T05:09:42.9733801Z Uploaded bytes 13002
+2026-11-15T05:09:43.0042039Z Finished uploading artifact content to blob storage!
+2026-11-15T05:09:43.0042980Z SHA256 digest of uploaded artifact is d7332f00a4f30a95547e19130cdf4e672771a917524ee2484314eea303704f5e
+2026-11-15T05:09:43.0043540Z Finalizing artifact upload
+2026-11-15T05:09:43.3624290Z Artifact preparation-v2-proof successfully finalized. Artifact ID 14147917672
+2026-11-15T05:09:43.3625238Z Artifact preparation-v2-proof has been successfully uploaded! Final size is 13002 bytes. Artifact ID is 14147917672
+2026-11-15T05:09:43.3627718Z Artifact download URL: https://github.com/alvarovillalbaa/ayudario/actions/runs/43679845140/artifacts/14147917672
+2026-11-15T05:09:43.3785390Z Post job cleanup.
+2026-11-15T05:09:43.4367304Z [command]/usr/bin/git version
+2026-11-15T05:09:43.4401371Z git version 2.56.1
+2026-11-15T05:09:43.4427514Z Temporarily overriding HOME='/home/runner/work/_temp/66b027c4-d6a5-4b90-b0b6-40dc0cf614db' before making global git config changes
+2026-11-15T05:09:43.4428237Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-15T05:09:43.4432823Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ayudario/ayudario
+2026-11-15T05:09:43.4461092Z Removing SSH command configuration
+2026-11-15T05:09:43.4466131Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-15T05:09:43.4497132Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-15T05:09:43.4700895Z Removing HTTP extra header
+2026-11-15T05:09:43.4704565Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-15T05:09:43.4746596Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-15T05:09:43.4961042Z Removing includeIf entries pointing to credentials config files
+2026-11-15T05:09:43.4967581Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-15T05:09:43.5005279Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-15T05:09:43.5319771Z Cleaning up orphan processes
