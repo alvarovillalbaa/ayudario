@@ -1,0 +1,22 @@
+{
+  "source": "3e481626f4140dfc488270b0a9888af2afd07cea",
+  "run": {
+    "check_suite_id": 118261421061,
+    "conclusion": "failure",
+    "created_at": "2026-11-15T05:03:50Z",
+    "event": "push",
+    "head_sha": "3e481626f4140dfc488270b0a9888af2afd07cea",
+    "html_url": "https://github.com/alvarovillalbaa/ayudario/actions/runs/43679434781",
+    "id": 43679434781,
+    "path": ".github/workflows/preparation-v2-qa.yml",
+    "run_started_at": "2026-11-15T05:03:50Z",
+    "status": "completed",
+    "updated_at": "2026-11-15T05:03:50Z"
+  },
+  "jobs": [],
+  "runner_seconds_used": 0,
+  "browser_cases_executed": 0,
+  "source_error_found": "runner.temp is unavailable at jobs.<job_id>.env per official context availability table; run API provides no detailed annotation",
+  "correction": "Define path through GITHUB_ENV in a runner step; use a scoped push trigger",
+  "main_changed": false
+}
