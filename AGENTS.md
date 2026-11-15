@@ -1,9 +1,12 @@
 # Ayudario
 
 - Owner intent: the personal Notion `españa-ayudas` brief asks for a self-service application inspired by Wizbii Money. The owning contract is `docs/spec.md`.
+- GEN-3659 explicitly adds more guides, per-guide steps/documents, a top-right modal add action and requirement/document preparation progress. Local iteration evidence is `docs/results/2026/11-14/preparation.md`; publication/visual acceptance is pending.
 - Work only in this repository. Preserve unrelated work and the four deferred portfolio projects.
 - This is a dependency-free Spanish web application. Profile answers and application plans stay in the browser; persistence is an explicit local choice. Do not add accounts, telemetry, document uploads, model calls or a database without a real requirement.
 - Recommendations express relevance, never a legal eligibility decision or guaranteed amount. Keep unknown requirements visible. Government sources, attribution and review/update dates are product data.
+- There are 16 maintained guides: the original eight retain their 7 November review; the eight additions have 14 November source review. Do not label any guide or recent BDNS announcement an open entitlement. A completed personal checklist is not government validation.
+- Plan format 2 keeps document indices and adds independent requirement indices. Read/import format 1 without checking any new criterion; preserve its local bytes while writing the separate v2 key. Never reorder or repurpose existing checklist indices without explicit versioned mapping. Refuse malformed/future data and a changed observed v2 value; verify write readback. This localStorage comparison is not atomic cross-tab locking. Clear both versions only on explicit local deletion/disable.
 - BDNS discovery is a separate public catalogue. Do not call a recent announcement open, or treat `abierto` as a current-deadline flag. Import only public call metadata, never concessions or recipient records.
 - Public data refreshes are bounded, serialized and retain the last good file on failure. Scheduled updates may change only their owned public catalogue file.
 - Standing user authorization covers this new project, its personal GitHub repository, free Vercel delivery and focused disposable Node/Chromium CI. No payment, account enrollment, provider/model call or private data is authorized.

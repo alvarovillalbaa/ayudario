@@ -6,7 +6,7 @@ import { normalizeProfile, rankGuides } from "../../public/lib/matcher.js";
 
 test("Unknown answers retain all guides without inventing a positive match", () => {
   const rows = rankGuides(GUIDES);
-  assert.equal(rows.length, 8);
+  assert.equal(rows.length, 16);
   assert.deepEqual(rows.map((row) => row.guide.id), GUIDES.map((guide) => guide.id));
   assert.ok(rows.every((row) => row.score === 0 && row.label === "Para explorar"));
 });
@@ -44,13 +44,13 @@ test("Unknown is distinct from no, and malformed or identifying fields are refus
 });
 
 test("Programme links are official and every guide exposes source, uncertainty and next steps", () => {
-  const hosts = new Set(["www.inclusion.gob.es", "www.sepe.es", "www.becaseducacion.gob.es", "www.boe.es", "www.dsca.gob.es", "imserso.es"]);
-  assert.equal(new Set(GUIDES.map((guide) => guide.id)).size, 8);
-  for (const guide of GUIDES) {
+  const hosts = new Set(["www.inclusion.gob.es", "www.sepe.es", "www.becaseducacion.gob.es", "www.boe.es", "www.dsca.gob.es", "imserso.es", "sede.agenciatributaria.gob.es"]);
+  assert.equal(new Set(GUIDES.map((guide) => guide.id)).size, 16);
+  for (const [index, guide] of GUIDES.entries()) {
     const url = new URL(guide.sourceUrl);
     assert.equal(url.protocol, "https:");
     assert.ok(hosts.has(url.hostname), guide.sourceUrl);
-    assert.equal(guide.reviewedAt, "2026-11-07");
+    assert.equal(guide.reviewedAt, index < 8 ? "2026-11-07" : "2026-11-14");
     assert.ok(guide.requirements.length && guide.documents.length && guide.steps.length && guide.availability);
   }
 });

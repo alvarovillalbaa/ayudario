@@ -1,8 +1,9 @@
 import { normalizeProfile } from "./matcher.js";
 
-export const STORAGE_KEY = "ayudario.plan.v1";
+export const STORAGE_KEY = "ayudario.plan.v2";
+export const LEGACY_STORAGE_KEY = "ayudario.plan.v1";
 export const STATUSES = Object.freeze({ saved: "Por revisar", preparing: "Preparando", submitted: "Presentada", resolved: "Resuelta" });
-export function emptyPlan() { return { version: 1, profile: null, entries: {} }; }
+export function emptyPlan() { return { version: 2, profile: null, entries: {} }; }
 
 function isRecord(value) { return value !== null && typeof value === "object" && !Array.isArray(value); }
 function exactKeys(value, allowed) { return Object.keys(value).every((key) => allowed.includes(key)); }
@@ -13,8 +14,8 @@ function validDate(value) {
 }
 
 export function validatePlan(value, guides) {
-  if (!isRecord(value) || value.version !== 1 || !exactKeys(value, ["version", "profile", "entries"])
-    || !isRecord(value.entries)) throw new Error("La copia no tiene el formato de Ayudario 1.");
+  if (!isRecord(value) || ![1, 2].includes(value.version) || !exactKeys(value, ["version", "profile", "entries"])
+    || !isRecord(value.entries)) throw new Error("La copia no tiene un formato compatible de Ayudario.");
   const result = emptyPlan();
   result.profile = value.profile == null ? null : normalizeProfile(value.profile);
   const keys = Object.keys(value.entries);
@@ -22,15 +23,18 @@ export function validatePlan(value, guides) {
   for (const id of keys) {
     const guide = guides.find((item) => item.id === id);
     const entry = value.entries[id];
-    if (!guide || !isRecord(entry) || !exactKeys(entry, ["status", "checks", "notes", "reminder"])
+    const criteria = value.version === 1 ? [] : entry?.criteria;
+    if (!guide || !isRecord(entry) || !exactKeys(entry, value.version === 1 ? ["status", "checks", "notes", "reminder"] : ["status", "checks", "criteria", "notes", "reminder"])
       || !Object.hasOwn(STATUSES, entry.status) || !Array.isArray(entry.checks)
       || entry.checks.length > guide.documents.length || new Set(entry.checks).size !== entry.checks.length
       || entry.checks.some((index) => !Number.isInteger(index) || index < 0 || index >= guide.documents.length)
+      || !Array.isArray(criteria) || criteria.length > guide.requirements.length || new Set(criteria).size !== criteria.length
+      || criteria.some((index) => !Number.isInteger(index) || index < 0 || index >= guide.requirements.length)
       || typeof entry.notes !== "string" || entry.notes.length > 2000
       || typeof entry.reminder !== "string" || (entry.reminder !== "" && !validDate(entry.reminder))) {
       throw new Error("Una ayuda de la copia contiene datos no válidos.");
     }
-    result.entries[id] = { status: entry.status, checks: [...entry.checks], notes: entry.notes, reminder: entry.reminder };
+    result.entries[id] = { status: entry.status, checks: [...entry.checks], criteria: [...criteria], notes: entry.notes, reminder: entry.reminder };
   }
   return result;
 }
@@ -42,7 +46,34 @@ export function parseBackup(text, guides) {
   return validatePlan(value, guides);
 }
 
-export function newEntry() { return { status: "saved", checks: [], notes: "", reminder: "" }; }
+export function newEntry() { return { status: "saved", checks: [], criteria: [], notes: "", reminder: "" }; }
+
+export function preparationProgress(guide, entry) {
+  const criteria = entry.criteria ?? [], complete = criteria.length + entry.checks.length;
+  const total = guide.requirements.length + guide.documents.length;
+  return { complete, total, remaining: total - complete,
+    requirements: { complete: criteria.length, total: guide.requirements.length },
+    documents: { complete: entry.checks.length, total: guide.documents.length },
+    next: guide.requirements.find((_, index) => !criteria.includes(index)) ?? guide.documents.find((_, index) => !entry.checks.includes(index)) ?? null };
+}
+
+export function readStoredPlan(storage, guides) {
+  const raw = storage.getItem(STORAGE_KEY);
+  if (raw !== null) return { plan: parseBackup(raw, guides), raw, legacy: false, found: true };
+  const legacy = storage.getItem(LEGACY_STORAGE_KEY);
+  return { plan: legacy === null ? emptyPlan() : parseBackup(legacy, guides), raw: null, legacy: legacy !== null, found: legacy !== null };
+}
+export function writeStoredPlan(storage, value, guides, expectedRaw) {
+  const current = storage.getItem(STORAGE_KEY);
+  if (current !== null) parseBackup(current, guides);
+  if (current !== expectedRaw) throw new Error("La copia local cambió en otra pestaña. Descarga tu plan antes de continuar.");
+  const raw = JSON.stringify(validatePlan(value, guides)); storage.setItem(STORAGE_KEY, raw);
+  if (storage.getItem(STORAGE_KEY) !== raw) throw new Error("No se pudo confirmar la copia local. Descarga tu plan.");
+  return raw;
+}
+export function clearStoredPlan(storage) {
+  storage.removeItem(STORAGE_KEY); storage.removeItem(LEGACY_STORAGE_KEY);
+}
 
 export function calendarText(guide, entry, now = new Date()) {
   if (!validDate(entry.reminder)) throw new Error("Añade primero una fecha de recordatorio válida.");

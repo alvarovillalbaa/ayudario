@@ -1,6 +1,7 @@
 # Catálogo orientativo y procedencia
 
-Revisión de reglas básicas: **7 de noviembre de 2026**. Estas ocho guías son
+Revisión de reglas básicas: **7 de noviembre de 2026** para las ocho guías
+originales; **14 de noviembre de 2026** para ocho incorporaciones. Las 16 guías son
 resúmenes propios de fuentes públicas oficiales. No proceden de Wizbii ni de un
 catálogo comercial. No contienen importes prometidos, un cálculo de derecho o
 una afirmación de convocatoria abierta. La administración competente decide
@@ -26,6 +27,29 @@ no pide esos documentos ni permite subirlos.
 | `bono-social` | [Ministerio de Derechos Sociales: bono social eléctrico](https://www.dsca.gob.es/es/consumo/preguntas-frecuentes/que-es-bono-social-electrico). Vivienda habitual, PVPC mediante comercializadora de referencia y requisitos de vulnerabilidad económicos, familiares o personales. | Alta para estos elementos. El perfil no acredita contrato, vulnerabilidad ni descuento. No se publican porcentajes ni umbrales variables. |
 | `pnc-incapacidad` | [Imserso: normativa y requisitos](https://imserso.es/pnc-prestaciones-subvenciones/pnc-invalidez/normativa-requisitos). Edad desde 18 y menor de 65, discapacidad reconocida de al menos el 65 %, residencia y recursos insuficientes. | Alta. La fuente exige cinco años de residencia en España, incluidos los dos últimos consecutivos; también deben revisarse convivencia e incompatibilidades. «Discapacidad: sí» no acredita grado. El nombre actual es incapacidad, aunque la URL conserva `pnc-invalidez`. |
 
+## Incorporaciones revisadas el 14 de noviembre
+
+Las páginas completas enlazadas se leyeron en esta iteración. Los pasos y las
+listas son preparación orientativa, no formularios exhaustivos. Las guías
+anteriores conservan su evidencia de noviembre 7; no se declara una nueva
+revisión de sus reglas. No se añaden importes ni plazos abiertos al producto.
+
+| ID | Fuente oficial leída | Límite de la ficha |
+| --- | --- | --- |
+| `pnc-jubilacion` | [Imserso: requisitos](https://imserso.es/pnc-prestaciones-subvenciones/pnc-jubilacion/normativa-requisitos) | Edad, residencia y recursos; sin cálculo individual ni lista documental territorial completa. |
+| `subsidio-cotizacion-insuficiente` | [SEPE: requisitos, documentos y trámite](https://www.sepe.es/HomeSepe/es/prestaciones-desempleo/subsidio-desempleo/subsidio-cotizaciones-insuficientes-he-trabajado-menos-de-un-anyo.html) | El régimen depende del hecho causante; no se comprueban cotizaciones ni expediente. |
+| `subsidio-agotamiento` | [SEPE: requisitos, documentos y trámite](https://www.sepe.es/HomeSepe/es/prestaciones-desempleo/subsidio-desempleo/subsidio-agotamiento-prestacion-contributiva.html) | No se infiere derecho al agotar el paro ni se calcula duración o plazo personal. |
+| `pago-unico` | [SEPE: capitalización](https://www.sepe.es/HomeSepe/autonomos/capitaliza-tu-prestacion.html) | Anticipo sujeto a modalidad y obligaciones; no es dinero adicional ni asesoramiento de inversión. |
+| `complemento-alquiler-pnc` | [Imserso: complemento y solicitud](https://imserso.es/pnc-prestaciones-subvenciones/solicitud-complemento-titulares-pension-contributiva) | Requiere PNC y otras condiciones; plazo anual y documentación deben confirmarse. La URL oficial conserva «pension-contributiva». |
+| `dependencia` | [Imserso: personas beneficiarias](https://imserso.es/autonomia-personal-dependencia/sistema-autonomia-atencion-dependencia-saad/preguntas-frecuentes/personas-beneficiarias-sistema-autonomia-atencion-dependencia) y [tramitación](https://imserso.es/autonomia-personal-dependencia/sistema-autonomia-atencion-dependencia-saad/preguntas-frecuentes/tramitacion-reconocimiento-situacion-dependencia-derecho-prestaciones-sistema) | La ficha no valora grado ni asigna prestación; formularios e informes dependen del territorio. |
+| `deduccion-maternidad` | [AEAT: personas con derecho](https://sede.agenciatributaria.gob.es/Sede/ciudadanos-familias-personas-discapacidad/deducciones-relacionadas-hijos-descendientes/deduccion-maternidad/quien-corresponde-deduccion.html), [beneficio](https://sede.agenciatributaria.gob.es/Sede/ciudadanos-familias-personas-discapacidad/deducciones-relacionadas-hijos-descendientes/deduccion-maternidad.html) y [anticipo](https://sede.agenciatributaria.gob.es/Sede/ciudadanos-familias-personas-discapacidad/deducciones-relacionadas-hijos-descendientes/deduccion-maternidad/abono-anticipado-deduccion.html) | Hay supuestos especiales e interacción con CAPI; no se calcula la deducción. |
+| `deduccion-familia-numerosa` | [AEAT: personas con derecho](https://sede.agenciatributaria.gob.es/Sede/ciudadanos-familias-personas-discapacidad/deducciones-relacionadas-hijos-descendientes/deduccion-familia-numerosa/quien-corresponde-deduccion.html) y [solicitud/cesión](https://sede.agenciatributaria.gob.es/Sede/ciudadanos-familias-personas-discapacidad/deducciones-relacionadas-hijos-descendientes/deduccion-familia-numerosa/solicitud-cesion-abono-anticipado.html) | Los menores a cargo son una señal de interés, no prueba de familia numerosa ni de derecho fiscal. |
+
+Una URL abreviada inicialmente consultada para cotizaciones insuficientes falló;
+se recuperó y leyó la ficha oficial completa enlazada arriba. También se examinó
+la página de formularios de nacimiento y cuidado de menor, pero no se añadió
+esa prestación ni se dedujeron reglas de acceso de una página documental.
+
 ## Uso responsable del perfil
 
 - Edad, situación laboral y respuestas generales solo ordenan relevancia; no
@@ -39,7 +63,7 @@ no pide esos documentos ni permite subirlos.
 - En alquiler, el territorio incompatible se explica y la ficha permanece
   consultable. La restricción pertenece a este marco concreto, no a todas las
   ayudas de vivienda del territorio.
-- `reviewedAt` señala esta revisión humana de reglas básicas, no una consulta
+- `reviewedAt` señala la revisión documentada de reglas básicas, no una consulta
   en vivo de plazos o la fecha de actualización de cada organismo. Becas conserva
   expresamente su comprobación parcial.
 

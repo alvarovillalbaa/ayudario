@@ -6,12 +6,25 @@ Proyecto nacido del [brief España ayudas](https://app.notion.com/p/40da1ee8bd06
 
 ## Qué hace
 
-- Busca y filtra ocho guías de programas oficiales. Un perfil opcional ordena por relevancia y explica cada señal; mantiene visibles los requisitos pendientes.
-- Guarda un plan personal con documentos por preparar, notas, progreso manual y recordatorios descargables para el calendario.
+- Busca y filtra 16 guías de programas oficiales. Un perfil opcional ordena por relevancia y explica cada señal; mantiene visibles los requisitos pendientes.
+- Añade una ayuda desde la parte superior derecha de su ficha. Cada plan tiene requisitos por revisar, documentos por preparar, barra de avance, siguiente punto pendiente, notas y recordatorios descargables para el calendario.
 - Exporta e importa una copia JSON validada. La persistencia en este dispositivo se activa expresamente; también puedes trabajar solo durante la sesión y borrar los datos.
 - Descubre hasta 50 convocatorias registradas en los últimos 30 días para personas físicas sin actividad económica, mediante una actualización diaria y acotada de la BDNS. Muestra su fecha de descarga y el origen; no es un catálogo completo y una convocatoria reciente no implica que su plazo esté abierto ni que seas elegible.
 
 No recoge nombres, DNI, datos bancarios, credenciales ni documentos. El perfil y el plan no se envían al servidor. Las guías orientan la preparación: la comprobación completa, los plazos y la decisión corresponden al organismo. Las solicitudes se presentan en su sede oficial.
+
+La [iteración de preparación](docs/results/2026/11-14/preparation.md) está en
+local y todavía no se ha publicado. Las ocho guías nuevas se contrastaron con
+fuentes oficiales; las ocho anteriores conservan su fecha de revisión. Las
+marcas son personales: completar la lista no acredita elegibilidad. Los cambios
+del formulario se conservan al pulsar **Guardar cambios**; activar el guardado
+local sigue siendo opcional.
+
+Las copias JSON anteriores se pueden importar y sus documentos/notas se
+conservan. El formato 2 añade requisitos revisados sin darlos por comprobados
+automáticamente. La copia local anterior se mantiene al abrir y guardar la
+nueva; desactivar el guardado o confirmar Borrar todo elimina ambas copias.
+Descarga una copia actualizada antes de cambiar de dispositivo.
 
 ## Desarrollo
 

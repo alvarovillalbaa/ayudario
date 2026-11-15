@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { GUIDES } from "../../public/lib/catalog.js";
 import { calendarText, emptyPlan, newEntry, parseBackup, validatePlan } from "../../public/lib/plan.js";
 
-const fixture = () => ({ version: 1, profile: { age: 31, region: "Andalucía", children: true }, entries: { imv: { ...newEntry(), checks: [0], notes: "Revisar con José — mañana 東京", reminder: "2028-02-29" } } });
+const fixture = () => ({ version: 1, profile: { age: 31, region: "Andalucía", children: true }, entries: { imv: { status: "saved", checks: [0], notes: "Revisar con José — mañana 東京", reminder: "2028-02-29" } } });
 
 test("Backup round trip retains Unicode notes, profile, progress and checklist without aliases", () => {
   const source = fixture();
@@ -41,7 +41,7 @@ test("Import refuses malformed JSON, oversized bodies, extra fields and prototyp
 
 test("Rejected imports do not mutate the existing plan", () => {
   const existing = fixture(); const before = JSON.stringify(existing);
-  assert.throws(() => parseBackup('{"version":2,"entries":{}}', GUIDES));
+  assert.throws(() => parseBackup('{"version":3,"entries":{}}', GUIDES));
   assert.equal(JSON.stringify(existing), before);
 });
 

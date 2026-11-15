@@ -1,6 +1,6 @@
 import { GUIDES, CATEGORIES } from "./lib/catalog.js";
 import { REGIONS, rankGuides, normalizeProfile } from "./lib/matcher.js";
-import { STORAGE_KEY, STATUSES, emptyPlan, validatePlan, parseBackup, newEntry, calendarText } from "./lib/plan.js";
+import { STATUSES, emptyPlan, validatePlan, parseBackup, newEntry, calendarText, preparationProgress, readStoredPlan, writeStoredPlan, clearStoredPlan } from "./lib/plan.js";
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const FIELDS = { age: "edad", region: "territorio", employment: "situación laboral", studying: "estudios", renting: "alquiler", children: "hijos a cargo", lowIncome: "ingresos", disability: "discapacidad" };
@@ -10,6 +10,7 @@ const OFFICIAL_HOSTS = new Set(["infosubvenciones.es", "www.infosubvenciones.es"
 const MAX_FEED_BYTES = 1024 * 1024;
 let plan = emptyPlan();
 let persistent = false;
+let storageBaseline = null;
 let view = "browse";
 let category = "Todas";
 let search = "";
@@ -59,7 +60,7 @@ function updateStorageStatus() {
 }
 function saveLocal() {
   if (!persistent) return;
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(plan)); }
+  try { storageBaseline = writeStoredPlan(localStorage, plan, GUIDES, storageBaseline); }
   catch {
     persistent = false;
     notice("El navegador no ha permitido guardar los cambios. Tu plan sigue en esta pestaña: descarga una copia JSON antes de salir. Una copia anterior podría seguir en el navegador.");
@@ -73,8 +74,9 @@ function commit(value) {
 }
 function loadPlan() {
   try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved !== null) { plan = parseBackup(saved, GUIDES); persistent = true; }
+    const saved = readStoredPlan(localStorage, GUIDES);
+    plan = saved.plan; storageBaseline = saved.raw; persistent = saved.found;
+    if (saved.legacy) notice("Tu plan anterior sigue aquí, con documentos y notas. Los requisitos nuevos empiezan sin marcar. Conservamos la copia anterior; descarga también una copia actualizada.");
   } catch {
     notice("No hemos podido leer el plan guardado. No se ha modificado esa copia. Puedes seguir en esta pestaña o importar una copia JSON válida; el guardado local está desactivado.");
   }
@@ -128,8 +130,9 @@ function guideCard(match, savedView = false) {
   card.append(node("div", { class: "card-top" }, savedView ? node("span", { class: "entry-status" }, STATUSES[entry.status]) : categoryLabel(guide), save));
   card.append(node("h3", {}, guide.title), node("p", { class: "card-summary" }, guide.summary));
   if (savedView) {
-    const complete = entry.checks.length; const total = guide.documents.length;
-    card.append(node("progress", { class: "progress-track", value: complete, max: total || 1, "aria-label": "Documentos preparados" }), node("p", { class: "progress-label" }, `${complete} de ${total} documentos preparados`));
+    const { complete, total, remaining, next } = preparationProgress(guide, entry);
+    card.append(node("progress", { class: "progress-track", value: complete, max: total || 1, "aria-label": "Preparación personal de la solicitud" }), node("p", { class: "progress-label" }, `${complete} de ${total} puntos revisados · ${remaining} pendientes`));
+    card.append(node("p", { class: "entry-note" }, next ? `Siguiente: ${next}` : "Lista revisada. Confirma el formulario, el plazo y los documentos completos en la sede oficial."));
     if (entry.reminder) card.append(node("p", { class: "entry-note" }, `Recordatorio: ${dateLabel(entry.reminder)}`));
   } else { card.append(node("p", { class: "card-scope" }, guide.scope), relevance(match)); }
   card.append(node("div", { class: "card-footer" }, button(savedView ? "Continuar con mi plan ↗" : "Conocer la ayuda ↗", () => openGuide(guide.id)), node("span", { class: "official-note" }, "Fuente oficial")));
@@ -182,31 +185,49 @@ function listBlock(title, items, ordered = false) {
 function renderGuide(id) {
   const match = ranked().find((row) => row.guide.id === id); const { guide } = match; const entry = plan.entries[id];
   const root = $("#guide-detail"); root.replaceChildren();
+  $("#guide-save-action").textContent = entry ? "✓ En mi plan" : "Añadir a mi plan +";
+  $("#guide-save-action").disabled = Boolean(entry);
   const cat = categoryLabel(guide); cat.classList.add("detail-category");
   root.append(cat, node("h2", { id: "guide-detail-title", class: "detail-title" }, guide.title), node("p", { class: "detail-summary" }, guide.summary));
   root.append(node("div", { class: "detail-meta" }, node("p", {}, guide.agency), node("p", {}, guide.scope), node("p", {}, `Revisada: ${dateLabel(guide.reviewedAt)}`)));
   root.append(relevance(match, true));
   root.append(node("section", { class: "detail-block" }, node("h3", {}, "Antes de empezar"), node("p", {}, guide.availability)));
-  root.append(listBlock("Requisitos que debes comprobar", guide.requirements), listBlock("Cómo dar el siguiente paso", guide.steps, true));
-  root.append(node("div", { class: "detail-source" }, sourceLink("Consultar la fuente oficial", guide.sourceUrl, "button button-primary"), node("p", {}, guide.sourceLabel, node("br"), "Se abre una web oficial en otra pestaña.")));
   if (entry) root.append(planEditor(guide, entry));
-  else root.append(node("section", { class: "plan-editor" }, node("h3", {}, "Hazle un hueco en tu plan."), node("p", {}, "Guarda esta guía para preparar sus documentos, tomar notas y recordar tu próximo paso."), button("Añadir a mi plan +", () => toggleSave(id), "button button-outline")));
+  else root.append(listBlock("Requisitos que debes comprobar", guide.requirements), listBlock("Documentos por preparar", guide.documents));
+  root.append(listBlock("Cómo dar el siguiente paso", guide.steps, true));
+  root.append(node("div", { class: "detail-source" }, sourceLink("Consultar la fuente oficial", guide.sourceUrl, "button button-primary"), node("p", {}, guide.sourceLabel, node("br"), "Se abre una web oficial en otra pestaña.")));
 }
 function entryFromForm(form, guide) {
   const data = new FormData(form);
-  return { status: String(data.get("status")), checks: data.getAll("checks").map(Number), notes: String(data.get("notes") ?? ""), reminder: String(data.get("reminder") ?? "") };
+  return { status: String(data.get("status")), checks: data.getAll("checks").map(Number), criteria: data.getAll("criteria").map(Number), notes: String(data.get("notes") ?? ""), reminder: String(data.get("reminder") ?? "") };
+}
+function progressContent(guide, entry, draft = false) {
+  const progress = preparationProgress(guide, entry);
+  return [node("strong", {}, `${progress.complete} de ${progress.total} puntos revisados · ${progress.remaining} pendientes`),
+    node("progress", { class: "progress-track", value: progress.complete, max: progress.total || 1, "aria-label": "Mi preparación personal" }),
+    node("p", {}, `${progress.requirements.complete}/${progress.requirements.total} requisitos revisados · ${progress.documents.complete}/${progress.documents.total} documentos preparados${draft ? " · Cambios sin guardar" : ""}`),
+    node("p", {}, progress.next ? `Siguiente: ${progress.next}` : "Lista revisada. Confirma plazos, formulario y documentación completa en la sede oficial. Esto no acredita elegibilidad ni presenta la solicitud.")];
 }
 function planEditor(guide, entry) {
   const section = node("section", { class: "plan-editor" }, node("h3", {}, "Tu plan para esta ayuda"), node("p", {}, "Un espacio de preparación personal. El estado que elijas no presenta ni consulta ningún trámite oficial. Pulsa «Guardar cambios» cuando termines de editar."));
   const form = node("form", { class: "plan-form" });
+  const progress = node("div", { class: "preparation-summary", "aria-live": "polite" }, ...progressContent(guide, entry));
+  form.append(progress);
   const status = node("select", { name: "status", id: "entry-status", "aria-label": "Mi progreso" }, ...Object.entries(STATUSES).map(([value, label]) => option(value, label))); status.value = entry.status;
   form.append(node("label", { for: "entry-status" }, "Mi progreso", status));
+  const criteria = node("fieldset", { class: "document-checklist" }, node("legend", {}, "Requisitos que he revisado"), node("p", { class: "notes-help" }, "Marca lo que has comprobado en la fuente oficial. Las marcas son tuyas: Ayudario no verifica tu derecho."));
+  for (const [index, text] of guide.requirements.entries()) {
+    const input = node("input", { type: "checkbox", name: "criteria", value: index }); input.checked = entry.criteria.includes(index);
+    criteria.append(node("label", {}, input, node("span", {}, text)));
+  }
+  form.append(criteria);
   const checks = node("fieldset", { class: "document-checklist" }, node("legend", {}, "Documentos por preparar"));
   for (const [index, text] of guide.documents.entries()) {
     const input = node("input", { type: "checkbox", name: "checks", value: index }); input.checked = entry.checks.includes(index);
     checks.append(node("label", {}, input, node("span", {}, text)));
   }
   form.append(checks);
+  form.addEventListener("change", () => { progress.replaceChildren(...progressContent(guide, entryFromForm(form, guide), true)); });
   const notes = node("textarea", { name: "notes", id: "entry-notes", maxlength: 2000, rows: 4, "aria-describedby": "notes-help" }); notes.value = entry.notes;
   form.append(node("label", { for: "entry-notes" }, "Mis notas", notes), node("p", { id: "notes-help", class: "notes-help" }, "No hace falta incluir datos personales. Evita nombres, DNI, cuentas bancarias, contraseñas o información sensible. Máximo 2.000 caracteres."));
   const reminder = node("input", { type: "date", name: "reminder", id: "entry-reminder" }); reminder.value = entry.reminder;
@@ -215,6 +236,7 @@ function planEditor(guide, entry) {
       const value = entryFromForm(form, guide); const next = validatePlan(plan, GUIDES); next.entries[guide.id] = value;
       const valid = validatePlan(next, GUIDES); const text = calendarText(guide, valid.entries[guide.id]);
       commit(valid); downloadText(text, `${guide.id}-recordatorio.ics`, "text/calendar;charset=utf-8");
+      progress.replaceChildren(...progressContent(guide, valid.entries[guide.id]));
       message.textContent = "Cambios guardados y recordatorio descargado. Impórtalo en tu calendario; no es una fecha límite oficial."; message.hidden = false;
     } catch { error.textContent = "Revisa los campos y añade una fecha válida antes de descargar el recordatorio."; error.hidden = false; }
   }, "button button-outline");
@@ -227,6 +249,7 @@ function planEditor(guide, entry) {
     event.preventDefault(); error.hidden = true; message.hidden = true;
     try {
       const next = validatePlan(plan, GUIDES); next.entries[guide.id] = entryFromForm(form, guide); commit(next);
+      progress.replaceChildren(...progressContent(guide, plan.entries[guide.id]));
       message.textContent = persistent ? "Cambios guardados en este navegador." : "Cambios guardados en esta pestaña. Puedes descargar una copia para conservarlos.";
       message.hidden = false;
     } catch { error.textContent = "No se pudieron guardar los cambios. Revisa la fecha y los campos del plan."; error.hidden = false; }
@@ -290,7 +313,7 @@ async function loadFeed() {
     $("#feed-freshness").textContent = fetched === null ? "Todavía no hay una descarga pública verificada." : `${stale ? "Datos con más de 48 horas · " : "Última descarga correcta · "}${new Intl.DateTimeFormat("es-ES", { dateStyle: "medium", timeStyle: "short" }).format(new Date(fetched))}`;
     const messages = [];
     if (feed.warning) messages.push(feed.warning);
-    if (fetched === null) messages.push("Aún no hay anuncios disponibles aquí. Las ocho guías de orientación siguen disponibles arriba.");
+    if (fetched === null) messages.push(`Aún no hay anuncios disponibles aquí. Las ${GUIDES.length} guías de orientación siguen disponibles arriba.`);
     else if (!feed.items.length) messages.push("La última descarga no contiene anuncios en su ventana de consulta. Esto no significa que no existan otras ayudas.");
     if (stale) messages.push("El catálogo puede haber cambiado. Consulta la BDNS para confirmar la información más reciente.");
     $("#feed-message").replaceChildren(...messages.map((message) => node("p", {}, message)));
@@ -314,6 +337,7 @@ $("#reset-filters").addEventListener("click", () => { search = ""; category = "T
 $("#dismiss-notice").addEventListener("click", () => { $("#notice").hidden = true; });
 for (const close of document.querySelectorAll("[data-close]")) close.addEventListener("click", () => document.getElementById(close.dataset.close).close());
 $("#guide-dialog").addEventListener("close", () => { openGuideId = null; });
+$("#guide-save-action").addEventListener("click", () => { if (openGuideId && !plan.entries[openGuideId]) toggleSave(openGuideId); });
 $("#confirm-cancel").addEventListener("click", () => $("#confirm-dialog").close());
 $("#confirm-dialog").addEventListener("close", () => { confirmation = null; });
 $("#confirm-accept").addEventListener("click", () => {
@@ -337,7 +361,7 @@ $("#persistence-toggle").addEventListener("change", (event) => {
     if (persistent) toast("Guardado local activado. Usa este dispositivo con cuidado si lo compartes.");
   } else {
     persistent = false;
-    try { localStorage.removeItem(STORAGE_KEY); toast("Guardado local desactivado. Tu plan continúa en esta pestaña."); }
+    try { clearStoredPlan(localStorage); storageBaseline = null; toast("Guardado local desactivado. Tu plan continúa en esta pestaña."); }
     catch { notice("El navegador no ha permitido borrar la copia guardada. No guardaremos nuevos cambios; una copia anterior podría seguir disponible en este dispositivo. Tu plan continúa en esta pestaña."); }
   }
   updateStorageStatus();
@@ -358,7 +382,7 @@ $("#backup-file").addEventListener("change", async (event) => {
 $("#clear-plan").addEventListener("click", () => {
   confirmAction("¿Borrar todo tu plan y tu perfil?", "Se borrarán las guías guardadas, las notas, los recordatorios y las respuestas del perfil de esta pestaña y se intentará eliminar la copia de este navegador. Una copia JSON que hayas descargado no se borra.", "Borrar todo", () => {
     plan = emptyPlan(); persistent = false;
-    try { localStorage.removeItem(STORAGE_KEY); }
+    try { clearStoredPlan(localStorage); storageBaseline = null; }
     catch { notice("El plan se ha vaciado en esta pestaña, pero el navegador no ha permitido borrar la copia local. Una copia anterior podría reaparecer al volver a abrir Ayudario."); }
     render(); toast("Plan y perfil vaciados en esta pestaña.");
   });

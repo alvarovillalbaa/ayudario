@@ -26,3 +26,27 @@ The [official OpenAPI](https://www.infosubvenciones.es/bdnstrans/estaticos/doc/s
 Use authored T2 fixtures for matcher/import/catalogue-boundary checks. Browser scenarios cover actual desktop/narrow profile discovery, save/checklist/reload, backup/import/clear and unavailable catalogue/storage recovery. A separate bounded official public GET establishes source connectivity; fixtures cannot stand in for it. Keep exact checked source and outputs, then verify personal GitHub and actual Vercel delivery separately. Storage Guard prohibits local installation, builds, servers and browser execution; use owned free Ubuntu CI.
 
 The [first application packet](results/2026/11-07/application-checks.md) closes requirements 1–4 on its exact source with authored profiles and loopback Chromium, including touch emulation. The separate real refresh and anonymous hosted observation close the first-release public-data/delivery boundary in requirements 5–6. These sources and limits remain distinct; future programme changes, scheduled-service availability and actual government decisions are not asserted by this release.
+
+## Preparation iteration — GEN-3659
+
+The [current portfolio request](https://app.notion.com/p/418a1ee8bd0680c99343ea23eb42d0dd)
+adds more guides, application steps/documents, a top-right modal add action and
+per-aid requirement readiness. Sixteen maintained guides now expose requirements,
+documents, steps, source and review date. The modal toolbar keeps Add at the top
+right while scrolling; a saved guide shows independent requirement/document
+checkboxes, counts, a progress bar and the next unchecked item. Cards summarize
+saved preparation. No status or eligibility is inferred from complete checklists.
+
+Form changes update a draft count and require Save changes to update the plan.
+Persistence remains opt-in. Format 2 adds `criteria` indices alongside unchanged
+document `checks`. Valid format-1 JSON/device plans normalize to format 2 with
+all new criteria unchecked. The original v1 device value is kept; a separate v2
+key receives later saves. Current malformed/newer data does not fall back to an
+older valid value. Writes reject a changed observed current value and check exact
+readback; this is not atomic cross-tab locking. Explicit disable/clear removes
+both local versions. Document/criterion index meaning must remain stable or get
+a versioned migration; changing a label must not silently change what was checked.
+
+The [iteration receipt](results/2026/11-14/preparation.md) records source research,
+24 focused checks and unverified browser/publication boundaries. No scheduled
+BDNS refresh, CI configuration or backend was changed.
