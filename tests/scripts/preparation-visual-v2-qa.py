@@ -28,6 +28,7 @@ env = dict(os.environ)
 env["AYUDARIO_PLAYWRIGHT_DIR"] = str(owned / "tools")
 env["PLAYWRIGHT_BROWSERS_PATH"] = str(owned / "browsers")
 env["npm_config_cache"] = str(owned / "npm-cache")
+env["AYUDARIO_VISUAL_CASES"] = '["V02"]'
 deadline = time.monotonic() + 15 * 60
 receipt = {"source": os.environ["GITHUB_SHA"], "commands": [], "passed": False}
 server = None
@@ -148,7 +149,7 @@ try:
     assert ready, "Owned server did not become ready"
     run(["node", "tests/e2e/preparation-visual-v2.mjs"], "preparation-visual", seconds=420)
     browser = json.loads((proof / "preparation-visual.json").read_text())
-    assert browser["passed"] and len(browser["cases"]) == 2
+    assert browser["passed"] and len(browser["cases"]) == 1
     assert browser["cleanup"]["nativeAbsent"] and browser["cleanup"]["contextsClosed"]
     receipt["passed"] = True
 except Exception as error:

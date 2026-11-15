@@ -4,7 +4,7 @@ import { gzipSync } from 'node:zlib';
 import path from 'node:path';
 const root = process.env.AYUDARIO_PROOF_DIR;
 if (!root) throw new Error('Owned proof directory required');
-const allowed = new Set(['owner.json','runner.json','source-before.json','source-after.json','browser-package-lock.json','preparation-browser.json','preparation-visual.json','visual-desktop-immediate.png','visual-desktop-stable.png','visual-narrow-initial.png','visual-narrow-scrolled.png','failure-V01.png','failure-V02.png','server.stdout.txt','server.stderr.txt','desktop-sticky.png','desktop-complete.png','narrow-390.png','narrow-320.png','p02-current-plan.json','p05-recovery.json','p06-write-denial.json','failure-P01.png','failure-P02.png','failure-P03a.png','failure-P03b.png','failure-P04.png','failure-P05.png','failure-P06.png']);
+const allowed = new Set(['owner.json','runner.json','source-before.json','source-after.json','browser-package-lock.json','preparation-browser.json','preparation-visual.json','visual-desktop-immediate.png','visual-desktop-stable.png','visual-narrow-initial.png','visual-narrow-scrolled.png','visual-narrow-saved.png','failure-V01.png','failure-V02.png','server.stdout.txt','server.stderr.txt','desktop-sticky.png','desktop-complete.png','narrow-390.png','narrow-320.png','p02-current-plan.json','p05-recovery.json','p06-write-denial.json','failure-P01.png','failure-P02.png','failure-P03a.png','failure-P03b.png','failure-P04.png','failure-P05.png','failure-P06.png']);
 let names;
 try { names = await readdir(root); } catch (error) { if (error.code !== 'ENOENT') throw error; names = []; }
 let total = 0;

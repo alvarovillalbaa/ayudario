@@ -1,0 +1,9 @@
+{
+  "runId": 43681370652,
+  "source": "77bac4529e99dc313b92e4b495973d7219d786c9",
+  "V01": "Passed after stable viewport/native paint; immediate original image has one color, stable original image has 1509 colors. No application manipulation or product change.",
+  "V02": "Failed: layout innerWidth/scrollWidth378, visual/client width320, modal x41,width296,y88.5,height820 outside screenshot320x844.",
+  "correction": "Append one max-width360 media rule: constrain/clip decorative illustration and wrap/center the header/navigation. No JavaScript, catalogue, plan persistence or >=361px style rule changed.",
+  "nextRun": "Only changed V02, extended to add/save/reopen independent criterion/document marks and enforce exact viewport containment. V01 and the other functional receipts retained without rerunning.",
+  "localState": "Mac ENOSPC prevented safe local patch persistence. Immutable Git Data objects on the owned QA branch retain source and original proof; local source/index/refs remain untouched."
+}

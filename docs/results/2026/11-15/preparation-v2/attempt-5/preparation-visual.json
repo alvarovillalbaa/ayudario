@@ -1,0 +1,238 @@
+{
+  "tier": "T2",
+  "source": "77bac4529e99dc313b92e4b495973d7219d786c9",
+  "node": "v24.22.2",
+  "cases": [
+    {
+      "id": "V01",
+      "description": "Stable desktop modal paint after actual sequential guide opening and native scrolling",
+      "status": "passed",
+      "guides": [
+        "imv",
+        "complemento-infancia",
+        "paro-contributivo",
+        "subsidio-mayores-52",
+        "beca-general",
+        "bono-alquiler-joven",
+        "bono-social",
+        "pnc-incapacidad",
+        "pnc-jubilacion"
+      ],
+      "immediate": {
+        "name": "visual-desktop-immediate.png",
+        "bytes": 5293,
+        "sha256": "3281850819f874d02b81653c4c4ea575088af070a6469ae718475c6010e511d8",
+        "colors": 1
+      },
+      "geometry": {
+        "dialog": {
+          "x": 245,
+          "y": 22,
+          "width": 790,
+          "height": 856
+        },
+        "viewport": {
+          "innerWidth": 1280,
+          "innerHeight": 900,
+          "clientWidth": 1280,
+          "scrollWidth": 1280,
+          "visual": {
+            "width": 1280,
+            "height": 900,
+            "offsetLeft": 0,
+            "offsetTop": 0,
+            "scale": 1
+          }
+        },
+        "scroll": {
+          "pageX": 0,
+          "pageY": 3518,
+          "dialog": 281
+        },
+        "open": true
+      },
+      "stable": {
+        "name": "visual-desktop-stable.png",
+        "bytes": 159805,
+        "sha256": "57719ed3116c7a888e20d13d82f7ad5befb8e468d6335c9cc571cd6b0e81b1c6",
+        "colors": 1509
+      }
+    },
+    {
+      "id": "V02",
+      "description": "320px modal fits actual screenshot viewport before and after native scroll",
+      "status": "failed",
+      "initial": {
+        "dialog": {
+          "x": 41,
+          "y": 88.5,
+          "width": 296,
+          "height": 820
+        },
+        "viewport": {
+          "innerWidth": 378,
+          "innerHeight": 997,
+          "clientWidth": 320,
+          "scrollWidth": 378,
+          "visual": {
+            "width": 320,
+            "height": 844,
+            "offsetLeft": 0,
+            "offsetTop": 0,
+            "scale": 1
+          }
+        },
+        "scroll": {
+          "pageX": 0,
+          "pageY": 5072,
+          "dialog": 0
+        },
+        "open": true
+      },
+      "initialImage": {
+        "name": "visual-narrow-initial.png",
+        "bytes": 59380,
+        "sha256": "b7c4424d136e2b9eb92110de31420c4c4f527142e80e2a0e905fc51bd864071b",
+        "colors": 973
+      },
+      "scrolled": {
+        "dialog": {
+          "x": 41,
+          "y": 88.5,
+          "width": 296,
+          "height": 820
+        },
+        "viewport": {
+          "innerWidth": 378,
+          "innerHeight": 997,
+          "clientWidth": 320,
+          "scrollWidth": 378,
+          "visual": {
+            "width": 320,
+            "height": 844,
+            "offsetLeft": 0,
+            "offsetTop": 0,
+            "scale": 1
+          }
+        },
+        "scroll": {
+          "pageX": 0,
+          "pageY": 5072,
+          "dialog": 799
+        },
+        "open": true
+      },
+      "scrolledImage": {
+        "name": "visual-narrow-scrolled.png",
+        "bytes": 62484,
+        "sha256": "952f67a37e267c8a42ebf90f54621ad1fe78c368248607a1de96543aee9158a1",
+        "colors": 882
+      },
+      "error": "AssertionError [ERR_ASSERTION]: Modal outside actual 320px capture viewport: {\"dialog\":{\"x\":41,\"y\":88.5,\"width\":296,\"height\":820},\"viewport\":{\"innerWidth\":378,\"innerHeight\":997,\"clientWidth\":320,\"scrollWidth\":378,\"visual\":{\"width\":320,\"height\":844,\"offsetLeft\":0,\"offsetTop\":0,\"scale\":1}},\"scroll\":{\"pageX\":0,\"pageY\":5072,\"dialog\":0},\"open\":true}\n    at file:///home/runner/work/ayudario/ayudario/tests/e2e/preparation-visual-v2.mjs:162:41\n    at async run (file:///home/runner/work/ayudario/ayudario/tests/e2e/preparation-visual-v2.mjs:92:9)\n    at async file:///home/runner/work/ayudario/ayudario/tests/e2e/preparation-visual-v2.mjs:153:3",
+      "boundary": {
+        "requests": [
+          {
+            "method": "GET",
+            "url": "http://127.0.0.1:4173/",
+            "legacy": false
+          },
+          {
+            "method": "GET",
+            "url": "http://127.0.0.1:4173/styles.css",
+            "legacy": false
+          },
+          {
+            "method": "GET",
+            "url": "http://127.0.0.1:4173/app.js",
+            "legacy": false
+          },
+          {
+            "method": "GET",
+            "url": "http://127.0.0.1:4173/lib/catalog.js",
+            "legacy": false
+          },
+          {
+            "method": "GET",
+            "url": "http://127.0.0.1:4173/lib/matcher.js",
+            "legacy": false
+          },
+          {
+            "method": "GET",
+            "url": "http://127.0.0.1:4173/lib/plan.js",
+            "legacy": false
+          },
+          {
+            "method": "GET",
+            "url": "http://127.0.0.1:4173/data/calls.json",
+            "legacy": false
+          }
+        ],
+        "errors": [],
+        "unexpected": []
+      },
+      "visibleState": {
+        "title": "Ayudario — Un poco más cerca",
+        "text": "Saltar al contenido\nayudario.\nExplorar ayudas\nMi plan 0\n\n✳ TU PRÓXIMO PASO, MÁS CLARO\n\nLas ayudas que buscas,\nun poco más cerca.\n\nEntre requisitos y papeles, a veces cuesta saber por dónde empezar. Explora las opciones, entiende lo que falta y prepara tu propio camino.\n\nEncontrar mi punto de partida\n↗\nVer todas las guías\n↓\n\nUn perfil opcional. Sin nombres, documentos ni datos bancarios.\n\nUN PLAN QUE ES TUYO\nPoco a poco,\npaso a paso.\n✓\nExplorar mis opciones\n✓\nEntender los requisitos\nPreparar lo que necesito\nA tu manera\n↗\n✦ Aquí empieza algo.\n\n01 Fuentes oficiales, siempre\n\n02 Requisitos a la vista\n\n03 Tu información se queda contigo\n\nEXPLORA CON CALMA\n\nUn buen punto de partida.\n\nGuías para orientarte.La decisión y los requisitos, en su fuente oficial.\n\nBuscar en las guías\n☷\nMi perfil opcional\nTodas\nIngresos\nFamilia\nEmpleo\nEstudios\nVivienda\nEnergía\nCuidados\n\n16 guías para explorar\n\nIngresos\n+\nIngreso Mínimo Vital\n\nApoyo para personas y hogares con recursos insuficientes. Tener trabajo no lo descarta por sí solo.\n\nPrestación estatal; confirma el trámite y el organismo competente para tu situación.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: ingresos.\n\nConocer la ayuda ↗\nFuente oficial\nFamilia\n+\nComplemento de Ayuda para la Infancia\n\nApoyo a unidades de convivencia con menores. Puede reconocerse sin cobrar el Ingreso Mínimo Vital.\n\nComplemento vinculado al sistema del IMV, con sus propios límites económicos.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: hijos a cargo, ingresos.\n\nConocer la ayuda ↗\nFuente oficial\nEmpleo\n+\nPrestación contributiva por desempleo\n\nProtección por desempleo para quienes reúnen las condiciones legales y de cotización.\n\nPrestación del sistema estatal de protección por desempleo.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: situación laboral.\n\nConocer la ayuda ↗\nFuente oficial\nEmpleo\n+\nSubsidio para mayores de 52 años\n\nSubsidio sujeto a una vía de acceso, rentas propias y requisitos de cotización y jubilación.\n\nProtección estatal por desempleo; la edad por sí sola no basta.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: edad, situación laboral, ingresos.\n\nConocer la ayuda ↗\nFuente oficial\nEstudios\n+\nBeca general para estudios postobligatorios\n\nOrientación sobre becas generales de FP, Bachillerato y estudios superiores; las condiciones dependen de los estudios.\n\nConvocatoria general de estudios postobligatorios; confirma el tipo de estudios y el órgano gestor.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: estudios, ingresos.\n\nConocer la ayuda ↗\nFuente oficial\nVivienda\n+\nBono Alquiler Joven\n\nMarco de ayuda al alquiler de vivienda o habitación habitual para personas jóvenes con recursos limitados.\n\nGestionado mediante convocatorias territoriales. Este marco estatal excluye País Vasco y Navarra.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: edad, alquiler, ingresos.\n\nConocer la ayuda ↗\nFuente oficial\nEnergía\n+\nBono social eléctrico\n\nDescuento regulado en la factura eléctrica para quienes acreditan las condiciones de vulnerabilidad.\n\nSuministro de la vivienda habitual con tarifa regulada PVPC y comercializadora de referencia.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: ingresos, hijos a cargo, discapacidad.\n\nConocer la ayuda ↗\nFuente oficial\nCuidados\n+\nPensión no contributiva de incapacidad\n\nProtección sujeta a discapacidad reconocida, residencia y recursos insuficientes.\n\nPensión de la Seguridad Social; consulta el órgano competente de tu territorio.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: edad, discapacidad, ingresos.\n\nConocer la ayuda ↗\nFuente oficial\nIngresos\n+\nPensión no contributiva de jubilación\n\nProtección para personas de 65 años o más con recursos insuficientes.\n\nPensión no contributiva; gestión territorial.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: edad, ingresos.\n\nConocer la ayuda ↗\nFuente oficial\nEmpleo\n+\nSubsidio por cotizaciones insuficientes\n\nOrientación si no alcanzas la cotización para la prestación contributiva.\n\nSubsidio estatal; revisa el hecho causante y las reglas aplicables.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: situación laboral.\n\nConocer la ayuda ↗\nFuente oficial\nEmpleo\n+\nSubsidio tras agotar la prestación contributiva\n\nUn posible apoyo al terminar la prestación, sujeto a condiciones adicionales.\n\nProtección estatal por desempleo.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: situación laboral.\n\nConocer la ayuda ↗\nFuente oficial\nEmpleo\n+\nPago único para emprender\n\nCapitalizar prestación contributiva pendiente para una iniciativa admitida de autoempleo.\n\nAnticipo de una prestación reconocida, no una subvención adicional.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: situación laboral.\n\nConocer la ayuda ↗\nFuente oficial\nVivienda\n+\nComplemento de alquiler para titulares de PNC\n\nComplemento para titulares de pensión no contributiva que viven de alquiler.\n\nSolicitud ante el órgano gestor de tu PNC.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: alquiler.\n\nConocer la ayuda ↗\nFuente oficial\nCuidados\n+\nApoyos a la autonomía y la dependencia\n\nOrientación para solicitar valoración y acceder a servicios o prestaciones del SAAD.\n\nEl apoyo concreto depende del reconocimiento y del Programa Individual de Atención.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: discapacidad.\n\nConocer la ayuda ↗\nFuente oficial\nFamilia\n+\nDeducción por maternidad\n\nBeneficio fiscal por descendientes en los supuestos previstos por la normativa.\n\nDeducción de IRPF; posible abono anticipado si se cumplen los requisitos.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: hijos a cargo.\n\nConocer la ayuda ↗\nFuente oficial\nFamilia\n+\nDeducción por familia numerosa\n\nDeducción fiscal vinculada a familia numerosa y otros requisitos de la persona contribuyente.\n\nIRPF; consulta también las reglas de abono anticipado y cesión.\n\nPara explorar\n\nAñade un perfil opcional para ver coincidencias y lo que falta por comprobar.\n\nSin responder: hijos a cargo.\n\nConocer la ayuda ↗\nFuente oficial\n\nLas coincidencias indican temas que pueden interesarte. No confirman tu derecho a una ayuda, su importe ni que una convocatoria esté abierta.\n\nTu plan, en tu dispositivo.\n\nPor defecto, solo vive en esta pestaña. Puedes elegir guardarlo en este navegador o descargar una copia. En un dispositivo compartido, mejor usa una copia y borra al terminar.\n\nGuardar mi perfil y mi plan en este navegador\n\nGuardado local desactivado. El plan de esta pestaña se perderá al cerrarla; puedes descargar una copia JSON.\n\nDESDE LA FUENTE\n\nTambién se está publicando.\nBDNS · Catálogo público\n\nUna ventana a anuncios recientes de la Base de Datos Nacional de Subvenciones. No están personalizados: publicación reciente no significa plazo abierto ni que puedas solicitarlos.\n\nÚltima descarga correcta · 14 nov 2026, 13:47\n\nVolver a consultar\n\nSelección limitada a 50 convocatorias registradas en los últimos 30 días para personas físicas sin actividad económica. No es un catálogo completo: una convocatoria reciente no implica plazo abierto ni elegibilidad personal. La reutilización de los datos del Sistema Nacional de Publicidad de Subvenciones y Ayudas Públicas está sujeta a una serie de restricciones y consideraciones legales. Consulte el aviso legal en https://www.infosubvenciones.es/bdnstrans/GE/es/avisolegal.Además, el usuario debe ser consciente que la información presentada es de naturaleza dinámica, y que los datos pueden ser sometidos a correcciones, inserciones, modificaciones y eliminaciones en momentos posteriores a su extracción. Accesos al API del sistema Nacional de Publicidad de Subvenciones y Ayudas Públicas. La Administración Presupuestaria, para salvaguardar la protección del acceso libre e irrestricto de los ciudadanos a este Portal y a su información podrá adoptar medidas restrictivas de acceso al API ante situaciones de manifiesto abuso del servicio, riesgos de seguridad, o uso fraudulento de la información descargada, de acuerdo con las buenas prácticas de gestión de datos abiertos (https://datos.gob.es/es/blog/limitaciones-la-consulta-de-una-api) establecidas por el Ministerio para la Transformación Digital y de la Función Pública.\n\nConvocatoria pública de ayudas para la ejecución del programa Juventud Asturiana Cooperante 2027\n\nAUTONOMICA · PRINCIPADO DE ASTURIAS · CONSEJERÍA DE DERECHOS SOCIALES Y BIENESTAR\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nResolucion Dirección SCE concesión/denegación becas/ayudas alumn. Desemp. Cursos Ocupados prog. 2025. Fichero 13\n\nAUTONOMICA · CANARIAS · SERVICIO CANARIO DE EMPLEO\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nBASES PARTICIPACION DE LA 68 ª EDICION DEL CONCURSO DE PIANO PREMIO JAEN 2027\n\nLOCAL · DIPUTACIÓN PROV. DE JAÉN · DIPUTACIÓN PROVINCIAL DE JAÉN\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nAYUDA EPES_ ANTONIA OCHANDO ESCAMEZ_DÍA RETAIL ESPAÑA SA\n\nLOCAL · DIPUTACIÓN PROV. DE JAÉN · DIPUTACIÓN PROVINCIAL DE JAÉN\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nAYUDA EPES LUCÍA DÍAZ VARGAS_LUCIANO VILCHEZ MARTÍNEZ\n\nLOCAL · DIPUTACIÓN PROV. DE JAÉN · DIPUTACIÓN PROVINCIAL DE JAÉN\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nConvocatòria ESAL per al finançament acció assistencial, 2027\n\nLOCAL · DIPUTACIÓN PROV. DE LLEIDA · DIPUTACIÓN PROVINCIAL DE LLEIDA\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nOrden, de fecha de firma electrónica, de la Consejera de Educación, Ciencia y Universidades, por la que se adjudican ayudas a personas becarias auxiliares de conversación con destino en centros educativos de la Comunidad Autónoma de Aragón\n\nAUTONOMICA · ARAGÓN · DIRECCIÓN GENERAL DE POLÍTICA EDUCATIVA, ORDENACIÓN ACADÉMICA Y EDUCACIÓN PERMANENTE\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nPrograma de ayudas “Bono-Consumo 2026 Campaña Navidad” destinadas a incentivar el consumo de proximidad en el comercio y servicios de Formentera del Segura\n\nLOCAL · FORMENTERA DEL SEGURA · AYUNTAMIENTO DE FORMENTERA DEL SEGURA\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nResolución nº 2026001038 de 13/11/2026 de la Consejería de Cultura, Patrimonio Cultural y Del Mayor, por la que se convoca el CONCURSO DE DIORAMAS DE PLAYMOBIL Y LEGOS 2026.\n\nAUTONOMICA · CIUDAD AUTÓNOMA DE MELILLA · CONSEJERÍA DE CULTURA, PATRIMONIO CULTURAL Y DEL MAYOR\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nAYUDAS TRANSP. PÚBLICO TRABAJ. DESEMP.- ANTICIPADA 2027\n\nAUTONOMICA · COMUNIDAD DE MADRID · CONSEJERÍA ECONOMÍA, HACIENDA Y EMPLEO\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nResolución nº 2026001036 de 13/11/2026 de la Consejería de Cultura, Patrimonio Cultural y Del Mayor, por la que se convoca el CONCURSO DE DECORACIÓN NAVIDEÑA DE FACHADAS 2026.\n\nAUTONOMICA · CIUDAD AUTÓNOMA DE MELILLA · CONSEJERÍA DE CULTURA, PATRIMONIO CULTURAL Y DEL MAYOR\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nCONCESIÓN DIRECTA AYUDAS CONCILIACIÓN TRABAJ. DESEMPLEADOS-ANTICIPADA 2027\n\nAUTONOMICA · COMUNIDAD DE MADRID · CONSEJERÍA ECONOMÍA, HACIENDA Y EMPLEO\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nResolución nº 2026001033 de 13/11/2026 de la Consejería de Cultura, Patrimonio Cultural y Del Mayor, por la que se convoca el CONCURSO DE ESCAPARATES NAVIDEÑOS 2026.\n\nAUTONOMICA · CIUDAD AUTÓNOMA DE MELILLA · CONSEJERÍA DE CULTURA, PATRIMONIO CULTURAL Y DEL MAYOR\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nResolución nº 2026001035 de 13/11/2026 de la Consejería de Cultura, Patrimonio Cultural y Del Mayor, por la que se convoca el CONCURSO DE BELENES 2026.\n\nAUTONOMICA · CIUDAD AUTÓNOMA DE MELILLA · CONSEJERÍA DE CULTURA, PATRIMONIO CULTURAL Y DEL MAYOR\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nSubvención Cheque Bebé “Castrillonízate\" 2026: aprobación convocatoria y bases reguladoras\n\nLOCAL · CASTRILLÓN · AYUNTAMIENTO DE CASTRILLÓN\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nResolución nº 2026001034 de 13/11/2026 de la Consejería de Cultura, Patrimonio Cultural y Del Mayor, por la que se convoca el CONCURSO DE VILLANCICOS 2026.\n\nAUTONOMICA · CIUDAD AUTÓNOMA DE MELILLA · CONSEJERÍA DE CULTURA, PATRIMONIO CULTURAL Y DEL MAYOR\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nAYUDA MAXIMA NECESIDAD L.N.G.\n\nLOCAL · ORTUELLA · AYUNTAMIENTO DE ORTUELLA\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nSubvención nominativa a CAROLINA GARCIA RODRIGUEZ en representación del menor ERASMO JAVIER DE LA RICA GARCIA para el desarrollo de proyecto deportivo de Hípica durante el ejercicio 2026\n\nLOCAL · ADEJE · AYUNTAMIENTO DE ADEJE\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nConvocatoria 2026 de ayudas económicas a vecinas y vecinos de Portugalete que constituyan una familia numerosa\n\nLOCAL · PORTUGALETE · AYUNTAMIENTO DE PORTUGALETE\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nACUERDO DE LA JUNTA DE GOBIERNO LOCAL DEL AYUNTAMIENTO DE DELTEBRE, DE FECHA 12 DE NOVIEMBRE DE 2026, POR EL QUE SE APRUEBA LA CONVOCATORIA DEL 29.º CONCURSO DE DECORACIÓN NAVIDEÑA\n\nLOCAL · DELTEBRE · AYUNTAMIENTO DE DELTEBRE\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nConvocatoria del XL Concurso Literario de Lasarte-Oria 2026\n\nLOCAL · LASARTE-ORIA · AYUNTAMIENTO DE LASARTE-ORIA\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nConvocatoria de ayudas para el alquiler de la vivienda habitual 2026\n\nLOCAL · SANT JOAN DE LABRITJA · AJUNTAMENT DE SANT JOAN DE LABRITJA\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nConvocatoria 2026 de ayudas económicas a vecinas y vecinos del municipio de Portugalete que cuenten con escasos recursos\n\nLOCAL · PORTUGALETE · AYUNTAMIENTO DE PORTUGALETE\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nCONCURSO MUNICIPAL DE POSTALES NAVIDEÑAS 2026\n\nLOCAL · ALCAUDETE · AYUNTAMIENTO DE ALCAUDETE\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nBASES REGULADORAS DE LA CONVOCATORIA DEL SISTEMA DE INCENTIVOS A LA PARTICIPACIÓN Y EXCELENCIA DEL PROYECTO “100KAIRÓS\n\nLOCAL · DIPUTACIÓN PROV. DE CÁCERES · DIPUTACIÓN PROVINCIAL DE CÁCERES\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nCONCURSO MUNICIPAL DE BELENES 2026\n\nLOCAL · ALCAUDETE · AYUNTAMIENTO DE ALCAUDETE\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nBases de los procedimientos para la selección de participantes y concesión de becas de formación del proyecto EFESO INTEGRA-2 de Almendralejo en el marco del programa de Empleo, Educación, Formación y Economía del Fondo Social Europeo (FSE+`)\n\nLOCAL · ALMENDRALEJO · AYUNTAMIENTO DE ALMENDRALEJO\n\nRegistro en la fuente: 13 de noviembre de 2026\n\nVer publicación oficial ↗\nCON",
+        "dialog": {
+          "open": true,
+          "scrollTop": 799,
+          "scrollHeight": 1618,
+          "clientHeight": 818
+        }
+      }
+    }
+  ],
+  "boundaries": [
+    {
+      "requests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": false
+        }
+      ],
+      "errors": [],
+      "unexpected": []
+    }
+  ],
+  "passed": false,
+  "browser": "158.0.8127.18",
+  "cleanup": {
+    "contextsClosed": true,
+    "nativePid": 2678,
+    "nativeExitCode": 0,
+    "nativeSignal": null,
+    "failures": [],
+    "nativeAbsent": true
+  }
+}

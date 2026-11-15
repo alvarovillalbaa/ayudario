@@ -22,6 +22,7 @@ const nativeProcess = server.process();
 const browser = await chromium.connect(server.wsEndpoint());
 report.browser = browser.version();
 const contexts = [], states = [];
+const selectedCases = process.env.AYUDARIO_VISUAL_CASES ? new Set(JSON.parse(process.env.AYUDARIO_VISUAL_CASES)) : new Set(['V01','V02']);
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
 async function until(check, message) {
   const deadline = Date.now() + 8000;
@@ -88,6 +89,7 @@ function boundary(state) {
   assert.ok(state.requests.length >= 5);
 }
 async function run(id, description, action) {
+  if (!selectedCases.has(id)) return;
   const item = { id, description, status: 'running' }; report.cases.push(item);
   try { await action(item); item.status = 'passed'; }
   catch (error) {
@@ -162,9 +164,17 @@ try {
       const rect=geometry.dialog;assert.ok(rect.x>=-1 && rect.y>=-1 && rect.x+rect.width<=viewport.width+1 && rect.y+rect.height<=viewport.height+1,'Modal outside actual 320px capture viewport: '+JSON.stringify(geometry));
     }
     assert.ok(item.initialImage.colors>64&&item.scrolledImage.colors>64,'Narrow paint is blank');
+    await saved(page).tap();
+    await page.locator('input[name=criteria]').first().check(); await page.locator('input[name=checks]').first().check();
+    await page.getByRole('button',{name:'Guardar cambios'}).tap();
+    assert.equal(await page.locator('.preparation-summary progress').getAttribute('value'),'2');
+    await stablePaint(page); item.saved=await measure(page);item.savedImage=await capture(page,'visual-narrow-saved.png');
+    const savedRect=item.saved.dialog;assert.ok(savedRect.x>=-1&&savedRect.y>=-1&&savedRect.x+savedRect.width<=viewport.width+1&&savedRect.y+savedRect.height<=viewport.height+1,'Saved modal leaves actual viewport');
+    await page.getByRole('button',{name:'Cerrar guía',exact:true}).tap();assert.equal(await modal(page).isVisible(),false);
+    await openGuide(page,GUIDES[9].id);assert.equal(await page.locator('input[name=criteria]').first().isChecked(),true);assert.equal(await page.locator('input[name=checks]').first().isChecked(),true);
     await toolbar(page,'stable narrow');boundary(state);await state.context.close();
   });
-  report.passed=report.cases.length===2&&report.cases.every(item=>item.status==='passed');
+  report.passed=report.cases.length===selectedCases.size&&report.cases.every(item=>item.status==='passed');
 } finally {
   const failures = [];
   for (const context of contexts) { try { await context.close(); } catch (error) { failures.push(String(error)); } }

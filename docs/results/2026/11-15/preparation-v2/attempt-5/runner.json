@@ -1,0 +1,174 @@
+{
+  "source": "77bac4529e99dc313b92e4b495973d7219d786c9",
+  "commands": [
+    {
+      "argv": [
+        "node",
+        "--version"
+      ],
+      "label": "node-version",
+      "stdout": "01-node-version.stdout.txt",
+      "stderr": "01-node-version.stderr.txt",
+      "exit": 0,
+      "orphaned_group": false,
+      "elapsed_seconds": 0.151,
+      "stdout_sha256": "6a0cec2e157365c1a8ac6d1715733b7c3321a7c5565862a701ca71ef00359d04",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "streams_complete": true,
+      "failure": null
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/fingerprint.mjs",
+        "/home/runner/work/_temp/ayudario-preparation-proof-43681370652-1/source-before.json"
+      ],
+      "label": "source-before",
+      "stdout": "02-source-before.stdout.txt",
+      "stderr": "02-source-before.stderr.txt",
+      "exit": 0,
+      "orphaned_group": false,
+      "elapsed_seconds": 0.151,
+      "stdout_sha256": "d202a1c0298d251cebda915708e72fd75a243eec3602ce7c975db7225967558b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "streams_complete": true,
+      "failure": null
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/check.mjs"
+      ],
+      "label": "static-source",
+      "stdout": "03-static-source.stdout.txt",
+      "stderr": "03-static-source.stderr.txt",
+      "exit": 0,
+      "orphaned_group": false,
+      "elapsed_seconds": 0.751,
+      "stdout_sha256": "707323b7dbf107544b33ab26fe3b55db89edecef0bb16ebbb9c375a5d4d15aab",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "streams_complete": true,
+      "failure": null
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "label": "diff-check",
+      "stdout": "04-diff-check.stdout.txt",
+      "stderr": "04-diff-check.stderr.txt",
+      "exit": 0,
+      "orphaned_group": false,
+      "elapsed_seconds": 0.151,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "streams_complete": true,
+      "failure": null
+    },
+    {
+      "argv": [
+        "npm",
+        "install",
+        "--prefix",
+        "/home/runner/work/_temp/ayudario-preparation-43681370652-1/tools",
+        "--registry=https://registry.npmjs.org",
+        "--ignore-scripts",
+        "--omit=optional",
+        "--no-audit",
+        "--no-fund",
+        "playwright@1.65.0"
+      ],
+      "label": "browser-tools",
+      "stdout": "05-browser-tools.stdout.txt",
+      "stderr": "05-browser-tools.stderr.txt",
+      "exit": 0,
+      "orphaned_group": false,
+      "elapsed_seconds": 2.103,
+      "stdout_sha256": "65c731cd02e19c79f6f5a3e84a4dd64a49acd6c47d2ee551d7cc9da191e8c96c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "streams_complete": true,
+      "failure": null
+    },
+    {
+      "argv": [
+        "/home/runner/work/_temp/ayudario-preparation-43681370652-1/tools/node_modules/.bin/playwright",
+        "install",
+        "chromium"
+      ],
+      "label": "chromium",
+      "stdout": "06-chromium.stdout.txt",
+      "stderr": "06-chromium.stderr.txt",
+      "exit": 0,
+      "orphaned_group": false,
+      "elapsed_seconds": 9.915,
+      "stdout_sha256": "8423beb24f4d690678fd03215220502d73085b2f9df6e7d5691fdc3c94b58670",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "streams_complete": true,
+      "failure": null
+    },
+    {
+      "argv": [
+        "node",
+        "tests/e2e/preparation-visual-v2.mjs"
+      ],
+      "label": "preparation-visual",
+      "stdout": "07-preparation-visual.stdout.txt",
+      "stderr": "07-preparation-visual.stderr.txt",
+      "exit": 1,
+      "orphaned_group": false,
+      "elapsed_seconds": 7.66,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "streams_complete": true,
+      "failure": null
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/fingerprint.mjs",
+        "/home/runner/work/_temp/ayudario-preparation-proof-43681370652-1/source-after.json"
+      ],
+      "label": "source-after",
+      "stdout": "08-source-after.stdout.txt",
+      "stderr": "08-source-after.stderr.txt",
+      "exit": 0,
+      "orphaned_group": false,
+      "elapsed_seconds": 0.151,
+      "stdout_sha256": "d202a1c0298d251cebda915708e72fd75a243eec3602ce7c975db7225967558b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "streams_complete": true,
+      "failure": null
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "label": "git-status",
+      "stdout": "09-git-status.stdout.txt",
+      "stderr": "09-git-status.stderr.txt",
+      "exit": 0,
+      "orphaned_group": false,
+      "elapsed_seconds": 0.151,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "streams_complete": true,
+      "failure": null
+    }
+  ],
+  "passed": false,
+  "node": "v24.22.2",
+  "server_pid": 2654,
+  "error": "RuntimeError: preparation-visual failed; preserve its original streams",
+  "server_forced": false,
+  "server_exit": 0,
+  "server_group_absent": true,
+  "source_stable": true,
+  "git_clean": true,
+  "lingering_owned_pids": [],
+  "owned_processes_absent": true,
+  "owned_tools_removed": true
+}
