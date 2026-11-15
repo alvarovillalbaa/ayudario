@@ -1,0 +1,262 @@
+TAP version 13
+# Subtest: T2 parser preserves public source metadata and constructs official stable links
+ok 1 - T2 parser preserves public source metadata and constructs official stable links
+  ---
+  duration_ms: 3.363964
+  type: 'test'
+  ...
+# Subtest: T2 parser preserves bounded registration text without deadline coercion
+ok 2 - T2 parser preserves bounded registration text without deadline coercion
+  ---
+  duration_ms: 0.228555
+  type: 'test'
+  ...
+# Subtest: T2 public titles round-trip TAB LF and CR without changing their text
+ok 3 - T2 public titles round-trip TAB LF and CR without changing their text
+  ---
+  duration_ms: 0.173622
+  type: 'test'
+  ...
+# Subtest: T2 public titles still refuse NUL DEL and other non-whitespace controls
+ok 4 - T2 public titles still refuse NUL DEL and other non-whitespace controls
+  ---
+  duration_ms: 0.60992
+  type: 'test'
+  ...
+# Subtest: T2 a genuinely empty validated response remains a dated bounded snapshot
+ok 5 - T2 a genuinely empty validated response remains a dated bounded snapshot
+  ---
+  duration_ms: 0.253723
+  type: 'test'
+  ...
+# Subtest: T2 parser refuses malformed root and inconsistent or excessive pagination
+ok 6 - T2 parser refuses malformed root and inconsistent or excessive pagination
+  ---
+  duration_ms: 0.348837
+  type: 'test'
+  ...
+# Subtest: T2 parser refuses duplicate/nonstring IDs and missing or oversized metadata
+ok 7 - T2 parser refuses duplicate/nonstring IDs and missing or oversized metadata
+  ---
+  duration_ms: 0.414054
+  type: 'test'
+  ...
+# Subtest: T2 parser refuses invented refresh metadata and wrong 30-day windows
+ok 8 - T2 parser refuses invented refresh metadata and wrong 30-day windows
+  ---
+  duration_ms: 0.217017
+  type: 'test'
+  ...
+# Subtest: T2 fetch makes exactly one fixed anonymous recipient-1 request
+ok 9 - T2 fetch makes exactly one fixed anonymous recipient-1 request
+  ---
+  duration_ms: 24.46001
+  type: 'test'
+  ...
+# Subtest: T2 fetch refuses non-200 status, redirects and non-JSON content
+ok 10 - T2 fetch refuses non-200 status, redirects and non-JSON content
+  ---
+  duration_ms: 2.244004
+  type: 'test'
+  ...
+# Subtest: T2 fetch refuses both declared and streamed body overflow
+ok 11 - T2 fetch refuses both declared and streamed body overflow
+  ---
+  duration_ms: 2.726352
+  type: 'test'
+  ...
+# Subtest: T2 fetch refuses malformed JSON/UTF-8 and suppresses raw network errors
+ok 12 - T2 fetch refuses malformed JSON/UTF-8 and suppresses raw network errors
+  ---
+  duration_ms: 1.337287
+  type: 'test'
+  ...
+# Subtest: T2 timeout aborts the request without retry
+ok 13 - T2 timeout aborts the request without retry
+  ---
+  duration_ms: 10.357801
+  type: 'test'
+  ...
+# Subtest: T2 body consumption shares the request deadline
+ok 14 - T2 body consumption shares the request deadline
+  ---
+  duration_ms: 12.464858
+  type: 'test'
+  ...
+# Subtest: T2 refresh atomically publishes a fully validated fixture and leaves no temporary file
+ok 15 - T2 refresh atomically publishes a fully validated fixture and leaves no temporary file
+  ---
+  duration_ms: 6.352896
+  type: 'test'
+  ...
+# Subtest: T2 failed HTTP, body and payload refreshes preserve last-good bytes exactly
+ok 16 - T2 failed HTTP, body and payload refreshes preserve last-good bytes exactly
+  ---
+  duration_ms: 2.830163
+  type: 'test'
+  ...
+# Subtest: T2 failed first refresh does not invent a fresh output
+ok 17 - T2 failed first refresh does not invent a fresh output
+  ---
+  duration_ms: 0.953077
+  type: 'test'
+  ...
+# Subtest: T2 output symlink or directory is refused without changing the target
+ok 18 - T2 output symlink or directory is refused without changing the target
+  ---
+  duration_ms: 1.992024
+  type: 'test'
+  ...
+# Subtest: Unknown answers retain all guides without inventing a positive match
+ok 19 - Unknown answers retain all guides without inventing a positive match
+  ---
+  duration_ms: 1.719893
+  type: 'test'
+  ...
+# Subtest: Working adults with limited resources can still discover IMV
+ok 20 - Working adults with limited resources can still discover IMV
+  ---
+  duration_ms: 0.14571
+  type: 'test'
+  ...
+# Subtest: Young renters in excluded territories are not presented as a matching national rental scheme
+ok 21 - Young renters in excluded territories are not presented as a matching national rental scheme
+  ---
+  duration_ms: 0.153922
+  type: 'test'
+  ...
+# Subtest: A disability answer leaves recognition, income and residence checks unresolved
+ok 22 - A disability answer leaves recognition, income and residence checks unresolved
+  ---
+  duration_ms: 0.11305
+  type: 'test'
+  ...
+# Subtest: Unknown is distinct from no, and malformed or identifying fields are refused
+ok 23 - Unknown is distinct from no, and malformed or identifying fields are refused
+  ---
+  duration_ms: 0.301835
+  type: 'test'
+  ...
+# Subtest: Programme links are official and every guide exposes source, uncertainty and next steps
+ok 24 - Programme links are official and every guide exposes source, uncertainty and next steps
+  ---
+  duration_ms: 0.193502
+  type: 'test'
+  ...
+# Subtest: Backup round trip retains Unicode notes, profile, progress and checklist without aliases
+ok 25 - Backup round trip retains Unicode notes, profile, progress and checklist without aliases
+  ---
+  duration_ms: 1.606723
+  type: 'test'
+  ...
+# Subtest: New plans and new entries have independent mutable state
+ok 26 - New plans and new entries have independent mutable state
+  ---
+  duration_ms: 0.155615
+  type: 'test'
+  ...
+# Subtest: Import refuses unknown guides, invalid progress, duplicate checks and impossible dates
+ok 27 - Import refuses unknown guides, invalid progress, duplicate checks and impossible dates
+  ---
+  duration_ms: 0.420153
+  type: 'test'
+  ...
+# Subtest: Import refuses malformed JSON, oversized bodies, extra fields and prototype keys
+ok 28 - Import refuses malformed JSON, oversized bodies, extra fields and prototype keys
+  ---
+  duration_ms: 0.357069
+  type: 'test'
+  ...
+# Subtest: Rejected imports do not mutate the existing plan
+ok 29 - Rejected imports do not mutate the existing plan
+  ---
+  duration_ms: 0.144088
+  type: 'test'
+  ...
+# Subtest: Calendar reminder is a personal all-day event with leap-day rollover and safe UTF-8 folding
+ok 30 - Calendar reminder is a personal all-day event with leap-day rollover and safe UTF-8 folding
+  ---
+  duration_ms: 1.186059
+  type: 'test'
+  ...
+# Subtest: Calendar export refuses a missing or invalid reminder
+ok 31 - Calendar export refuses a missing or invalid reminder
+  ---
+  duration_ms: 0.155404
+  type: 'test'
+  ...
+# Subtest: U01 all 16 guides open with visible documents/steps and a header add action before the details
+ok 32 - U01 all 16 guides open with visible documents/steps and a header add action before the details
+  ---
+  duration_ms: 65.233772
+  type: 'test'
+  ...
+# Subtest: U02 criteria/documents update draft progress; explicit save persists and reloads the independent checklists
+ok 33 - U02 criteria/documents update draft progress; explicit save persists and reloads the independent checklists
+  ---
+  duration_ms: 10.923084
+  type: 'test'
+  ...
+# Subtest: U03 legacy saved notes/checks remain intact and never become reviewed requirements
+ok 34 - U03 legacy saved notes/checks remain intact and never become reviewed requirements
+  ---
+  duration_ms: 8.610706
+  type: 'test'
+  ...
+# Subtest: U04 opting into persistence cannot replace corrupt current data; the working plan remains usable
+ok 35 - U04 opting into persistence cannot replace corrupt current data; the working plan remains usable
+  ---
+  duration_ms: 7.068801
+  type: 'test'
+  ...
+# Subtest: A01 legacy import preserves documents, notes, reminder and status; never infers reviewed criteria
+ok 36 - A01 legacy import preserves documents, notes, reminder and status; never infers reviewed criteria
+  ---
+  duration_ms: 1.208032
+  type: 'test'
+  ...
+# Subtest: A02 v2 round trip keeps criteria isolated from documents and rejects malformed/future checklists
+ok 37 - A02 v2 round trip keeps criteria isolated from documents and rejects malformed/future checklists
+  ---
+  duration_ms: 0.438561
+  type: 'test'
+  ...
+# Subtest: A03 every guide starts unchecked; progress counts requirements plus documents and finds the next missing item
+ok 38 - A03 every guide starts unchecked; progress counts requirements plus documents and finds the next missing item
+  ---
+  duration_ms: 0.30466
+  type: 'test'
+  ...
+# Subtest: A04 legacy storage is read without writes; first v2 save keeps the original bytes
+ok 39 - A04 legacy storage is read without writes; first v2 save keeps the original bytes
+  ---
+  duration_ms: 0.234854
+  type: 'test'
+  ...
+# Subtest: A05 malformed/newer current storage is not replaced or hidden by a valid legacy fallback
+ok 40 - A05 malformed/newer current storage is not replaced or hidden by a valid legacy fallback
+  ---
+  duration_ms: 0.1724
+  type: 'test'
+  ...
+# Subtest: A06 changed storage, denied access, quota and failed readback cannot be reported as a confirmed save
+ok 41 - A06 changed storage, denied access, quota and failed readback cannot be reported as a confirmed save
+  ---
+  duration_ms: 0.355787
+  type: 'test'
+  ...
+# Subtest: A07 explicit local deletion removes current and legacy copies
+ok 42 - A07 explicit local deletion removes current and legacy copies
+  ---
+  duration_ms: 0.081103
+  type: 'test'
+  ...
+1..42
+# tests 42
+# suites 0
+# pass 42
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 180.853975

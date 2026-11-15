@@ -1,0 +1,37 @@
+{
+  "tier": "T2",
+  "source": "24f906de413f11afab19305b953448327fcea1c2",
+  "node": "v24.22.2",
+  "browser": "158.0.8127.18",
+  "cases": [
+    {
+      "id": "R01",
+      "title": "Desktop profile, official guide, checklist, notes, calendar and opt-in reload",
+      "status": "passed"
+    },
+    {
+      "id": "R02",
+      "title": "Narrow touch-emulated discovery and session-only application progress",
+      "status": "passed"
+    },
+    {
+      "id": "R03",
+      "title": "Real JSON chooser, replacement confirmation, hostile text, backup and clear",
+      "status": "passed"
+    },
+    {
+      "id": "R04",
+      "title": "Blocked storage and refused catalogue preserve an operable in-memory plan",
+      "status": "passed"
+    }
+  ],
+  "passed": true,
+  "cleanup": {
+    "contextsClosed": true,
+    "nativePid": 2557,
+    "nativeExitCode": 0,
+    "nativeSignal": null,
+    "nativeAbsent": true,
+    "failures": []
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "profile": {
+    "age": 24,
+    "region": null,
+    "employment": null,
+    "studying": true,
+    "renting": null,
+    "children": null,
+    "lowIncome": null,
+    "disability": null
+  },
+  "entries": {
+    "beca-general": {
+      "status": "saved",
+      "checks": [],
+      "criteria": [],
+      "notes": "Revisar la convocatoria",
+      "reminder": ""
+    },
+    "imv": {
+      "status": "preparing",
+      "checks": [
+        0
+      ],
+      "criteria": [],
+      "notes": "<img src=\"https://invalid.example/private\" onerror=\"window.__injected=true\">",
+      "reminder": "2028-02-29"
+    }
+  }
+}

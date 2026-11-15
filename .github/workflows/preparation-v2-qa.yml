@@ -1,0 +1,99 @@
+name: Preparation V2 isolated qualification
+on:
+  push:
+    branches: [qa/ayudario-preparation-20261115]
+permissions:
+  contents: read
+concurrency:
+  group: ayudario-preparation-v2-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  hosted:
+    if: github.ref == 'refs/heads/qa/ayudario-preparation-20261115'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - name: Define owned proof path
+        shell: bash
+        run: echo "AYUDARIO_PROOF_DIR=$RUNNER_TEMP/ayudario-preparation-proof-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" >> "$GITHUB_ENV"
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.22.2'
+      - name: Anonymous production readback and owned teardown
+        run: python3 tests/scripts/preparation-hosted-v2-qa.py
+      - name: Retain original bytes in job log
+        if: always()
+        run: node tests/scripts/emit-preparation-proof.mjs
+      - name: Retain original bounded proof
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: preparation-v2-hosted-proof
+          path: ${{ env.AYUDARIO_PROOF_DIR }}
+          retention-days: 7
+
+  retire:
+    needs: hosted
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    permissions:
+      contents: write
+    steps:
+      - name: Retire only the leased temporary branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_SHA: 24f906de413f11afab19305b953448327fcea1c2
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os,json,urllib.request,urllib.error
+          root=Path(os.environ["RUNNER_TEMP"])/("ayudario-retirement-"+os.environ["GITHUB_RUN_ID"]+"-"+os.environ["GITHUB_RUN_ATTEMPT"])
+          root.mkdir()
+          receipt={"release":os.environ["RELEASE_SHA"],"qa":os.environ["GITHUB_SHA"],"deleted":False}
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self,*args):
+                  return None
+          opener=urllib.request.build_opener(NoRedirect)
+          def request(method,suffix):
+              req=urllib.request.Request("https://api.github.com/repos/alvarovillalbaa/ayudario"+suffix,method=method,headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json"})
+              try:
+                  with opener.open(req,timeout=20) as response:
+                      raw=response.read(1024*1024)
+                      return response.status,json.loads(raw) if raw else None
+              except urllib.error.HTTPError as error:
+                  raw=error.read(16384)
+                  return error.code,json.loads(raw) if raw else None
+          try:
+              assert os.environ["GITHUB_REF"]=="refs/heads/qa/ayudario-preparation-20261115"
+              status,main=request("GET","/git/ref/heads/main")
+              assert status==200 and main["object"]["sha"]==receipt["release"],"Main lease changed; preserve QA ref"
+              status,commit=request("GET","/git/commits/"+receipt["release"])
+              assert status==200 and commit["tree"]["sha"]=="027b08baaad585e12a232a3628d479495797b5ef"
+              status,_=request("GET","/contents/.github/workflows/preparation-v2-qa.yml?ref=main")
+              assert status==404,"One-off workflow must be absent from main"
+              status,owned=request("GET","/git/ref/heads/qa/ayudario-preparation-20261115")
+              assert status==200 and owned["object"]["sha"]==receipt["qa"],"QA lease changed; preserve ref"
+              status,_=request("DELETE","/git/refs/heads/qa/ayudario-preparation-20261115")
+              receipt["delete_status"]=status
+              assert status==204,"Temporary ref deletion refused"
+              status,_=request("GET","/git/ref/heads/qa/ayudario-preparation-20261115")
+              receipt["readback_status"]=status
+              assert status==404,"Temporary branch still present"
+              receipt["deleted"]=True
+          except Exception as error:
+              receipt["error"]=type(error).__name__+": "+str(error)
+              raise
+          finally:
+              (root/"retirement.json").write_text(json.dumps(receipt,indent=2)+"\n")
+              print(json.dumps(receipt))
+          PY
+      - name: Retain retirement readback
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: preparation-v2-retirement
+          path: ${{ runner.temp }}/ayudario-retirement-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 7

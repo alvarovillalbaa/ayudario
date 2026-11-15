@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ayudario//Plan personal//ES
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:imv-20280229@ayudario.local
+DTSTAMP:20261115T054258Z
+DTSTART;VALUE=DATE:20280229
+DTEND;VALUE=DATE:20280301
+SUMMARY:Revisar: Ingreso Mínimo Vital
+DESCRIPTION:Recordatorio personal. Comprueba el plazo oficial en https://ww
+ w.inclusion.gob.es/web/inclusion/ingreso-minimo-vital/que-es
+END:VEVENT
+END:VCALENDAR

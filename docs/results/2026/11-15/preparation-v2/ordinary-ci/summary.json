@@ -1,0 +1,21 @@
+{
+  "runId": 43682243334,
+  "jobId": 132715157999,
+  "source": "24f906de413f11afab19305b953448327fcea1c2",
+  "node": "v24.22.2",
+  "domain": {
+    "tests": 42,
+    "pass": 42,
+    "fail": 0,
+    "skipped": 0,
+    "durationMs": 180.853975
+  },
+  "browserCases": [
+    "R01",
+    "R02",
+    "R03",
+    "R04"
+  ],
+  "ordinaryWorkflow": "success",
+  "actualHostedAcceptance": "Separate H01 remains pending"
+}
