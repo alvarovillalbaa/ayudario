@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: '24.22.2'
       - name: Owned preparation qualification and teardown
-        run: python3 tests/scripts/preparation-v2-qa.py
+        run: python3 tests/scripts/preparation-visual-v2-qa.py
       - name: Retain original bytes in job log
         if: always()
         run: node tests/scripts/emit-preparation-proof.mjs

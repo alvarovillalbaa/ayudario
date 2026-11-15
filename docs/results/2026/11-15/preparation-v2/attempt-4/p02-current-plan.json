@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "profile": null,
+  "entries": {
+    "pnc-jubilacion": {
+      "status": "saved",
+      "checks": [
+        0,
+        1,
+        2
+      ],
+      "criteria": [
+        0,
+        1,
+        2
+      ],
+      "notes": "",
+      "reminder": ""
+    }
+  }
+}

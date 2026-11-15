@@ -1,0 +1,631 @@
+{
+  "tier": "T2",
+  "source": "5ee0c7a1b43daae8256138802649aa20ae78deb7",
+  "node": "v24.22.2",
+  "cases": [
+    {
+      "id": "P01",
+      "description": "All 16 guides, source/steps/documents, desktop sticky add and Escape close",
+      "status": "passed",
+      "guideIds": [
+        "imv",
+        "complemento-infancia",
+        "paro-contributivo",
+        "subsidio-mayores-52",
+        "beca-general",
+        "bono-alquiler-joven",
+        "bono-social",
+        "pnc-incapacidad",
+        "pnc-jubilacion",
+        "subsidio-cotizacion-insuficiente",
+        "subsidio-agotamiento",
+        "pago-unico",
+        "complemento-alquiler-pnc",
+        "dependencia",
+        "deduccion-maternidad",
+        "deduccion-familia-numerosa"
+      ]
+    },
+    {
+      "id": "P02",
+      "description": "Independent draft/save/reload marks, complete-list wording and actual backup/future import",
+      "status": "passed",
+      "exported": {
+        "version": 2,
+        "profile": null,
+        "entries": {
+          "pnc-jubilacion": {
+            "status": "saved",
+            "checks": [
+              0,
+              1,
+              2
+            ],
+            "criteria": [
+              0,
+              1,
+              2
+            ],
+            "notes": "",
+            "reminder": ""
+          }
+        }
+      }
+    },
+    {
+      "id": "P03a",
+      "description": "Narrow 390px real taps, native scrolling and accessible checklist",
+      "status": "passed",
+      "initial": {
+        "dialog": {
+          "x": 19,
+          "y": 12,
+          "width": 352,
+          "height": 820
+        },
+        "add": {
+          "x": 169.9375,
+          "y": 49,
+          "width": 125.0625,
+          "height": 46.5
+        },
+        "close": {
+          "x": 303,
+          "y": 50.25,
+          "width": 44,
+          "height": 44
+        }
+      },
+      "scrolled": {
+        "dialog": {
+          "x": 19,
+          "y": 12,
+          "width": 352,
+          "height": 820
+        },
+        "add": {
+          "x": 169.9375,
+          "y": 25,
+          "width": 125.0625,
+          "height": 46.5
+        },
+        "close": {
+          "x": 303,
+          "y": 26.25,
+          "width": 44,
+          "height": 44
+        }
+      }
+    },
+    {
+      "id": "P03b",
+      "description": "Narrow 320px real taps, native scrolling and accessible checklist",
+      "status": "passed",
+      "initial": {
+        "dialog": {
+          "x": 41,
+          "y": 88.5,
+          "width": 296,
+          "height": 820
+        },
+        "add": {
+          "x": 135.9375,
+          "y": 125.5,
+          "width": 125.0625,
+          "height": 46.5
+        },
+        "close": {
+          "x": 269,
+          "y": 126.75,
+          "width": 44,
+          "height": 44
+        }
+      },
+      "scrolled": {
+        "dialog": {
+          "x": 41,
+          "y": 88.5,
+          "width": 296,
+          "height": 820
+        },
+        "add": {
+          "x": 135.9375,
+          "y": 101.5,
+          "width": 125.0625,
+          "height": 46.5
+        },
+        "close": {
+          "x": 269,
+          "y": 102.75,
+          "width": 44,
+          "height": 44
+        }
+      }
+    },
+    {
+      "id": "P04",
+      "description": "Actual V1 client creates legacy storage; current client preserves it and adds unchecked criteria",
+      "status": "passed",
+      "legacyUnchanged": true
+    },
+    {
+      "id": "P05",
+      "description": "Two actual tabs refuse to overwrite changed V2 storage and retain a recoverable working copy",
+      "status": "passed",
+      "preservedStoredValueSha256": "dc384cf3dec223c44994210801e16b6bb2054794ac4d5b8f6e5a9e6b43314e2c"
+    },
+    {
+      "id": "P06",
+      "description": "Labelled failing-write fixture exercises current V2 recovery UI/export",
+      "status": "passed",
+      "storageBoundary": "Authored failing method in actual browser; not native OS quota proof"
+    }
+  ],
+  "boundaries": [
+    {
+      "requests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": false
+        }
+      ],
+      "errors": [],
+      "unexpected": []
+    },
+    {
+      "requests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": false
+        }
+      ],
+      "errors": [],
+      "unexpected": []
+    },
+    {
+      "requests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": false
+        }
+      ],
+      "errors": [],
+      "unexpected": []
+    },
+    {
+      "requests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": false
+        }
+      ],
+      "errors": [],
+      "unexpected": []
+    },
+    {
+      "requests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": true
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": true
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": true
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": true
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": true
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": true
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": true
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": false
+        }
+      ],
+      "errors": [],
+      "unexpected": []
+    },
+    {
+      "requests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": false
+        }
+      ],
+      "errors": [],
+      "unexpected": []
+    },
+    {
+      "requests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": false
+        }
+      ],
+      "errors": [],
+      "unexpected": []
+    }
+  ],
+  "passed": true,
+  "legacyRef": "f60033c8d6b10ea8dc46c3931b820d41525c6a3e",
+  "legacyAssets": [
+    {
+      "path": "public/index.html",
+      "bytes": 12341,
+      "sha256": "1f86d19b26068d4e125a6b2dc9027c128c3f72e09c4cbd642e614b8e5510a083"
+    },
+    {
+      "path": "public/app.js",
+      "bytes": 28603,
+      "sha256": "70285052a4ca02f1085a661030bd8aa256b0bd281fd951d1265e843a4ef3c626"
+    },
+    {
+      "path": "public/styles.css",
+      "bytes": 23904,
+      "sha256": "e106a1c1389f09156e1f616361530c9412800e3a60324098967817dfc0a6fe0e"
+    },
+    {
+      "path": "public/lib/catalog.js",
+      "bytes": 16617,
+      "sha256": "f5a68110cde22a609249aa0fffb688227cea9285c563cfa1d77996881a826ca5"
+    },
+    {
+      "path": "public/lib/plan.js",
+      "bytes": 4079,
+      "sha256": "57cc21f20ea704b2420fc51cab2344f956d4aa2fe6404c2fe386a5b6f78b681a"
+    }
+  ],
+  "browser": "158.0.8127.18",
+  "cleanup": {
+    "contextsClosed": true,
+    "nativePid": 2536,
+    "nativeExitCode": 0,
+    "nativeSignal": null,
+    "failures": [],
+    "nativeAbsent": true
+  }
+}

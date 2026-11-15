@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "profile": null,
+  "entries": {
+    "subsidio-agotamiento": {
+      "status": "saved",
+      "checks": [],
+      "criteria": [
+        0
+      ],
+      "notes": "",
+      "reminder": ""
+    }
+  }
+}

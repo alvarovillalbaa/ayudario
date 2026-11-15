@@ -1,0 +1,68 @@
+{
+  "runId": 43681008367,
+  "source": "5ee0c7a1b43daae8256138802649aa20ae78deb7",
+  "functionalCasesPassed": [
+    "P01",
+    "P02",
+    "P03a",
+    "P03b",
+    "P04",
+    "P05",
+    "P06"
+  ],
+  "overallAccepted": false,
+  "visualReview": {
+    "desktopSticky": "Original PNG is a single blank paper-colored frame; stable-paint diagnosis required.",
+    "narrow320": "Original PNG clips the right/bottom modal edge; reported x=41,y=88.5,width=296,height=820 exceeds actual 320x844 screenshot viewport.",
+    "narrow390": "Controls render visibly in the captured viewport.",
+    "desktopComplete": "Checklist/editor/source render in original capture."
+  },
+  "newCases": [
+    "V01 stable desktop paint after native sequential opening/scroll",
+    "V02 exact 320px capture-viewport containment"
+  ],
+  "carriedFunctionalInputs": [
+    {
+      "path": "public/app.js",
+      "bytes": 31132,
+      "sha256": "ec215354aaba5df53e8fd2ab072231aaa138895f16cb995e4aa1c492c5851dd0"
+    },
+    {
+      "path": "public/data/calls.json",
+      "bytes": 20560,
+      "sha256": "23276e9b29526928eac0a1e4c486de84b8280b9e2282b9b530d4da6d5cf2948e"
+    },
+    {
+      "path": "public/favicon.svg",
+      "bytes": 298,
+      "sha256": "1e2919dc454b4d9e198e0bfc574d4e5d797ebc87223a448a32683ce00b201428"
+    },
+    {
+      "path": "public/index.html",
+      "bytes": 12484,
+      "sha256": "11e6639af123596c8856c47465a102a8035acff9e71280f8b81bee977434c74f"
+    },
+    {
+      "path": "public/lib/catalog.js",
+      "bytes": 29094,
+      "sha256": "dccd136d9d3c565938019a4aa4ce5e90a59f9e2da018169521acf17618eab893"
+    },
+    {
+      "path": "public/lib/matcher.js",
+      "bytes": 2772,
+      "sha256": "aebdafea1d9c31db2b98b715669f2dd23b18c5d8de1015625c1df627bba40d9c"
+    },
+    {
+      "path": "public/lib/plan.js",
+      "bytes": 6202,
+      "sha256": "7c2fcca7fbcf9a76345cc134a25f08ea6413372353f5c89d27e513d767b8c899"
+    },
+    {
+      "path": "public/styles.css",
+      "bytes": 24943,
+      "sha256": "69117e0867fd27068318e180c1950376c5f4dbf8787db1de3f7f3fa730736951"
+    }
+  ],
+  "cumulativeRunnerSeconds": 85,
+  "localPersistence": "Mac full; owned remote branch contains original receipts. No local checkout/index/ref change."
+}
