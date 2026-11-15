@@ -1,0 +1,106 @@
+﻿2026-11-15T05:49:02.3535242Z Current runner version: '2.338.2'
+2026-11-15T05:49:02.3556325Z ##[group]Runner Image Provisioner
+2026-11-15T05:49:02.3557043Z Hosted Compute Agent
+2026-11-15T05:49:02.3557615Z Version: 20261103.629
+2026-11-15T05:49:02.3558191Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+2026-11-15T05:49:02.3558794Z Build Date: 2026-11-03T17:26:59Z
+2026-11-15T05:49:02.3559458Z Worker ID: {3cb9bb62-d2cf-48e9-8456-9ff0e0177ac0}
+2026-11-15T05:49:02.3560068Z Region: westus3
+2026-11-15T05:49:02.3560567Z Cloud: Azure
+2026-11-15T05:49:02.3561074Z ##[endgroup]
+2026-11-15T05:49:02.3562164Z ##[group]Operating System
+2026-11-15T05:49:02.3562765Z Ubuntu
+2026-11-15T05:49:02.3563215Z 24.04.5
+2026-11-15T05:49:02.3563675Z LTS
+2026-11-15T05:49:02.3564167Z ##[endgroup]
+2026-11-15T05:49:02.3564889Z ##[group]Runner Image
+2026-11-15T05:49:02.3565737Z Image: ubuntu-24.04
+2026-11-15T05:49:02.3566235Z Version: 20261111.370.1
+2026-11-15T05:49:02.3567363Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261111.370/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-15T05:49:02.3568598Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261111.370
+2026-11-15T05:49:02.3569439Z ##[endgroup]
+2026-11-15T05:49:02.3570390Z ##[group]GITHUB_TOKEN Permissions
+2026-11-15T05:49:02.3572050Z Contents: write
+2026-11-15T05:49:02.3572576Z Metadata: read
+2026-11-15T05:49:02.3573143Z ##[endgroup]
+2026-11-15T05:49:02.3575444Z Secret source: Actions
+2026-11-15T05:49:02.3576247Z Cache mode: write
+2026-11-15T05:49:02.3577068Z Prepare workflow directory
+2026-11-15T05:49:02.3845956Z Prepare all required actions
+2026-11-15T05:49:02.3885892Z Getting action download info
+2026-11-15T05:49:02.6724763Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-11-15T05:49:02.9413174Z Complete job name: retire
+2026-11-15T05:49:03.0166116Z ##[group]Run python3 - <<'PY'
+2026-11-15T05:49:03.0166681Z [36;1mpython3 - <<'PY'[0m
+2026-11-15T05:49:03.0167135Z [36;1mfrom pathlib import Path[0m
+2026-11-15T05:49:03.0167651Z [36;1mimport os,json,urllib.request,urllib.error[0m
+2026-11-15T05:49:03.0168591Z [36;1mroot=Path(os.environ["RUNNER_TEMP"])/("ayudario-retirement-"+os.environ["GITHUB_RUN_ID"]+"-"+os.environ["GITHUB_RUN_ATTEMPT"])[0m
+2026-11-15T05:49:03.0169416Z [36;1mroot.mkdir()[0m
+2026-11-15T05:49:03.0170045Z [36;1mreceipt={"release":os.environ["RELEASE_SHA"],"qa":os.environ["GITHUB_SHA"],"deleted":False}[0m
+2026-11-15T05:49:03.0170836Z [36;1mclass NoRedirect(urllib.request.HTTPRedirectHandler):[0m
+2026-11-15T05:49:03.0171420Z [36;1m    def redirect_request(self,*args):[0m
+2026-11-15T05:49:03.0171887Z [36;1m        return None[0m
+2026-11-15T05:49:03.0172356Z [36;1mopener=urllib.request.build_opener(NoRedirect)[0m
+2026-11-15T05:49:03.0172864Z [36;1mdef request(method,suffix):[0m
+2026-11-15T05:49:03.0174074Z [36;1m    req=urllib.request.Request("https://api.github.com/repos/alvarovillalbaa/ayudario"+suffix,method=method,headers={"Authorization":"Bearer "+os.environ["GH_TOKEN"],"Accept":"application/vnd.github+json"})[0m
+2026-11-15T05:49:03.0175386Z [36;1m    try:[0m
+2026-11-15T05:49:03.0175835Z [36;1m        with opener.open(req,timeout=20) as response:[0m
+2026-11-15T05:49:03.0176373Z [36;1m            raw=response.read(1024*1024)[0m
+2026-11-15T05:49:03.0176958Z [36;1m            return response.status,json.loads(raw) if raw else None[0m
+2026-11-15T05:49:03.0177566Z [36;1m    except urllib.error.HTTPError as error:[0m
+2026-11-15T05:49:03.0178066Z [36;1m        raw=error.read(16384)[0m
+2026-11-15T05:49:03.0178579Z [36;1m        return error.code,json.loads(raw) if raw else None[0m
+2026-11-15T05:49:03.0179093Z [36;1mtry:[0m
+2026-11-15T05:49:03.0179630Z [36;1m    assert os.environ["GITHUB_REF"]=="refs/heads/qa/ayudario-preparation-20261115"[0m
+2026-11-15T05:49:03.0180337Z [36;1m    status,main=request("GET","/git/ref/heads/main")[0m
+2026-11-15T05:49:03.0181115Z [36;1m    assert status==200 and main["object"]["sha"]==receipt["release"],"Main lease changed; preserve QA ref"[0m
+2026-11-15T05:49:03.0182177Z [36;1m    status,commit=request("GET","/git/commits/"+receipt["release"])[0m
+2026-11-15T05:49:03.0182962Z [36;1m    assert status==200 and commit["tree"]["sha"]=="027b08baaad585e12a232a3628d479495797b5ef"[0m
+2026-11-15T05:49:03.0183816Z [36;1m    status,_=request("GET","/contents/.github/workflows/preparation-v2-qa.yml?ref=main")[0m
+2026-11-15T05:49:03.0184681Z [36;1m    assert status==404,"One-off workflow must be absent from main"[0m
+2026-11-15T05:49:03.0185438Z [36;1m    status,owned=request("GET","/git/ref/heads/qa/ayudario-preparation-20261115")[0m
+2026-11-15T05:49:03.0186294Z [36;1m    assert status==200 and owned["object"]["sha"]==receipt["qa"],"QA lease changed; preserve ref"[0m
+2026-11-15T05:49:03.0187143Z [36;1m    status,_=request("DELETE","/git/refs/heads/qa/ayudario-preparation-20261115")[0m
+2026-11-15T05:49:03.0187819Z [36;1m    receipt["delete_status"]=status[0m
+2026-11-15T05:49:03.0188487Z [36;1m    assert status==204,"Temporary ref deletion refused"[0m
+2026-11-15T05:49:03.0189191Z [36;1m    status,_=request("GET","/git/ref/heads/qa/ayudario-preparation-20261115")[0m
+2026-11-15T05:49:03.0189831Z [36;1m    receipt["readback_status"]=status[0m
+2026-11-15T05:49:03.0190390Z [36;1m    assert status==404,"Temporary branch still present"[0m
+2026-11-15T05:49:03.0190923Z [36;1m    receipt["deleted"]=True[0m
+2026-11-15T05:49:03.0191365Z [36;1mexcept Exception as error:[0m
+2026-11-15T05:49:03.0191885Z [36;1m    receipt["error"]=type(error).__name__+": "+str(error)[0m
+2026-11-15T05:49:03.0192406Z [36;1m    raise[0m
+2026-11-15T05:49:03.0192765Z [36;1mfinally:[0m
+2026-11-15T05:49:03.0193286Z [36;1m    (root/"retirement.json").write_text(json.dumps(receipt,indent=2)+"\n")[0m
+2026-11-15T05:49:03.0193902Z [36;1m    print(json.dumps(receipt))[0m
+2026-11-15T05:49:03.0194823Z [36;1mPY[0m
+2026-11-15T05:49:03.0215476Z shell: /usr/bin/bash -e {0}
+2026-11-15T05:49:03.0216082Z env:
+2026-11-15T05:49:03.0219349Z   GH_TOKEN: ***
+2026-11-15T05:49:03.0219777Z   RELEASE_SHA: 24f906de413f11afab19305b953448327fcea1c2
+2026-11-15T05:49:03.0220266Z ##[endgroup]
+2026-11-15T05:49:05.2441327Z {"release": "24f906de413f11afab19305b953448327fcea1c2", "qa": "8dbafc5364e94a7b6e7982bbbe6a94e7e63ae346", "deleted": true, "delete_status": 204, "readback_status": 404}
+2026-11-15T05:49:05.2714178Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-11-15T05:49:05.2715873Z with:
+2026-11-15T05:49:05.2716717Z   name: preparation-v2-retirement
+2026-11-15T05:49:05.2718018Z   path: /home/runner/work/_temp/ayudario-retirement-43682647320-1
+2026-11-15T05:49:05.2719357Z   retention-days: 7
+2026-11-15T05:49:05.2720222Z   if-no-files-found: warn
+2026-11-15T05:49:05.2721152Z   compression-level: 6
+2026-11-15T05:49:05.2722069Z   overwrite: false
+2026-11-15T05:49:05.2722927Z   include-hidden-files: false
+2026-11-15T05:49:05.2723887Z   archive: true
+2026-11-15T05:49:05.2724792Z ##[endgroup]
+2026-11-15T05:49:05.5151581Z With the provided path, there will be 1 file uploaded
+2026-11-15T05:49:05.5156218Z Artifact name is valid!
+2026-11-15T05:49:05.5156750Z Root directory input is valid!
+2026-11-15T05:49:05.8746589Z Uploading artifact: preparation-v2-retirement.zip
+2026-11-15T05:49:05.8776363Z Beginning upload of artifact content to blob storage
+2026-11-15T05:49:06.1019527Z Uploaded bytes 274
+2026-11-15T05:49:06.1565395Z Finished uploading artifact content to blob storage!
+2026-11-15T05:49:06.1566986Z SHA256 digest of uploaded artifact is b88c6128d709c23e8a1f9de9eccc4538a0c2bd498081f0c49409f4d2bf1c8a46
+2026-11-15T05:49:06.1568198Z Finalizing artifact upload
+2026-11-15T05:49:06.6428243Z Artifact preparation-v2-retirement successfully finalized. Artifact ID 14148049490
+2026-11-15T05:49:06.6429476Z Artifact preparation-v2-retirement has been successfully uploaded! Final size is 274 bytes. Artifact ID is 14148049490
+2026-11-15T05:49:06.6431843Z Artifact download URL: https://github.com/alvarovillalbaa/ayudario/actions/runs/43682647320/artifacts/14148049490
+2026-11-15T05:49:06.6583970Z Cleaning up orphan processes

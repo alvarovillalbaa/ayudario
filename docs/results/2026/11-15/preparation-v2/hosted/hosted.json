@@ -1,0 +1,200 @@
+{
+  "tier": "T2",
+  "source": "8dbafc5364e94a7b6e7982bbbe6a94e7e63ae346",
+  "release": "24f906de413f11afab19305b953448327fcea1c2",
+  "origin": "https://ayudario-xi.vercel.app",
+  "node": "v24.22.2",
+  "cases": [
+    {
+      "id": "H01",
+      "status": "passed",
+      "description": "Eight exact production resources/security headers and anonymous native 320px add/save/close, with session-only marks"
+    }
+  ],
+  "resources": [
+    {
+      "path": "/app.js",
+      "status": 200,
+      "bytes": 31132,
+      "sha256": "ec215354aaba5df53e8fd2ab072231aaa138895f16cb995e4aa1c492c5851dd0",
+      "expected": "ec215354aaba5df53e8fd2ab072231aaa138895f16cb995e4aa1c492c5851dd0",
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "age": "365",
+        "etag": "W/\"6e19844c7dc0d3a9de762311b1a1e4bd\""
+      }
+    },
+    {
+      "path": "/data/calls.json",
+      "status": 200,
+      "bytes": 20560,
+      "sha256": "23276e9b29526928eac0a1e4c486de84b8280b9e2282b9b530d4da6d5cf2948e",
+      "expected": "23276e9b29526928eac0a1e4c486de84b8280b9e2282b9b530d4da6d5cf2948e",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=300, must-revalidate",
+        "age": "0",
+        "etag": "W/\"a2960caed72ff7fb44823b3b2897efd2\""
+      }
+    },
+    {
+      "path": "/favicon.svg",
+      "status": 200,
+      "bytes": 298,
+      "sha256": "1e2919dc454b4d9e198e0bfc574d4e5d797ebc87223a448a32683ce00b201428",
+      "expected": "1e2919dc454b4d9e198e0bfc574d4e5d797ebc87223a448a32683ce00b201428",
+      "headers": {
+        "content-type": "image/svg+xml",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "age": "0",
+        "etag": "\"c11a2138b12f3bcba17c304075f539c2\""
+      }
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 12484,
+      "sha256": "11e6639af123596c8856c47465a102a8035acff9e71280f8b81bee977434c74f",
+      "expected": "11e6639af123596c8856c47465a102a8035acff9e71280f8b81bee977434c74f",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "age": "365",
+        "etag": "W/\"4322113f7d7b84cf260c80f2c336a5fe\""
+      }
+    },
+    {
+      "path": "/lib/catalog.js",
+      "status": 200,
+      "bytes": 29094,
+      "sha256": "dccd136d9d3c565938019a4aa4ce5e90a59f9e2da018169521acf17618eab893",
+      "expected": "dccd136d9d3c565938019a4aa4ce5e90a59f9e2da018169521acf17618eab893",
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "age": "365",
+        "etag": "W/\"c0d0a2e35d281b099c6eddbc44e9c280\""
+      }
+    },
+    {
+      "path": "/lib/matcher.js",
+      "status": 200,
+      "bytes": 2772,
+      "sha256": "aebdafea1d9c31db2b98b715669f2dd23b18c5d8de1015625c1df627bba40d9c",
+      "expected": "aebdafea1d9c31db2b98b715669f2dd23b18c5d8de1015625c1df627bba40d9c",
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "age": "365",
+        "etag": "W/\"14efd55b98b74c2d24619bdaf7a7a742\""
+      }
+    },
+    {
+      "path": "/lib/plan.js",
+      "status": 200,
+      "bytes": 6202,
+      "sha256": "7c2fcca7fbcf9a76345cc134a25f08ea6413372353f5c89d27e513d767b8c899",
+      "expected": "7c2fcca7fbcf9a76345cc134a25f08ea6413372353f5c89d27e513d767b8c899",
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "age": "365",
+        "etag": "W/\"6b942ffd009c0fb345de5e8ada96b7bb\""
+      }
+    },
+    {
+      "path": "/styles.css",
+      "status": 200,
+      "bytes": 25160,
+      "sha256": "af72f053e664fe547ecb344d4a4306392d2f6a9b61cadc4ad89d4a8da0235b61",
+      "expected": "af72f053e664fe547ecb344d4a4306392d2f6a9b61cadc4ad89d4a8da0235b61",
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "age": "365",
+        "etag": "W/\"0b956eb6ea9dc386940c1813567667cc\""
+      }
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://ayudario-xi.vercel.app/",
+      "method": "GET"
+    },
+    {
+      "url": "https://ayudario-xi.vercel.app/styles.css",
+      "method": "GET"
+    },
+    {
+      "url": "https://ayudario-xi.vercel.app/app.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://ayudario-xi.vercel.app/lib/catalog.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://ayudario-xi.vercel.app/lib/matcher.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://ayudario-xi.vercel.app/lib/plan.js",
+      "method": "GET"
+    },
+    {
+      "url": "https://ayudario-xi.vercel.app/data/calls.json",
+      "method": "GET"
+    }
+  ],
+  "errors": [],
+  "unexpected": [],
+  "passed": true,
+  "browser": "158.0.8127.18",
+  "geometry": {
+    "x": 19,
+    "y": 12,
+    "width": 282,
+    "height": 820
+  },
+  "cleanup": {
+    "contextsClosed": true,
+    "nativePid": 2737,
+    "nativeExitCode": 0,
+    "nativeSignal": null,
+    "nativeAbsent": true,
+    "failures": []
+  }
+}

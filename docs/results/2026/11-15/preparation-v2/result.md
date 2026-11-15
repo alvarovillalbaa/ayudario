@@ -7,6 +7,11 @@ and steps. The top-right modal action remains visible while scrolling. Requireme
 and document marks are independent; Save commits drafts, progress stays personal,
 and format-1 plans retain their old bytes while new saves use format 2.
 
+Delivered at [Ayudario](https://ayudario-xi.vercel.app). Current ordinary CI passed
+42 domain cases plus R01-R04; actual anonymous production H01 matched all eight
+public resources and security headers and exercised the corrected 320px UI.
+See the separate source boundaries below; these are not one combined execution.
+
 ## Evidence and source boundaries
 
 - [Attempt 4](attempt-4/preparation-browser.json), source
@@ -58,10 +63,41 @@ a pass to close the visual boundary.
 
 The ordinary workflow is versioned for this edition: R01-R04 live in
 `tests/e2e/journeys-v2.mjs`, with 16 guides, five explicit employment IDs,
-document-only selectors and refused format 3. The historical `journeys.mjs`
-and B01-B05 receipts remain unchanged. Ordinary current-edition CI and actual
-Vercel READY/served-byte/native hosted observation are separate pending checks
-at this source-publication checkpoint.
+document-only selectors and refused format 3. Historical `journeys.mjs`
+and B01-B05 remain unchanged. [Current ordinary CI](ordinary-ci/summary.json)
+on release `24f906de413f11afab19305b953448327fcea1c2` passed **42/42** Node
+cases (0 skipped, 180.854 ms) plus all four actual Chromium journeys. Its
+[original browser report](ordinary-ci/browser.json), TAP, complete streams,
+before/after source manifests and images are retained. Browser/server/tools
+closed normally, with stable source and no owned process left behind.
+
+Vercel deployment `dpl_BA7GzXkARW6F7xfmaRdiYALQEswk` was observed READY,
+production target, exact release SHA and the public alias. The separate
+[actual hosted report](hosted/hosted.json), driven by
+`8dbafc5364e94a7b6e7982bbbe6a94e7e63ae346`, anonymously fetched all eight
+resources from `https://ayudario-xi.vercel.app`: HTTP 200, exact bytes/SHA-256
+and declared CSP, referrer, nosniff and permissions headers all matched.
+A fresh real 320px Chromium context loaded 16 guides, added one guide, saved
+independent criterion/document marks and closed the fitted modal. Session-only
+localStorage remained empty; seven finite static GETs, zero unexpected requests
+or browser errors were observed. The [original screenshot](hosted/hosted-preparation.png)
+was viewed. Native process exit 0/absence and owned-tool removal were verified;
+no local loopback app server was started for hosted observation.
+
+[Retirement readback](retirement.json) records DELETE 204 and subsequent GET 404
+for only the owned exact-SHA QA branch, after hosted success and verification
+of the unchanged main release/tree. The active one-off workflow was absent on
+main before retirement; the final tree also excludes it. Vercel reports zero
+deployments for that QA branch. Its bounded cleanup job used a separate
+contents:write token only for the leased ref deletion; it did not write main.
+The exact retired [workflow source](source/hosted-v2.workflow.yml.example)
+and hosted driver/controller sources are preserved as inactive text.
+
+CI job wall time across all attempts, ordinary CI, hosted readback and branch
+retirement is **191 seconds**, within the 20-minute limit; this is not a billing
+claim. Source proof, real delivery and the older first-release observations
+remain separately identified. Final evidence publication changes documentation
+only relative to the qualified release tree and retains its public bytes.
 
 The default branch's seven catalogue-only advances were preserved, including its
 current `public/data/calls.json`. The temporary QA ref was created atomically

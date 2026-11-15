@@ -1,0 +1,85 @@
+{
+  "release": "24f906de413f11afab19305b953448327fcea1c2",
+  "ordinaryRun": 43682243334,
+  "hostedRun": 43682647320,
+  "hostedDriver": "8dbafc5364e94a7b6e7982bbbe6a94e7e63ae346",
+  "deployment": {
+    "id": "dpl_BA7GzXkARW6F7xfmaRdiYALQEswk",
+    "state": "READY",
+    "target": "production",
+    "alias": "https://ayudario-xi.vercel.app",
+    "gitSource": "24f906de413f11afab19305b953448327fcea1c2"
+  },
+  "temporaryBranch": {
+    "name": "qa/ayudario-preparation-20261115",
+    "deleted": true,
+    "deleteStatus": 204,
+    "readbackStatus": 404,
+    "observedVercelDeployments": 0
+  },
+  "ciJobWallSeconds": 191,
+  "notes": "Job durations include failed and accepted isolated qualification, current ordinary CI, actual hosted readback and ref retirement; not a billing claim. Final evidence publication changes docs only relative to the release tree.",
+  "artifacts": {
+    "ordinary": [
+      {
+        "id": 14148519180,
+        "name": "focused-application-checks",
+        "size_in_bytes": 190336,
+        "url": "https://api.github.com/repos/alvarovillalbaa/ayudario/actions/artifacts/14148519180",
+        "archive_download_url": "https://api.github.com/repos/alvarovillalbaa/ayudario/actions/artifacts/14148519180/zip",
+        "expired": false,
+        "created_at": "2026-11-15T05:43:04Z",
+        "expires_at": "2026-11-22T05:43:04Z",
+        "updated_at": "2026-11-15T05:43:04Z",
+        "digest": "sha256:cefa4d4b1c1c8fd29a5e685eae4dc3bafd4af89cd74319a4664eb452855b9865",
+        "workflow_run": {
+          "id": 43682243334,
+          "repository_id": 1449578322,
+          "head_repository_id": 1449578322,
+          "head_branch": "main",
+          "head_sha": "24f906de413f11afab19305b953448327fcea1c2"
+        }
+      }
+    ],
+    "hosted": [
+      {
+        "id": 14148961580,
+        "name": "preparation-v2-hosted-proof",
+        "size_in_bytes": 69542,
+        "url": "https://api.github.com/repos/alvarovillalbaa/ayudario/actions/artifacts/14148961580",
+        "archive_download_url": "https://api.github.com/repos/alvarovillalbaa/ayudario/actions/artifacts/14148961580/zip",
+        "expired": false,
+        "created_at": "2026-11-15T05:48:54Z",
+        "expires_at": "2026-11-22T05:48:53Z",
+        "updated_at": "2026-11-15T05:48:54Z",
+        "digest": "sha256:f240b0da715af7f52353101589a9067a3d42ba5bdf0ed1d373ce6b2c388dc5b9",
+        "workflow_run": {
+          "id": 43682647320,
+          "repository_id": 1449578322,
+          "head_repository_id": 1449578322,
+          "head_branch": "qa/ayudario-preparation-20261115",
+          "head_sha": "8dbafc5364e94a7b6e7982bbbe6a94e7e63ae346"
+        }
+      },
+      {
+        "id": 14148049490,
+        "name": "preparation-v2-retirement",
+        "size_in_bytes": 274,
+        "url": "https://api.github.com/repos/alvarovillalbaa/ayudario/actions/artifacts/14148049490",
+        "archive_download_url": "https://api.github.com/repos/alvarovillalbaa/ayudario/actions/artifacts/14148049490/zip",
+        "expired": false,
+        "created_at": "2026-11-15T05:49:06Z",
+        "expires_at": "2026-11-22T05:49:05Z",
+        "updated_at": "2026-11-15T05:49:06Z",
+        "digest": "sha256:b88c6128d709c23e8a1f9de9eccc4538a0c2bd498081f0c49409f4d2bf1c8a46",
+        "workflow_run": {
+          "id": 43682647320,
+          "repository_id": 1449578322,
+          "head_repository_id": 1449578322,
+          "head_branch": "qa/ayudario-preparation-20261115",
+          "head_sha": "8dbafc5364e94a7b6e7982bbbe6a94e7e63ae346"
+        }
+      }
+    ]
+  }
+}

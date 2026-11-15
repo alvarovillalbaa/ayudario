@@ -14,8 +14,9 @@ Proyecto nacido del [brief España ayudas](https://app.notion.com/p/40da1ee8bd06
 No recoge nombres, DNI, datos bancarios, credenciales ni documentos. El perfil y el plan no se envían al servidor. Las guías orientan la preparación: la comprobación completa, los plazos y la decisión corresponden al organismo. Las solicitudes se presentan en su sede oficial.
 
 La [iteración de preparación](docs/results/2026/11-15/preparation-v2/result.md)
-conserva la cualificación funcional y visual en CI; la entrega alojada se verifica
-por separado. Las ocho guías nuevas se contrastaron con
+está publicada y comprobada en la URL pública: 42 casos de dominio, cuatro
+recorridos de regresión y una sesión anónima real con los ocho recursos exactos.
+La evidencia mantiene separadas las revisiones funcionales y visuales. Las ocho guías nuevas se contrastaron con
 fuentes oficiales; las ocho anteriores conservan su fecha de revisión. Las
 marcas son personales: completar la lista no acredita elegibilidad. Los cambios
 del formulario se conservan al pulsar **Guardar cambios**; activar el guardado
