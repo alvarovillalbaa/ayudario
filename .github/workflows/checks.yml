@@ -32,96 +32,24 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
-      - name: Define owned runner paths
+      - name: Define owned proof path
         shell: bash
-        run: |
-          printf 'AYUDARIO_PROOF_DIR=%s\n' "$RUNNER_TEMP/ayudario-proof" >> "$GITHUB_ENV"
-          printf 'AYUDARIO_PLAYWRIGHT_DIR=%s\n' "$RUNNER_TEMP/ayudario-browser-tools" >> "$GITHUB_ENV"
-          printf 'PLAYWRIGHT_BROWSERS_PATH=%s\n' "$RUNNER_TEMP/ayudario-browser-binaries" >> "$GITHUB_ENV"
+        run: echo "AYUDARIO_PROOF_DIR=$RUNNER_TEMP/ayudario-preparation-proof-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" >> "$GITHUB_ENV"
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
           persist-credentials: false
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
         with:
           node-version: '24.22.2'
-      - name: Syntax and authored domain boundaries
-        shell: bash
-        run: |
-          mkdir -p "$AYUDARIO_PROOF_DIR"
-          node --version
-          npm --version
-          node scripts/fingerprint.mjs "$AYUDARIO_PROOF_DIR/source-before.json"
-          node scripts/check.mjs
-          node --test --test-reporter=tap tests/unit/*.test.mjs tests/integration/*.test.mjs 2>&1 | tee "$AYUDARIO_PROOF_DIR/domain.tap"
-          git diff --check
-      - name: Install exact disposable browser tools
-        shell: bash
-        run: |
-          npm install --prefix "$AYUDARIO_PLAYWRIGHT_DIR" --ignore-scripts --omit=optional --no-audit --no-fund playwright@1.65.0
-          node --input-type=module <<'JS'
-          import { readFile } from 'node:fs/promises';
-          const lock = JSON.parse(await readFile(`${process.env.AYUDARIO_PLAYWRIGHT_DIR}/package-lock.json`, 'utf8'));
-          const expected = {
-            playwright: 'sha512-F3AMWcR44qMBt4kq+6Kb6mX7bjGXshktKFOPULd7reED6ZJWevjbNRqysP7q+AATE9kdPEZBibex1BYsvpVoeA==',
-            'playwright-core': 'sha512-vNSKgH6YqtN7cdT/L334zo0a+YwkrpicyrHJlWWPIm/Q+Nn2SWInil01oT0mbu96U4GgoRtCYQD9CzJQgju+lA=='
-          };
-          for (const [name, integrity] of Object.entries(expected)) {
-            const entry = lock.packages[`node_modules/${name}`];
-            if (entry.version !== '1.65.0' || entry.integrity !== integrity) throw new Error(`Browser package identity mismatch: ${name}`);
-          }
-          JS
-          "$AYUDARIO_PLAYWRIGHT_DIR/node_modules/.bin/playwright" install --with-deps chromium
-      - name: Four actual Chromium journeys
-        shell: bash
-        run: |
-          node scripts/serve.mjs > "$AYUDARIO_PROOF_DIR/server.log" 2>&1 &
-          server_pid=$!
-          cleanup_server() {
-            original_status=$?
-            trap - EXIT
-            set +e
-            kill -TERM "$server_pid"
-            signal_status=$?
-            wait "$server_pid"
-            wait_status=$?
-            kill -0 "$server_pid" 2>/dev/null
-            alive_status=$?
-            node --input-type=module - "$original_status" "$signal_status" "$wait_status" "$alive_status" <<'JS'
-          import { writeFile } from 'node:fs/promises';
-          const [originalStatus, signalStatus, waitStatus, aliveStatus] = process.argv.slice(2).map(Number);
-          await writeFile(`${process.env.AYUDARIO_PROOF_DIR}/server-cleanup.json`, JSON.stringify({ originalStatus, signalStatus, waitStatus, processAbsent: aliveStatus !== 0 }) + '\n', { flag: 'wx' });
-          JS
-            proof_status=$?
-            if [ "$signal_status" -ne 0 ] || [ "$wait_status" -ne 0 ] || [ "$alive_status" -eq 0 ] || [ "$proof_status" -ne 0 ]; then exit 1; fi
-            exit "$original_status"
-          }
-          trap cleanup_server EXIT
-          node --input-type=module <<'JS'
-          let ready = false;
-          for (let attempt = 0; attempt < 40; attempt++) {
-            try { const response = await fetch('http://127.0.0.1:4173'); if (response.ok) { ready = true; break; } } catch {}
-            await new Promise(resolve => setTimeout(resolve, 100));
-          }
-          if (!ready) throw new Error('Owned server did not become ready');
-          JS
-          node tests/e2e/journeys.mjs
-      - name: Always retain final source guard
+      - name: Current edition regression and owned teardown
+        run: python3 tests/scripts/regression-v2-qa.py
+      - name: Retain original bytes in job log
         if: always()
-        shell: bash
-        run: |
-          test -f "$AYUDARIO_PROOF_DIR/source-before.json"
-          node scripts/fingerprint.mjs "$AYUDARIO_PROOF_DIR/source-after.json"
-          cmp "$AYUDARIO_PROOF_DIR/source-before.json" "$AYUDARIO_PROOF_DIR/source-after.json"
-          git diff --exit-code
-          test -z "$(git status --porcelain)"
-      - name: Retain bounded original bytes in the readable job log
-        if: always()
-        shell: bash
-        run: node scripts/emit-proof.mjs
-      - name: Retain original focused receipts
+        run: node tests/scripts/emit-preparation-proof.mjs
+      - name: Retain original bounded proof
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: focused-application-checks
-          path: ${{ runner.temp }}/ayudario-proof
+          path: ${{ env.AYUDARIO_PROOF_DIR }}
           retention-days: 7

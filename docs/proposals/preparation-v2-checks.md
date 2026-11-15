@@ -48,3 +48,7 @@ No deployment setting, paid plan or scheduled catalogue workflow is changed.
 Retire the temporary branch/workflow and record all proof limits. Actual
 government entitlement, application success, physical devices and native OS quota
 remain outside these checks.
+
+Qualification checkpoint: see [the actual result](../results/2026/11-15/preparation-v2/result.md).
+Do not rerun P01-P06/V01 unchanged. V02 closes the corrected 320px source; current
+ordinary R01-R04 and hosted readback have their own delivery boundaries.

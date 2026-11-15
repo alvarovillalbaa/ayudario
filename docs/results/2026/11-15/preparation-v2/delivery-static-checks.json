@@ -1,0 +1,46 @@
+[
+  {
+    "check": "journeys-v2",
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "b35486",
+      "wall_time_seconds": 0.018253583,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  },
+  {
+    "check": "proof-emitter",
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "3f903c",
+      "wall_time_seconds": 0.021037042,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  },
+  {
+    "check": "regression-controller",
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "c0ba31",
+      "wall_time_seconds": 0.000006667,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  },
+  {
+    "check": "local-whitespace",
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "3151ba",
+      "wall_time_seconds": 0.000009125,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  }
+]

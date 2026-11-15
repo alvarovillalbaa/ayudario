@@ -1,0 +1,164 @@
+{
+  "tier": "T2",
+  "source": "257d25636fb83a347ed4be988652c04b8db3da22",
+  "node": "v24.22.2",
+  "cases": [
+    {
+      "id": "V02",
+      "description": "320px modal fits actual screenshot viewport before and after native scroll",
+      "status": "passed",
+      "initial": {
+        "dialog": {
+          "x": 19,
+          "y": 12,
+          "width": 282,
+          "height": 820
+        },
+        "viewport": {
+          "innerWidth": 320,
+          "innerHeight": 844,
+          "clientWidth": 320,
+          "scrollWidth": 320,
+          "visual": {
+            "width": 320,
+            "height": 844,
+            "offsetLeft": 0,
+            "offsetTop": 0,
+            "scale": 1
+          }
+        },
+        "scroll": {
+          "pageX": 0,
+          "pageY": 5640,
+          "dialog": 0
+        },
+        "open": true
+      },
+      "initialImage": {
+        "name": "visual-narrow-initial.png",
+        "bytes": 53308,
+        "sha256": "2650e214f681193204db20403bf7de87dd2c87ba77f9acd04ad0e0e5ebb669d8",
+        "colors": 848
+      },
+      "scrolled": {
+        "dialog": {
+          "x": 19,
+          "y": 12,
+          "width": 282,
+          "height": 820
+        },
+        "viewport": {
+          "innerWidth": 320,
+          "innerHeight": 844,
+          "clientWidth": 320,
+          "scrollWidth": 320,
+          "visual": {
+            "width": 320,
+            "height": 844,
+            "offsetLeft": 0,
+            "offsetTop": 0,
+            "scale": 1
+          }
+        },
+        "scroll": {
+          "pageX": 0,
+          "pageY": 5640,
+          "dialog": 868
+        },
+        "open": true
+      },
+      "scrolledImage": {
+        "name": "visual-narrow-scrolled.png",
+        "bytes": 52972,
+        "sha256": "dc0152ed43a1a67e0936b353c00e4bfb8eb7584ad27de40d35bb8249eec7fef8",
+        "colors": 656
+      },
+      "saved": {
+        "dialog": {
+          "x": 19,
+          "y": 12,
+          "width": 282,
+          "height": 820
+        },
+        "viewport": {
+          "innerWidth": 320,
+          "innerHeight": 844,
+          "clientWidth": 320,
+          "scrollWidth": 320,
+          "visual": {
+            "width": 320,
+            "height": 844,
+            "offsetLeft": 0,
+            "offsetTop": 0,
+            "scale": 1
+          }
+        },
+        "scroll": {
+          "pageX": 0,
+          "pageY": 5640,
+          "dialog": 1991
+        },
+        "open": true
+      },
+      "savedImage": {
+        "name": "visual-narrow-saved.png",
+        "bytes": 49286,
+        "sha256": "7db73dcaf9e59a84a762d09015fb37a4ffdbcf51a5f33479bc6c0dd59f682800",
+        "colors": 835
+      }
+    }
+  ],
+  "boundaries": [
+    {
+      "requests": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/styles.css",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/app.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/catalog.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/matcher.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/lib/plan.js",
+          "legacy": false
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:4173/data/calls.json",
+          "legacy": false
+        }
+      ],
+      "errors": [],
+      "unexpected": []
+    }
+  ],
+  "passed": true,
+  "browser": "158.0.8127.18",
+  "cleanup": {
+    "contextsClosed": true,
+    "nativePid": 2514,
+    "nativeExitCode": 0,
+    "nativeSignal": null,
+    "failures": [],
+    "nativeAbsent": true
+  }
+}

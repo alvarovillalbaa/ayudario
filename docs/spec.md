@@ -50,3 +50,8 @@ a versioned migration; changing a label must not silently change what was checke
 The [iteration receipt](results/2026/11-14/preparation.md) records source research,
 24 focused checks and unverified browser/publication boundaries. No scheduled
 BDNS refresh, CI configuration or backend was changed.
+
+The [15 November qualification](results/2026/11-15/preparation-v2/result.md)
+records distinct functional, stable-paint and corrected 320px sources, preserved
+failures and remaining ordinary-CI/hosted boundaries. The current-edition CI is
+versioned; the scheduled BDNS workflow and backend remain unchanged.
