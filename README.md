@@ -1,5 +1,9 @@
 # Ayudario
 
+<!-- project-family:start -->
+> **Project family:** [Web & Creative Apps](https://github.com/alvarovillalbaa#web-and-creative-apps) · **Area:** Public services
+<!-- project-family:end -->
+
 Ayudas públicas en España, con fuentes oficiales y un plan que gestionas tú.
 
 Proyecto nacido del [brief España ayudas](https://app.notion.com/p/40da1ee8bd0680638e87f69899520d19): una experiencia de descubrimiento y preparación inspirada en Wizbii Money, autogestionable. [Abrir Ayudario](https://ayudario-xi.vercel.app). Primera versión publicada, con actualización oficial real y comprobación del catálogo en la interfaz alojada.
