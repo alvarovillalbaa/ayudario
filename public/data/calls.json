@@ -4,12 +4,19 @@
     "name": "SNPSAP / BDNS — Intervención General de la Administración del Estado",
     "url": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias"
   },
-  "fetchedAt": "2026-11-27T16:58:07.159Z",
+  "fetchedAt": "2026-11-28T15:48:54.119Z",
   "window": {
-    "from": "2026-10-29",
-    "to": "2026-11-27"
+    "from": "2026-10-30",
+    "to": "2026-11-28"
   },
   "items": [
+    {
+      "id": "945403",
+      "title": "Convocatoria de plazas de movilidad y ayudas económicas para estudiantes de la Universidad de Murcia en el marco del Programa Erasmus+ Estudios para el curso 2027/2028.",
+      "agency": "OTROS · UNIVERSIDAD DE MURCIA",
+      "registeredAt": "2026-11-27",
+      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/945403"
+    },
     {
       "id": "945389",
       "title": "Ayudas a personas becarias auxiliares de conversación con destino en centros educativos de la Comunidad Autónoma de Aragón, seleccionados por el Ministerio de Educación, Formación Profesional y Deportes del 1 de diciembre de 2026 al 31 de mayo de 2027.",
@@ -352,13 +359,6 @@
       "agency": "AUTONOMICA · CATALUÑA · AGÈNCIA CATALANA DE LA JOVENTUT",
       "registeredAt": "2026-11-26",
       "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/945034"
-    },
-    {
-      "id": "945031",
-      "title": "BASES Y CONVOCATORIA CONCURSO DE ESCAPARATISMO COMERCIAL AÑO 2026",
-      "agency": "LOCAL · CHIVA · AYUNTAMIENTO DE CHIVA",
-      "registeredAt": "2026-11-26",
-      "sourceUrl": "https://www.infosubvenciones.es/bdnstrans/GE/es/convocatorias/945031"
     }
   ],
   "warning": "Selección limitada a 50 convocatorias registradas en los últimos 30 días para personas físicas sin actividad económica. No es un catálogo completo: una convocatoria reciente no implica plazo abierto ni elegibilidad personal.\nLa reutilización de los datos del Sistema Nacional de Publicidad de Subvenciones y Ayudas Públicas está sujeta a una serie de restricciones y consideraciones legales. Consulte el aviso legal en https://www.infosubvenciones.es/bdnstrans/GE/es/avisolegal.Además, el usuario debe ser consciente que la información presentada es de naturaleza dinámica, y que los datos pueden ser sometidos a correcciones, inserciones, modificaciones y eliminaciones en momentos posteriores a su extracción. Accesos al API del sistema Nacional de Publicidad de Subvenciones y Ayudas Públicas. La Administración Presupuestaria, para salvaguardar la protección del acceso libre e irrestricto de los ciudadanos a este Portal y a su información podrá adoptar medidas restrictivas de acceso al API ante situaciones de manifiesto abuso del servicio, riesgos de seguridad, o uso fraudulento de la información descargada, de acuerdo con las buenas prácticas de gestión de datos abiertos (https://datos.gob.es/es/blog/limitaciones-la-consulta-de-una-api) establecidas por el Ministerio para la Transformación Digital y de la Función Pública."
